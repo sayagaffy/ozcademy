@@ -23,11 +23,14 @@ Proyek ini adalah OZCADEMY, platform EdTech & Mentorship skala Enterprise untuk 
 5. **UI & Styling:** JANGAN membuat file CSS eksternal baru. Gunakan kembalian *utility classes* Tailwind CSS dari desain Stitch.
 
 ## 🧠 Progressive Disclosure & Context7
+
 Agen tidak boleh menebak API pihak ketiga. Agen diwajibkan:
 1. Menggunakan **Context7 MCP** untuk membaca dokumentasi terbaru. 
    - Gunakan ID `/livekit/components-react` untuk antarmuka video.
    - Gunakan ID `/videojs/http-streaming` untuk pemutar VOD.
 2. Saat menjumpai tugas spesifik, periksa dan muat instruksi dari `.agent/skills/<nama-skill>/SKILL.md` sebelum mulai menulis kode.
+3. Jangan memuat semua referensi sekaligus. Baca file berikut hanya saat tugas Anda relevan dengan topik di bawah ini:
+- **Arsitektur Sistem & Flowchart:** Baca `docs/agent-guides/ARCHITECTURE.md`
 
 ## 💻 Terminal Commands (SOP Verifikasi)
 Agen WAJIB menjalankan perintah ini sebelum merencanakan atau menyelesaikan *Pull Request* (PR):

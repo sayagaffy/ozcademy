@@ -77,3 +77,9 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
   }
 }
+
+@layer utilities {
+  .studio-overlay {
+    background: linear-gradient(to right, rgba(5, 5, 5, 0.4), rgba(5, 5, 5, 0.9));
+  }
+}

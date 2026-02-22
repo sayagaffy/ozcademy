@@ -1,4 +1,5 @@
-import { Button } from "../../../../shared/ui/Button/Button";
+import { Link } from "react-router-dom";
+import { Button, buttonVariants } from "../../../../shared/ui/Button/Button";
 
 export const HeroSection = () => {
   return (
@@ -23,9 +24,16 @@ export const HeroSection = () => {
         Akses blueprint industri broadcasting langsung dari sumbernya.
       </p>
       <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
-        <Button variant="primary" size="lg" className="w-full sm:w-auto">
+        <Link
+          to="/pricing"
+          className={buttonVariants({
+            variant: "primary",
+            size: "lg",
+            className: "w-full sm:w-auto",
+          })}
+        >
           Pilih Jalurmu
-        </Button>
+        </Link>
         <Button variant="outline" size="lg" className="w-full sm:w-auto">
           <span className="material-symbols-outlined text-lg">play_circle</span>
           Tonton Trailer

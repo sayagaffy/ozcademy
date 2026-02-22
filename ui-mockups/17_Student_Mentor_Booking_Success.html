@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-primary {
+                filter: drop-shadow(0 0 15px rgba(242, 208, 13, 0.5));
+            }
+            .glassmorphism {
+                background: rgba(12, 12, 12, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(242, 208, 13, 0.3);
+                color: transparent;
+            }
+            .technical-circle {
+                border: 2px dashed rgba(242, 208, 13, 0.3);
+                padding: 20px;
+                border-radius: 50%;
+                position: relative;
+            }
+            .technical-circle::before {
+                content: '';
+                position: absolute;
+                inset: -10px;
+                border: 1px solid rgba(242, 208, 13, 0.1);
+                border-radius: 50%;
+            }
+            .cinematic-lighting {
+                background: radial-gradient(circle at center, rgba(242, 208, 13, 0.08) 0%, transparent 70%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="fixed inset-0 cinematic-lighting pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Booking_System</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1.5 mt-4 overflow-y-auto">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span class="text-[10px] tracking-[0.2em] uppercase">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">local_library</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Komunitas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">settings_applications</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Pengaturan &amp; Pembiayaan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">System_Status</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400">SESSION_CONFIRMED</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto relative z-10 flex flex-col items-center justify-center p-8">
+<div class="max-w-2xl w-full text-center space-y-12">
+<div class="flex justify-center mb-8">
+<div class="technical-circle">
+<div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center border border-primary/40 glow-primary">
+<span class="material-symbols-outlined text-5xl text-primary font-black">check</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<h1 class="text-5xl md:text-6xl font-black tracking-tighter uppercase leading-none">
+                    Pemesanan Berhasil!<br/>
+<span class="text-outline">Jadwal Terkunci.</span>
+</h1>
+<p class="text-[10px] font-mono text-primary/60 tracking-[0.4em] uppercase">TRANSACTION_ID: SUCCESS_01</p>
+</div>
+<div class="glassmorphism rounded-2xl p-8 max-w-md mx-auto relative group">
+<div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+<div class="grid grid-cols-1 gap-6 text-left">
+<div class="space-y-1">
+<p class="text-[9px] font-mono text-slate-500 uppercase tracking-[0.3em]">Tanggal</p>
+<p class="text-lg font-bold tracking-tight uppercase">Jumat, 11 Okt 2024</p>
+</div>
+<div class="h-px bg-white/5 w-full"></div>
+<div class="space-y-1">
+<p class="text-[9px] font-mono text-slate-500 uppercase tracking-[0.3em]">Waktu</p>
+<p class="text-lg font-bold tracking-tight uppercase">19:00 - 20:00 WIB</p>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-primary/40"></div>
+<div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-primary/40"></div>
+<div class="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-primary/40"></div>
+<div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-primary/40"></div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto">
+<button class="w-full bg-primary hover:bg-white text-background-dark py-4 px-6 rounded-xl font-black text-[11px] tracking-[0.2em] transition-all duration-300 shadow-[0_10px_30px_rgba(242,208,13,0.15)] uppercase flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-lg">calendar_add_on</span>
+<span>Tambah ke Google Calendar</span>
+</button>
+<button class="w-full bg-transparent border border-white/10 hover:border-white/30 text-white py-4 px-6 rounded-xl font-black text-[11px] tracking-[0.2em] transition-all duration-300 uppercase flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">video_call</span>
+<span>Gabung Google Meet</span>
+</button>
+</div>
+<div class="pt-8 flex flex-col items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[14px]">mail</span>
+<p class="text-[9px] font-mono text-slate-500 uppercase tracking-[0.2em]">Kwitansi dan detail pertemuan telah dikirimkan ke email Anda.</p>
+</div>
+<div class="flex items-center gap-4 opacity-30">
+<span class="text-[8px] font-mono tracking-widest">PROTOCOL: CONFIRMED</span>
+<div class="w-1 h-1 bg-slate-500 rounded-full"></div>
+<span class="text-[8px] font-mono tracking-widest">SECURE_HANDSHAKE_COMPLETE</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

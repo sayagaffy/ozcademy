@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.07);
+                border: 1px solid rgba(242, 208, 13, 0.15);
+            }
+            .glassmorphism {
+                background: rgba(12, 12, 12, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+                height: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .glow-border {
+                box-shadow: 0 0 15px rgba(242, 208, 13, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden relative">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase text-white">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Learning_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">BERANDA</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">search</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">CARI</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">school</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">MENTOR</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">local_library</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">PEMBELAJARANKU</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">person</span>
+<span class="text-xs tracking-[0.2em] uppercase font-bold">PROFIL</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">SUPPORT_PROTOCOL: ACTIVE</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">ENCRYPTION: AES-256</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-y-auto custom-scrollbar relative z-10 p-8 lg:p-12">
+<div class="max-w-5xl mx-auto w-full mb-12">
+<div class="flex flex-col mb-8">
+<h1 class="text-4xl lg:text-5xl font-black tracking-tighter uppercase mb-2">Help Center</h1>
+<div class="flex items-center gap-4">
+<span class="h-[1px] w-12 bg-primary"></span>
+<p class="text-[10px] text-slate-400 uppercase tracking-[0.4em]">Support &amp; FAQ Hub / Global Terminal</p>
+</div>
+</div>
+<div class="relative group max-w-2xl">
+<div class="absolute -inset-1 bg-primary/10 rounded-xl blur opacity-25 group-focus-within:opacity-100 transition duration-1000"></div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-5 text-primary text-2xl">search</span>
+<input class="w-full bg-background-dark/80 border-2 border-primary/20 rounded-xl py-5 pl-14 pr-6 text-sm font-medium tracking-wide placeholder:text-slate-600 focus:outline-none focus:border-primary focus:ring-0 transition-all text-white glow-border" placeholder="Apa yang bisa kami bantu?" type="text"/>
+<div class="absolute right-5 flex items-center gap-2 pointer-events-none">
+<span class="text-[8px] font-mono text-slate-500 border border-white/10 px-1.5 py-0.5 rounded uppercase">Press Enter</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-5xl mx-auto w-full mb-16">
+<div class="text-[10px] font-bold text-primary tracking-[0.5em] uppercase mb-6 flex items-center gap-3">
+                    KATEGORI PERTANYAAN <span class="h-px flex-1 bg-white/5"></span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-card-dark border border-white/10 p-6 rounded-2xl hover:border-primary/50 transition-all cursor-pointer group glow-card">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<h3 class="text-sm font-bold uppercase tracking-wider mb-1">Pembayaran</h3>
+<p class="text-[10px] text-slate-500 font-mono tracking-tighter">TRANS_LOG_01</p>
+</div>
+<div class="bg-card-dark border border-white/10 p-6 rounded-2xl hover:border-primary/50 transition-all cursor-pointer group glow-card">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">video_library</span>
+</div>
+<h3 class="text-sm font-bold uppercase tracking-wider mb-1">Kendala Video</h3>
+<p class="text-[10px] text-slate-500 font-mono tracking-tighter">STREAM_AUTH_X</p>
+</div>
+<div class="bg-card-dark border border-white/10 p-6 rounded-2xl hover:border-primary/50 transition-all cursor-pointer group glow-card">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">manage_accounts</span>
+</div>
+<h3 class="text-sm font-bold uppercase tracking-wider mb-1">Akun &amp; Profil</h3>
+<p class="text-[10px] text-slate-500 font-mono tracking-tighter">USER_DATABASE_V2</p>
+</div>
+<div class="bg-card-dark border border-white/10 p-6 rounded-2xl hover:border-primary/50 transition-all cursor-pointer group glow-card">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">workspace_premium</span>
+</div>
+<h3 class="text-sm font-bold uppercase tracking-wider mb-1">Menjadi Mentor</h3>
+<p class="text-[10px] text-slate-500 font-mono tracking-tighter">MENTOR_ACCESS_HUB</p>
+</div>
+</div>
+</div>
+<div class="max-w-5xl mx-auto w-full mb-12">
+<div class="bg-card-dark/80 backdrop-blur-md border border-white/10 rounded-2xl p-8 lg:p-10 relative overflow-hidden glow-card">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<div class="text-[8px] font-mono text-right uppercase tracking-[0.2em] space-y-1">
+<div>REQ_ID: #OZ-88219</div>
+<div>NODE: ASIA-SOUTH-1</div>
+</div>
+</div>
+<div class="flex flex-col mb-8">
+<h2 class="text-2xl font-black uppercase tracking-tighter">Buat Tiket Bantuan</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Direct Support Interface</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-primary uppercase tracking-widest ml-1">Kategori Masalah</label>
+<div class="relative">
+<select class="w-full bg-white/5 border border-white/10 rounded-lg py-4 px-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary transition-all appearance-none cursor-pointer text-slate-300">
+<option disabled="" selected="" value="">Pilih kategori masalah...</option>
+<option value="pembayaran">Masalah Pembayaran</option>
+<option value="teknis">Kendala Teknis</option>
+<option value="akun">Pengaturan Akun</option>
+<option value="konten">Konten Pembelajaran</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-primary uppercase tracking-widest ml-1">Deskripsi Masalah</label>
+<textarea class="w-full bg-white/5 border border-white/10 rounded-lg py-4 px-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary transition-all text-slate-300 resize-none placeholder:text-slate-600" placeholder="Jelaskan detail kendala yang Anda alami..." rows="6"></textarea>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-2 text-[9px] font-mono text-slate-500 uppercase">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                                    Staff_Online: 24/7
+                                </span>
+<span class="text-[9px] font-mono text-slate-600 uppercase tracking-tighter">Est_Response: &lt; 2 Hours</span>
+</div>
+<button class="bg-primary text-background-dark px-10 py-4 rounded-lg font-black text-xs uppercase tracking-widest shadow-[0_0_30px_rgba(242,208,13,0.3)] hover:scale-105 transition-all" type="submit">
+                                Kirim Tiket
+                            </button>
+</div>
+</form>
+</div>
+<div class="mt-8 flex items-center justify-between text-[8px] font-mono text-slate-600 tracking-[0.3em] uppercase px-2">
+<div class="flex gap-8">
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> GLOBAL_SYNC: STABLE</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-slate-700 rounded-full"></span> PROTOCOL_v4.0.1</span>
+</div>
+<div>
+<span>© OZCADEMY_DIGITAL_ASSETS_2024</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

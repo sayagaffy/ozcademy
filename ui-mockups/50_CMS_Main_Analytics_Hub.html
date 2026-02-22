@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.07);
+                border: 1px solid rgba(242, 208, 13, 0.15);
+            }
+            .cinematic-glow {
+                background: radial-gradient(circle at top left, rgba(242, 208, 13, 0.05), transparent);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+                height: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden relative">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase text-white">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Admin_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-xs tracking-[0.2em] uppercase font-bold">DASHBOARD</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">PENGGUNA</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">library_books</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">KONTEN</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">KEUANGAN</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">SYSTEM_STABLE</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">VERSION_3.0.1</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden relative z-10">
+<header class="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md z-20">
+<div class="flex flex-col">
+<h1 class="text-xl font-black tracking-tighter uppercase">Main Dashboard Hub</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Central Command / Analytics</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right hidden sm:block">
+<div class="text-[10px] font-bold uppercase tracking-widest text-slate-300">ADMIN_MASTER</div>
+<div class="text-[8px] text-primary uppercase font-mono tracking-tighter">LVL_9_ROOT</div>
+</div>
+<div class="w-10 h-10 rounded-full border border-primary/30 p-0.5">
+<div class="w-full h-full rounded-full bg-primary flex items-center justify-center font-black text-background-dark text-sm">AM</div>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-auto custom-scrollbar p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-card-dark border border-white/5 rounded-2xl p-6 glow-card cinematic-glow relative overflow-hidden group">
+<div class="flex flex-col">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1">TOTAL PENGGUNA</span>
+<span class="text-3xl font-black text-white tracking-tighter">24,892</span>
+<span class="text-[9px] text-primary font-mono mt-2">+12% DARI BULAN LALU</span>
+</div>
+<span class="material-symbols-outlined absolute right-4 top-4 text-white/5 text-4xl group-hover:text-primary/10 transition-colors">group</span>
+</div>
+<div class="bg-card-dark border border-white/5 rounded-2xl p-6 glow-card cinematic-glow relative overflow-hidden group">
+<div class="flex flex-col">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1">MENTOR AKTIF</span>
+<span class="text-3xl font-black text-white tracking-tighter">158</span>
+<span class="text-[9px] text-primary font-mono mt-2">STATUS: OPTIMIZED</span>
+</div>
+<span class="material-symbols-outlined absolute right-4 top-4 text-white/5 text-4xl group-hover:text-primary/10 transition-colors">school</span>
+</div>
+<div class="bg-card-dark border border-white/5 rounded-2xl p-6 glow-card cinematic-glow relative overflow-hidden group">
+<div class="flex flex-col">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1">TOTAL PENDAPATAN</span>
+<span class="text-3xl font-black text-white tracking-tighter">Rp 4.2B</span>
+<span class="text-[9px] text-primary font-mono mt-2">KUARTER_03_REPORT</span>
+</div>
+<span class="material-symbols-outlined absolute right-4 top-4 text-white/5 text-4xl group-hover:text-primary/10 transition-colors">payments</span>
+</div>
+<div class="bg-card-dark border border-white/5 rounded-2xl p-6 glow-card cinematic-glow relative overflow-hidden group">
+<div class="flex flex-col">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1">SESI BERJALAN HARI INI</span>
+<span class="text-3xl font-black text-white tracking-tighter">42</span>
+<span class="text-[9px] text-primary font-mono mt-2 flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+                            REAL-TIME TRACKING
+                        </span>
+</div>
+<span class="material-symbols-outlined absolute right-4 top-4 text-white/5 text-4xl group-hover:text-primary/10 transition-colors">rocket_launch</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 h-[500px]">
+<div class="lg:col-span-2 bg-card-dark/50 border border-white/10 rounded-2xl p-6 relative flex flex-col">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-sm font-bold uppercase tracking-[0.2em]">Pertumbuhan Pengguna</h3>
+<p class="text-[10px] font-mono text-slate-500 uppercase">Analytics Data Node_Alpha</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] font-mono uppercase hover:bg-primary hover:text-background-dark transition-all">Daily</button>
+<button class="px-3 py-1 bg-primary text-background-dark border border-primary rounded text-[9px] font-mono uppercase">Weekly</button>
+</div>
+</div>
+<div class="flex-1 relative border-l border-b border-white/10 mt-4 mb-4">
+<div class="absolute inset-0 grid grid-cols-6 pointer-events-none">
+<div class="border-r border-white/5"></div>
+<div class="border-r border-white/5"></div>
+<div class="border-r border-white/5"></div>
+<div class="border-r border-white/5"></div>
+<div class="border-r border-white/5"></div>
+<div></div>
+</div>
+<svg class="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+<defs>
+<linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#f2d00d" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#f2d00d" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<path class="drop-shadow-[0_0_8px_rgba(242,208,13,0.8)]" d="M0 80 Q 20 70, 30 75 T 50 40 T 70 30 T 100 10" fill="none" stroke="#f2d00d" stroke-width="2"></path>
+<path d="M0 80 Q 20 70, 30 75 T 50 40 T 70 30 T 100 10 L 100 100 L 0 100 Z" fill="url(#chartGradient)"></path>
+</svg>
+<div class="absolute -left-12 inset-y-0 flex flex-col justify-between text-[8px] font-mono text-slate-600 py-1">
+<span>100K</span>
+<span>75K</span>
+<span>50K</span>
+<span>25K</span>
+<span>0</span>
+</div>
+</div>
+<div class="flex justify-between px-4 text-[8px] font-mono text-slate-600 uppercase">
+<span>Sen</span>
+<span>Sel</span>
+<span>Rab</span>
+<span>Kam</span>
+<span>Jum</span>
+<span>Sab</span>
+<span>Min</span>
+</div>
+</div>
+<div class="bg-card-dark/50 border border-white/10 rounded-2xl flex flex-col overflow-hidden">
+<div class="p-6 border-b border-white/5">
+<h3 class="text-sm font-bold uppercase tracking-[0.2em]">Aktivitas Terbaru</h3>
+<p class="text-[10px] font-mono text-slate-500 uppercase">System_Log_Live</p>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
+<div class="flex gap-4 group">
+<div class="w-1 h-8 bg-primary rounded-full group-hover:shadow-[0_0_10px_#f2d00d] transition-all"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold uppercase tracking-tight text-slate-200">Pendaftaran Siswa Baru</span>
+<span class="text-[8px] font-mono text-slate-500">14:02:11</span>
+</div>
+<p class="text-[9px] text-slate-500 mt-0.5">UID: USER_8829-X (Jkt)</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="w-1 h-8 bg-white/20 rounded-full group-hover:bg-primary transition-all"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold uppercase tracking-tight text-slate-200">Sesi Mentoring Selesai</span>
+<span class="text-[8px] font-mono text-slate-500">13:45:00</span>
+</div>
+<p class="text-[9px] text-slate-500 mt-0.5">Mentor: Dr. Arifin - Studio_A</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="w-1 h-8 bg-green-500/50 rounded-full group-hover:bg-green-500 transition-all"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold uppercase tracking-tight text-slate-200">Pembayaran Berhasil</span>
+<span class="text-[8px] font-mono text-slate-500">13:30:45</span>
+</div>
+<p class="text-[9px] text-slate-500 mt-0.5">INV/20241014/TRX-09</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="w-1 h-8 bg-primary rounded-full group-hover:shadow-[0_0_10px_#f2d00d] transition-all"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold uppercase tracking-tight text-slate-200">Siswa Baru Terverifikasi</span>
+<span class="text-[8px] font-mono text-slate-500">13:12:02</span>
+</div>
+<p class="text-[9px] text-slate-500 mt-0.5">KYC_Level: PRO_USER</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="w-1 h-8 bg-white/20 rounded-full group-hover:bg-primary transition-all"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold uppercase tracking-tight text-slate-200">Update Modul Kursus</span>
+<span class="text-[8px] font-mono text-slate-500">12:55:18</span>
+</div>
+<p class="text-[9px] text-slate-500 mt-0.5">Category: Radio_Engineering</p>
+</div>
+</div>
+</div>
+<div class="p-4 bg-white/[0.02] border-t border-white/5">
+<button class="w-full py-2 bg-white/5 hover:bg-white/10 text-[9px] font-mono uppercase tracking-widest text-slate-400 transition-all">Tampilkan Semua Log</button>
+</div>
+</div>
+</div>
+</div>
+<footer class="h-10 border-t border-white/5 bg-background-dark/80 backdrop-blur-md px-8 flex items-center justify-between text-[8px] font-mono text-slate-600 tracking-[0.3em] uppercase">
+<div class="flex gap-8">
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> SERVER_NODE: SG_01</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-green-500 rounded-full"></span> NETWORK: STABLE</span>
+<span class="flex items-center gap-2 text-slate-400">UTC+7: 14:15:22</span>
+</div>
+<div>
+<span>OZCADEMY_CORE_V3.0.1</span>
+</div>
+</footer>
+</main>
+</div>
+
+</body></html>

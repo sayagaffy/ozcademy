@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                        "danger": "#ff4d4d",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            }
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                color: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .scanline {
+                background: linear-gradient(to bottom, transparent 50%, rgba(242, 208, 13, 0.02) 50%);
+                background-size: 100% 4px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="fixed inset-0 scanline pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden relative">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase text-white">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Admin_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-xs tracking-[0.2em] uppercase font-bold">DASHBOARD</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">PENGGUNA</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">library_books</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">KONTEN</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">KEUANGAN</span>
+</a>
+</nav>
+<div class="p-6 mt-auto space-y-4">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest leading-none">SECURE_REVIEW_PROTOCOL</div>
+<div class="text-[8px] font-mono text-slate-500 uppercase tracking-widest leading-tight">MODERATION_QUEUE: 12_PENDING</div>
+<div class="flex items-center gap-2 pt-1">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase tracking-tighter">LISTENING_UPLOADS</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden relative z-10">
+<header class="px-8 pt-8 pb-4 flex items-end justify-between">
+<div class="flex flex-col">
+<h1 class="text-5xl font-black tracking-tighter uppercase text-outline">REVIEW KONTEN MASUK</h1>
+<p class="text-[10px] font-mono text-slate-500 uppercase tracking-[0.4em] mt-2">ANTRIAN MODERASI VOD / REAL-TIME UPDATE</p>
+</div>
+<div class="flex items-center gap-4 mb-1">
+<div class="flex flex-col items-end">
+<span class="text-[8px] font-mono text-primary tracking-widest">SCAN_STATUS: ACTIVE</span>
+<span class="text-[10px] font-bold text-white tracking-widest">12 MODUL TERTUNDA</span>
+</div>
+<div class="h-10 w-[1px] bg-white/10 mx-2"></div>
+<button class="w-10 h-10 rounded border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-auto custom-scrollbar px-8 py-6 space-y-4">
+<div class="group relative bg-card-dark border border-white/5 rounded-xl overflow-hidden hover:border-primary/30 transition-all glow-card">
+<div class="flex items-center p-4">
+<div class="relative w-48 aspect-video rounded-lg overflow-hidden border border-white/10 bg-black flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDot3gyoZOtCoiSLQwPl_YqBeOBqo9qMy8Pm0jlhgb1rJfE2-dKtkA0rRf6Lf3t2kTTZlre4k4WvbXvq8iU8hRIYZinTLgahX3zdxQQTuoz286K3QX7oGf-ruBzw3jnv0OFkhnrfGiyZxupPdLLjNF_n2-lDTR-V6QZtRw7YeMV3Z6gJVh94CjRupTU1SFrNgB_drPT3jaAIekbP2rxxe3ELBNC8HUyY1D67eggeAQGIl3PF_oSrjl7TIZINXVBGTZtaTjcW7LN6uA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-[8px] font-mono text-white/70 bg-black/50 px-1.5 py-0.5 rounded">00:42:15</div>
+</div>
+<div class="ml-6 flex-1">
+<div class="flex flex-col">
+<span class="text-[9px] font-mono text-primary tracking-widest uppercase mb-1">MODUL_UPLOAD_ID: #44021</span>
+<h3 class="text-xl font-bold text-white tracking-tight leading-none">Teknik Vokal Radio 101</h3>
+<div class="flex items-center gap-4 mt-3">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-primary">person</span>
+</div>
+<span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Andi Arifin</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-slate-500">calendar_today</span>
+<span class="text-[10px] font-mono text-slate-500">12 MAR 2024</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4">
+<button class="px-4 py-2 rounded text-[10px] font-bold tracking-[0.15em] border border-white/10 text-slate-400 hover:text-white hover:border-white/30 transition-all uppercase">
+                            PREVIEW VIDEO
+                        </button>
+<button class="px-4 py-2 rounded text-[10px] font-bold tracking-[0.15em] border border-danger/30 text-danger hover:bg-danger/10 transition-all uppercase">
+                            TOLAK
+                        </button>
+<button class="px-6 py-2 rounded bg-primary text-background-dark text-[10px] font-black tracking-[0.15em] hover:brightness-110 shadow-[0_0_15px_rgba(242,208,13,0.1)] uppercase">
+                            SETUJUI
+                        </button>
+</div>
+</div>
+</div>
+<div class="group relative bg-card-dark border border-white/5 rounded-xl overflow-hidden hover:border-primary/30 transition-all glow-card">
+<div class="flex items-center p-4">
+<div class="relative w-48 aspect-video rounded-lg overflow-hidden border border-white/10 bg-black flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC97NsL4b7ZnTkuHI2v2eYP6nr5Bf7h-eng0iDakxj_iimIxpyJh-U7LuSdAk1r-tqct5LBkzm11QYoQNiEf60qa5i0sZeVUA1UXaV9yNqX6_ltmkMzQdpwe1YmZ63rYxpfbs0Z7a3uTg7JdireH6INWhs9hejLjmlXmDP5Npa5oUNRorepv4U6FqwMUFSr6aEdHPBLeF0wTzSEYfcNbKQ6TcNaQvySxmrsward9xxNUvmcuCZw1vVbp_xE23n6-oK8_JAidfyi4pE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-[8px] font-mono text-white/70 bg-black/50 px-1.5 py-0.5 rounded">00:28:40</div>
+</div>
+<div class="ml-6 flex-1">
+<div class="flex flex-col">
+<span class="text-[9px] font-mono text-primary tracking-widest uppercase mb-1">MODUL_UPLOAD_ID: #44019</span>
+<h3 class="text-xl font-bold text-white tracking-tight leading-none">Public Speaking Fundamental</h3>
+<div class="flex items-center gap-4 mt-3">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-primary">person</span>
+</div>
+<span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Siska Pratama</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-slate-500">calendar_today</span>
+<span class="text-[10px] font-mono text-slate-500">11 MAR 2024</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4">
+<button class="px-4 py-2 rounded text-[10px] font-bold tracking-[0.15em] border border-white/10 text-slate-400 hover:text-white hover:border-white/30 transition-all uppercase">
+                            PREVIEW VIDEO
+                        </button>
+<button class="px-4 py-2 rounded text-[10px] font-bold tracking-[0.15em] border border-danger/30 text-danger hover:bg-danger/10 transition-all uppercase">
+                            TOLAK
+                        </button>
+<button class="px-6 py-2 rounded bg-primary text-background-dark text-[10px] font-black tracking-[0.15em] hover:brightness-110 shadow-[0_0_15px_rgba(242,208,13,0.1)] uppercase">
+                            SETUJUI
+                        </button>
+</div>
+</div>
+</div>
+<div class="group relative bg-card-dark border border-white/5 rounded-xl overflow-hidden hover:border-primary/30 transition-all glow-card">
+<div class="flex items-center p-4">
+<div class="relative w-48 aspect-video rounded-lg overflow-hidden border border-white/10 bg-black flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGTT7cmwTC5As4nyoCE7Q3CFvA5x8XC1B3VGR8CMR6qrNEkuUBLp_QeKpIlAHAiGoF4VKmq2U-By990QAy9804xeZdudht5l6EW-duMUNFZBUkd6iPbionepxsjGW4toxb_XI7z0WmHgTvxnjQ8sW6TIDc503RdQUUbkxZzPyJHm8T66V2WKHKhoXgC8O4ioBvUrQGpH0RqyWpaWQ_IPAtH096HsFx8KxjjTyTCz5SSWLe5S1iYKtzdoVy8UM5ChTgqE1uhFzJcUI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-[8px] font-mono text-white/70 bg-black/50 px-1.5 py-0.5 rounded">01:15:22</div>
+</div>
+<div class="ml-6 flex-1">
+<div class="flex flex-col">
+<span class="text-[9px] font-mono text-primary tracking-widest uppercase mb-1">MODUL_UPLOAD_ID: #43992</span>
+<h3 class="text-xl font-bold text-white tracking-tight leading-none">Manajemen Produksi Podcast</h3>
+<div class="flex items-center gap-4 mt-3">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-primary">person</span>
+</div>
+<span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Budi Santoso</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-slate-500">calendar_today</span>
+<span class="text-[10px] font-mono text-slate-500">10 MAR 2024</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4">
+<button class="px-4 py-2 rounded text-[10px] font-bold tracking-[0.15em] border border-white/10 text-slate-400 hover:text-white hover:border-white/30 transition-all uppercase">
+                            PREVIEW VIDEO
+                        </button>
+<button class="px-4 py-2 rounded text-[10px] font-bold tracking-[0.15em] border border-danger/30 text-danger hover:bg-danger/10 transition-all uppercase">
+                            TOLAK
+                        </button>
+<button class="px-6 py-2 rounded bg-primary text-background-dark text-[10px] font-black tracking-[0.15em] hover:brightness-110 shadow-[0_0_15px_rgba(242,208,13,0.1)] uppercase">
+                            SETUJUI
+                        </button>
+</div>
+</div>
+</div>
+<div class="group relative bg-card-dark border border-white/5 rounded-xl overflow-hidden hover:border-primary/30 transition-all glow-card opacity-80">
+<div class="flex items-center p-4">
+<div class="relative w-48 aspect-video rounded-lg overflow-hidden border border-white/10 bg-black flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-kRIX_6AQA0JxpPcrc7ZUjNA5pIDvNxlg7RoJnmyHOgLpuaOXi75A71eR_tIccR8rmWoszco4m1P3LFzZbfCKzwxdVsTBvIHtxbCG-98pfNWG2hbLFN7fxlVHxT1r6ULy4PcswCSZbQWznzdZAHHNm8S3VrOGTOvSyLOaQgrIcHFMSvCyap2YGCNtjjCLkzvHdT-Bw--4de0cyzJdUUVacaUTE_lhJy3Z_npshZLJufehM4xTqIMnUQM5Bw7GYaAN9zBD-ESxsQg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-[8px] font-mono text-white/70 bg-black/50 px-1.5 py-0.5 rounded">00:55:00</div>
+</div>
+<div class="ml-6 flex-1">
+<div class="flex flex-col">
+<span class="text-[9px] font-mono text-primary tracking-widest uppercase mb-1">MODUL_UPLOAD_ID: #43877</span>
+<h3 class="text-xl font-bold text-white tracking-tight leading-none">Seni Wawancara Mendalam</h3>
+<div class="flex items-center gap-4 mt-3">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-primary">person</span>
+</div>
+<span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Lestari Wahyuni</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-slate-500">calendar_today</span>
+<span class="text-[10px] font-mono text-slate-500">09 MAR 2024</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4">
+<button class="px-4 py-2 rounded text-[10px] font-bold tracking-[0.15em] border border-white/10 text-slate-400 hover:text-white hover:border-white/30 transition-all uppercase">
+                            PREVIEW VIDEO
+                        </button>
+<button class="px-4 py-2 rounded text-[10px] font-bold tracking-[0.15em] border border-danger/30 text-danger hover:bg-danger/10 transition-all uppercase">
+                            TOLAK
+                        </button>
+<button class="px-6 py-2 rounded bg-primary text-background-dark text-[10px] font-black tracking-[0.15em] hover:brightness-110 shadow-[0_0_15px_rgba(242,208,13,0.1)] uppercase">
+                            SETUJUI
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<footer class="h-10 border-t border-white/5 bg-background-dark/80 backdrop-blur-md px-8 flex items-center justify-between text-[8px] font-mono text-slate-600 tracking-[0.3em] uppercase">
+<div class="flex gap-8">
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> SYSTEM: OPERATIONAL</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-green-500 rounded-full"></span> PROTOCOL: SECURE_REVIEW</span>
+<span class="flex items-center gap-2 text-slate-400">MOD_GATEWAY_V1.0</span>
+</div>
+<div>
+<span>OZCADEMY_CONTENT_MOD_2024</span>
+</div>
+</footer>
+</main>
+</div>
+
+</body></html>

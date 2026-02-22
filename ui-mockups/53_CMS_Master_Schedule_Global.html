@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.07);
+                border: 1px solid rgba(242, 208, 13, 0.15);
+            }
+            .glassmorphism {
+                background: rgba(12, 12, 12, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+                height: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden relative">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase text-white">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Admin_System</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">DASHBOARD</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">PENGGUNA</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">calendar_view_week</span>
+<span class="text-xs tracking-[0.2em] uppercase font-bold">MASTER SCHEDULE</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">ROYALTY</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">SYNC_STATUS: LIVE</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">TIMEZONE: UTC+7</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden relative z-10">
+<header class="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md z-20">
+<div class="flex flex-col">
+<h1 class="text-xl font-black tracking-tighter uppercase">Master Schedule</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Operational / Weekly Overview</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-primary transition-colors">search</span>
+<input class="bg-white/5 border border-white/10 rounded-full pl-10 pr-4 py-2 text-[10px] font-mono tracking-widest w-64 focus:ring-1 focus:ring-primary focus:border-primary transition-all uppercase placeholder:text-slate-600" placeholder="CARI SESI..." type="text"/>
+</div>
+<div class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-lg px-4 py-2 cursor-pointer hover:bg-white/10 transition-all group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary text-lg">event</span>
+<span class="text-[10px] font-mono tracking-widest text-slate-300">14 OKT - 20 OKT 2024</span>
+<span class="material-symbols-outlined text-slate-500 text-sm">expand_more</span>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-white/10">
+<div class="text-right">
+<div class="text-[10px] font-bold uppercase tracking-widest">ADMIN_ROOT</div>
+<div class="text-[8px] text-primary uppercase font-mono tracking-tighter">LVL_5_AUTH</div>
+</div>
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center font-black text-background-dark text-xs">A</div>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-auto custom-scrollbar p-6">
+<div class="min-w-[1200px]">
+<div class="grid grid-cols-[100px_repeat(7,1fr)] bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
+<div class="bg-white/10 border-b border-r border-white/10 h-16 flex items-center justify-center">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Waktu</span>
+</div>
+<div class="bg-white/5 border-b border-r border-white/5 h-16 flex flex-col items-center justify-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em]">Senin</span>
+<span class="text-[9px] text-slate-500 font-mono uppercase">14 OKT</span>
+</div>
+<div class="bg-white/5 border-b border-r border-white/5 h-16 flex flex-col items-center justify-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em]">Selasa</span>
+<span class="text-[9px] text-slate-500 font-mono uppercase">15 OKT</span>
+</div>
+<div class="bg-white/5 border-b border-r border-white/5 h-16 flex flex-col items-center justify-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em]">Rabu</span>
+<span class="text-[9px] text-slate-500 font-mono uppercase">16 OKT</span>
+</div>
+<div class="bg-white/5 border-b border-r border-white/5 h-16 flex flex-col items-center justify-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em]">Kamis</span>
+<span class="text-[9px] text-slate-500 font-mono uppercase">17 OKT</span>
+</div>
+<div class="bg-white/5 border-b border-r border-white/5 h-16 flex flex-col items-center justify-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em]">Jumat</span>
+<span class="text-[9px] text-slate-500 font-mono uppercase">18 OKT</span>
+</div>
+<div class="bg-white/5 border-b border-r border-white/5 h-16 flex flex-col items-center justify-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em]">Sabtu</span>
+<span class="text-[9px] text-slate-500 font-mono uppercase">19 OKT</span>
+</div>
+<div class="bg-white/5 border-b h-16 flex flex-col items-center justify-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Minggu</span>
+<span class="text-[9px] text-primary/50 font-mono uppercase">20 OKT</span>
+</div>
+<div class="border-r border-b border-white/10 p-4 flex items-center justify-center font-mono text-[10px] text-slate-400">08:00</div>
+<div class="border-r border-b border-white/5 p-2 min-h-[140px] relative">
+<div class="bg-white/10 border border-white/10 rounded-lg p-3 h-full flex flex-col justify-between group cursor-pointer hover:border-primary/50 transition-all">
+<div class="text-[10px] font-bold text-slate-300 group-hover:text-primary leading-tight uppercase tracking-wider">Morning Radio Fundamentals</div>
+<div class="flex items-center justify-between text-[8px] font-mono text-slate-500">
+<span>PODCAST_A</span>
+<span>LIVE</span>
+</div>
+</div>
+</div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2">
+<div class="bg-white/10 border border-white/10 rounded-lg p-3 h-full flex flex-col justify-between opacity-60">
+<div class="text-[10px] font-bold text-slate-300 leading-tight uppercase tracking-wider">Sound Engineering 101</div>
+<div class="flex items-center justify-between text-[8px] font-mono text-slate-500">
+<span>TECH_B</span>
+<span>RECORDED</span>
+</div>
+</div>
+</div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/10 p-4 flex items-center justify-center font-mono text-[10px] text-slate-400">10:00</div>
+<div class="border-r border-b border-white/5 p-2 min-h-[140px]"></div>
+<div class="border-r border-b border-white/5 p-2">
+<div class="bg-primary text-background-dark border border-primary rounded-lg p-3 h-full flex flex-col justify-between shadow-[0_0_20px_rgba(242,208,13,0.3)] scale-[1.02] z-10">
+<div>
+<div class="text-[8px] font-black uppercase mb-1 flex items-center gap-1">
+<span class="w-1 h-1 bg-background-dark rounded-full"></span> ACTIVE_SESSION
+                                </div>
+<div class="text-[10px] font-black leading-tight uppercase tracking-wider">Voice Articulation Workshop</div>
+</div>
+<div class="flex items-center justify-between text-[8px] font-mono font-bold">
+<span>STUDIO_01</span>
+<span>10:00 - 12:00</span>
+</div>
+</div>
+</div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2">
+<div class="bg-white/10 border border-white/10 rounded-lg p-3 h-full flex flex-col justify-between">
+<div class="text-[10px] font-bold text-slate-300 leading-tight uppercase tracking-wider">Advanced Mixing</div>
+<div class="flex items-center justify-between text-[8px] font-mono text-slate-500">
+<span>PRO_03</span>
+<span>LIVE</span>
+</div>
+</div>
+</div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/10 p-4 flex items-center justify-center font-mono text-[10px] text-slate-600">12:00</div>
+<div class="col-span-7 border-b border-white/5 bg-white/[0.02] flex items-center justify-center" colspan="7">
+<span class="text-[8px] font-mono text-slate-600 tracking-[1em] uppercase">System_Maintenance_Cooldown</span>
+</div>
+<div class="border-r border-b border-white/10 p-4 flex items-center justify-center font-mono text-[10px] text-slate-400">14:00</div>
+<div class="border-r border-b border-white/5 p-2 min-h-[140px]"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2">
+<div class="bg-white/10 border border-white/10 rounded-lg p-3 h-full flex flex-col justify-between">
+<div class="text-[10px] font-bold text-slate-300 leading-tight uppercase tracking-wider">Live Stream Management</div>
+<div class="flex items-center justify-between text-[8px] font-mono text-slate-500">
+<span>STREAM_A</span>
+<span>LIVE</span>
+</div>
+</div>
+</div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/10 p-4 flex items-center justify-center font-mono text-[10px] text-slate-400">16:00</div>
+<div class="border-r border-b border-white/5 p-2 min-h-[140px]"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2">
+<div class="bg-white/10 border border-white/10 rounded-lg p-3 h-full flex flex-col justify-between">
+<div class="text-[10px] font-bold text-slate-300 leading-tight uppercase tracking-wider">Digital Marketing for Radio</div>
+<div class="flex items-center justify-between text-[8px] font-mono text-slate-500">
+<span>WEB_01</span>
+<span>WEBINAR</span>
+</div>
+</div>
+</div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-r border-b border-white/5 p-2"></div>
+<div class="border-b border-white/5 p-2"></div>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-between text-[8px] font-mono text-slate-600 tracking-[0.3em] uppercase px-2">
+<div class="flex gap-8">
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Total Sesi: 12</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-green-500 rounded-full"></span> Studio Online: 04/05</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Buffer: Stable</span>
+</div>
+<div>
+<span>OZCADEMY_CORE_V2.5.0</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

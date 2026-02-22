@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .text-outline {
+                -webkit-text-stroke: 1.5px #f2d00d;
+                color: transparent;
+            }
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.07) 1px, transparent 0);
+                background-size: 40px 40px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.03) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.03) 1px, transparent 1px);
+                background-size: 50px 50px;
+            }
+            .glow-vignette {
+                background: radial-gradient(circle at 50% 50%, rgba(242, 208, 13, 0.05) 0%, transparent 80%);
+            }
+            .technical-label {
+                @apply text-[9px] tracking-[0.3em] font-mono text-primary/60 uppercase;
+            }
+            .static-effect {
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+                opacity: 0.05;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen overflow-hidden selection:bg-primary selection:text-background-dark flex flex-col items-center justify-center">
+<div class="fixed inset-0 star-field pointer-events-none"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="fixed inset-0 glow-vignette pointer-events-none"></div>
+<div class="fixed inset-0 static-effect pointer-events-none"></div>
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary rounded-lg text-background-dark shadow-[0_0_15px_rgba(242,208,13,0.3)]">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none">OZCADEMY</span>
+<span class="technical-label">SYS_RECOVERY_v4.04</span>
+</div>
+</div>
+</header>
+<main class="relative z-10 w-full max-w-4xl px-6 flex flex-col items-center text-center">
+<div class="relative mb-8 group">
+<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-75 group-hover:scale-100 transition-transform duration-700"></div>
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 flex flex-col gap-1 w-full">
+<div class="technical-label opacity-40">SIGNAL_STATUS: DISCONNECTED</div>
+<div class="technical-label opacity-40">ERROR_CODE: 404_NOT_FOUND</div>
+</div>
+<div class="relative bg-gradient-to-b from-slate-800 to-transparent p-12 rounded-full border border-white/5">
+<div class="relative">
+<span class="material-symbols-outlined text-[160px] text-primary/80 leading-none drop-shadow-[0_0_30px_rgba(242,208,13,0.4)]">mic_off</span>
+<div class="absolute top-0 right-0 w-8 h-px bg-primary/60 rotate-45 blur-[1px]"></div>
+<div class="absolute bottom-4 left-0 w-12 h-px bg-primary/40 -rotate-12 blur-[1px]"></div>
+<div class="absolute top-1/2 -right-8 w-6 h-[2px] bg-primary/80 blur-[2px]"></div>
+</div>
+</div>
+<div class="absolute -right-24 top-1/2 -translate-y-1/2 hidden lg:block">
+<div class="flex flex-col items-start gap-1 border-l border-primary/20 pl-4 py-2">
+<span class="technical-label text-[7px]">LAT_00.404</span>
+<span class="technical-label text-[7px]">LNG_40.000</span>
+<span class="technical-label text-[7px]">ALT_VOID</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">
+<span class="text-outline">SINYAL</span> <br/>
+                TERPUTUS!
+            </h1>
+<p class="text-slate-400 max-w-lg mx-auto text-lg md:text-xl font-light leading-relaxed pt-4">
+                Halaman yang Anda cari tidak ditemukan atau jadwal belum tersedia.
+            </p>
+</div>
+<div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
+<button class="bg-primary hover:bg-white text-background-dark py-5 px-12 rounded-sm font-black text-xs tracking-[0.3em] transition-all duration-300 w-full sm:w-auto shadow-[0_10px_40px_rgba(242,208,13,0.3)] uppercase">
+                Kembali ke Beranda
+            </button>
+<button class="group border border-white/20 hover:border-primary/50 text-white py-5 px-12 rounded-sm font-bold text-xs tracking-[0.3em] transition-all duration-300 flex items-center justify-center gap-3 w-full sm:w-auto bg-white/5 backdrop-blur-sm uppercase">
+                Cari Mentor Lain
+            </button>
+</div>
+</main>
+<div class="fixed bottom-8 left-0 right-0 px-8 flex flex-col md:flex-row justify-between items-end md:items-center gap-4 z-50 pointer-events-none">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-red-500 animate-pulse"></div>
+<span class="technical-label">TRANSMISSION_ERROR</span>
+</div>
+<div class="technical-label text-slate-600">Trace: Attempting Reconnection...</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="technical-label">© 2024 OZCADEMY</div>
+<div class="technical-label text-primary/40">Broadcasting Factory Protocol</div>
+</div>
+</div>
+<div class="fixed top-1/2 left-8 -translate-y-1/2 hidden xl:block">
+<div class="flex flex-col gap-12 items-center opacity-20">
+<div class="h-32 w-px bg-gradient-to-b from-transparent via-primary to-transparent"></div>
+<span class="technical-label rotate-90 origin-center whitespace-nowrap">OUT_OF_RANGE</span>
+<div class="h-32 w-px bg-gradient-to-b from-transparent via-primary to-transparent"></div>
+</div>
+</div>
+
+</body></html>

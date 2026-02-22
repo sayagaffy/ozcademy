@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 20px rgba(242, 208, 13, 0.05);
+                border: 1px solid rgba(242, 208, 13, 0.1);
+            }
+            .glow-active {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.15);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                color: transparent;
+            }
+            .input-technical {
+                @apply bg-background-dark border border-white/10 rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none text-white font-mono;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Learning_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">local_library</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Komunitas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">badge</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+<span class="text-xs tracking-[0.2em] uppercase">Pengaturan &amp; Pembiayaan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">System_Status</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">Secure_Transit: Encrypted</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar relative z-10">
+<header class="p-12 border-b border-white/5">
+<div class="flex items-end justify-between mb-12">
+<div class="space-y-2">
+<h1 class="text-5xl font-black uppercase tracking-tighter text-outline">Settings &amp; Financial Aid Hub</h1>
+<p class="text-[10px] font-mono text-primary uppercase tracking-[0.4em]">CORE_SYSTEM_ACCESS: GRANTED</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest hover:bg-primary/10 transition-all rounded">Reset Configuration</button>
+<button class="px-6 py-2 bg-primary text-background-dark text-[10px] font-bold uppercase tracking-widest hover:shadow-[0_0_15px_rgba(242,208,13,0.4)] transition-all rounded">Save Changes</button>
+</div>
+</div>
+<div class="flex gap-8 border-b border-white/5">
+<button class="pb-4 border-b-2 border-primary text-primary text-xs font-black uppercase tracking-[0.2em]">Pengaturan Akun</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 hover:text-white text-xs font-black uppercase tracking-[0.2em] transition-all">Skema Pembiayaan</button>
+</div>
+</header>
+<div class="p-12 max-w-6xl mx-auto space-y-12">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-2 space-y-8">
+<section class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<h2 class="text-sm font-black uppercase tracking-[0.3em]">Informasi Profil</h2>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Nama Lengkap</label>
+<input class="input-technical" type="text" value="Fahri Ramadhan"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Email Address</label>
+<input class="input-technical" type="email" value="fahri.ramadhan@student.ozcademy.id"/>
+</div>
+<div class="flex flex-col gap-2 pt-4">
+<label class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Kata Sandi Baru</label>
+<input class="input-technical" placeholder="••••••••••••" type="password"/>
+<p class="text-[9px] font-mono text-slate-500 mt-1">Sandi harus terdiri dari minimal 12 karakter alfanumerik.</p>
+</div>
+</div>
+</section>
+<section class="space-y-6 pt-6">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<h2 class="text-sm font-black uppercase tracking-[0.3em]">Verifikasi Keamanan</h2>
+</div>
+<div class="bg-card-dark border border-white/5 rounded-xl p-6 flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">phonelink_lock</span>
+</div>
+<div>
+<div class="text-xs font-bold uppercase tracking-wider">Two-Factor Authentication</div>
+<div class="text-[10px] text-slate-500 font-mono">STATUS: ENABLED_MOBILE_APP</div>
+</div>
+</div>
+<button class="text-[10px] font-bold uppercase tracking-widest text-primary hover:underline">Kelola Akses</button>
+</div>
+</section>
+</div>
+<div class="space-y-8">
+<section class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<h2 class="text-sm font-black uppercase tracking-[0.3em]">Status Langganan</h2>
+</div>
+<div class="glow-card glow-active bg-card-dark rounded-2xl p-8 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-8xl">bolt</span>
+</div>
+<div class="relative z-10 space-y-6">
+<div class="flex justify-between items-start">
+<div class="px-2 py-1 bg-primary/10 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-widest">Plan_Pro</div>
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<div class="text-3xl font-black tracking-tighter uppercase mb-1">Status: Aktif</div>
+<div class="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-mono">VOD_UNLIMITED_ACCESS</div>
+</div>
+<div class="pt-4 border-t border-white/10">
+<div class="flex justify-between text-[10px] font-mono mb-2">
+<span class="text-slate-500 uppercase">Next Billing</span>
+<span class="text-white">15_NOV_2023</span>
+</div>
+<button class="w-full py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-[9px] font-bold uppercase tracking-widest transition-all">Kelola Pembayaran</button>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<h2 class="text-sm font-black uppercase tracking-[0.3em]">Device_Authorized</h2>
+</div>
+<div class="space-y-3">
+<div class="p-4 bg-card-dark border border-white/5 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400">laptop_mac</span>
+<div class="flex-1">
+<div class="text-[10px] font-bold uppercase">MacBook Pro - Chrome</div>
+<div class="text-[9px] font-mono text-green-500">CURRENT_SESSION</div>
+</div>
+</div>
+<div class="p-4 bg-card-dark border border-white/5 rounded-xl flex items-center gap-4 opacity-50">
+<span class="material-symbols-outlined text-slate-400">smartphone</span>
+<div class="flex-1">
+<div class="text-[10px] font-bold uppercase">iPhone 14 - App</div>
+<div class="text-[9px] font-mono text-slate-500">LAST_SYNC: 2H_AGO</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<section class="pt-12 border-t border-white/5 mt-12 opacity-30 grayscale pointer-events-none">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-3xl font-black uppercase tracking-tighter text-outline">Formulir Skema Pembiayaan</h2>
+<span class="text-[10px] font-mono text-primary uppercase tracking-[0.2em]">[TAB_INACTIVE]</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<label class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Pilih Program</label>
+<select class="input-technical w-full appearance-none">
+<option>Cicilan Biaya Sesi Live Mentor</option>
+<option>Beasiswa Mitra</option>
+</select>
+</div>
+<div class="space-y-4">
+<label class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Durasi Cicilan</label>
+<select class="input-technical w-full appearance-none">
+<option>3 Bulan (0% Bunga)</option>
+<option>6 Bulan</option>
+</select>
+</div>
+</div>
+<div class="mt-8 border-2 border-dashed border-white/10 rounded-2xl p-12 text-center group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-slate-500 mb-4 block">cloud_upload</span>
+<div class="text-xs font-bold uppercase tracking-[0.2em] mb-2">Unggah Dokumen Pendukung</div>
+<p class="text-[10px] font-mono text-slate-500">PDF, JPG, PNG (Max 5MB) - Kartu Mahasiswa / ID</p>
+</div>
+</section>
+</div>
+<footer class="p-12 border-t border-white/5 flex items-center justify-between opacity-30">
+<div class="text-[8px] font-mono uppercase tracking-[0.4em]">OZCADEMY_CORE_SYNC_V.4.2</div>
+<div class="flex items-center gap-8">
+<span class="text-[8px] font-mono uppercase tracking-[0.2em]">Privacy_Protocol</span>
+<span class="text-[8px] font-mono uppercase tracking-[0.2em]">Security_Locked</span>
+</div>
+</footer>
+</main>
+</div>
+
+</body></html>

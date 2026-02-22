@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 20px rgba(242, 208, 13, 0.05);
+                border: 1px solid rgba(242, 208, 13, 0.1);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                color: transparent;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Learning_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">badge</span>
+<span class="text-xs tracking-[0.2em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Komunitas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">local_library</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Pengaturan &amp; Pembiayaan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">System_Status</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+<span class="text-[9px] font-mono text-slate-400">PROFILE_SYNC: COMPLETED</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar relative z-10">
+<section class="relative h-[350px] flex flex-col justify-end p-12 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Header Background" class="w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bIykbemfUwIVaQUZUTm7yrSt8IbFIDKDbT0gsjak3eVUAW5uIp9E9liHE9gDPtuhfTL0NT3HeaoPhQG7c9yuMmWTRFQW6FxuYaeD_T-kXl3eFnfbPVN6DAmoIhK7DCRv23bfL4-KNdBXnSZ2HVoTg6AeNqR8qoXRpMVz-A8ft9wOnMtuCbgkpVk0-EqwA8PfOwl_G08-WdcCKAcz3SutH855ieuRbDfOkt0lOObRVgLn8knqYxibJaZAVpoJBHPGfiXIubwQrXo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent"></div>
+</div>
+<div class="relative z-10 flex items-center gap-8">
+<div class="relative group">
+<div class="absolute -inset-1 bg-primary/20 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-1000"></div>
+<div class="w-32 h-32 rounded-full border-2 border-primary/50 p-1 relative bg-background-dark">
+<img alt="Fahri Ramadhan" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCod7SHCVRzHWFk6948Ua-jX2chGxPSqNkoihSCDbgS_3i1LDh0VwlyCqYkcmK1GXH_sp1ClXPyACPzqlBBqkwdjr1FvA_KZfSZe2_j4RYPOOSCc8mU_c3Vne470FawcPrfCSgQeWQDT16s-MwsJyL08OSp10dYyqAVyDGKDCSQuaJ2StC02nJOJsDxQoyAScF-YuAVbyus_XWXTGauabEPSZTXUBdzu6ULsqQSZ8jxcbemDFifvj2gaogvWCBojgE6r6Fe9d8XTkw"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<h1 class="text-4xl font-black tracking-tighter uppercase">Fahri Ramadhan</h1>
+<span class="px-3 py-1 bg-primary text-background-dark text-[10px] font-bold uppercase tracking-widest rounded">Langganan Premium Aktif</span>
+</div>
+<div class="flex items-center gap-6 text-slate-400 font-mono text-xs">
+<span class="flex items-center gap-2"><span class="text-primary/50">ID:</span> 103992</span>
+<span class="flex items-center gap-2"><span class="text-primary/50">RANK:</span> ELITE_PODCASTER</span>
+<span class="flex items-center gap-2 text-green-500"><span class="material-symbols-outlined text-sm">verified</span> VERIFIED_STUDENT</span>
+</div>
+</div>
+</div>
+</section>
+<div class="p-12 max-w-7xl mx-auto space-y-16">
+<section class="space-y-8">
+<div class="flex items-end justify-between">
+<h2 class="text-5xl font-black uppercase tracking-tighter text-outline">Portofolio Saya</h2>
+<div class="text-[10px] font-mono text-primary uppercase tracking-[0.4em]">Total_Projects: 12</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group relative bg-card-dark border border-white/5 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bIykbemfUwIVaQUZUTm7yrSt8IbFIDKDbT0gsjak3eVUAW5uIp9E9liHE9gDPtuhfTL0NT3HeaoPhQG7c9yuMmWTRFQW6FxuYaeD_T-kXl3eFnfbPVN6DAmoIhK7DCRv23bfL4-KNdBXnSZ2HVoTg6AeNqR8qoXRpMVz-A8ft9wOnMtuCbgkpVk0-EqwA8PfOwl_G08-WdcCKAcz3SutH855ieuRbDfOkt0lOObRVgLn8knqYxibJaZAVpoJBHPGfiXIubwQrXo"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-primary text-sm">play_circle</span>
+<span class="text-[10px] font-mono text-white">1.2k Plays</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-sm uppercase tracking-wide group-hover:text-primary transition-colors">Teknik Interview Eksklusif</h3>
+<span class="text-[9px] font-mono text-slate-500">24_OCT_2023</span>
+</div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">Broadcasting_Module_04</p>
+</div>
+</div>
+<div class="group relative bg-card-dark border border-white/5 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bIykbemfUwIVaQUZUTm7yrSt8IbFIDKDbT0gsjak3eVUAW5uIp9E9liHE9gDPtuhfTL0NT3HeaoPhQG7c9yuMmWTRFQW6FxuYaeD_T-kXl3eFnfbPVN6DAmoIhK7DCRv23bfL4-KNdBXnSZ2HVoTg6AeNqR8qoXRpMVz-A8ft9wOnMtuCbgkpVk0-EqwA8PfOwl_G08-WdcCKAcz3SutH855ieuRbDfOkt0lOObRVgLn8knqYxibJaZAVpoJBHPGfiXIubwQrXo"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-primary text-sm">play_circle</span>
+<span class="text-[10px] font-mono text-white">856 Plays</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-sm uppercase tracking-wide group-hover:text-primary transition-colors">Urban Night Radio Setup</h3>
+<span class="text-[9px] font-mono text-slate-500">12_SEP_2023</span>
+</div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">Studio_Production_01</p>
+</div>
+</div>
+<div class="group relative bg-card-dark border border-white/5 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bIykbemfUwIVaQUZUTm7yrSt8IbFIDKDbT0gsjak3eVUAW5uIp9E9liHE9gDPtuhfTL0NT3HeaoPhQG7c9yuMmWTRFQW6FxuYaeD_T-kXl3eFnfbPVN6DAmoIhK7DCRv23bfL4-KNdBXnSZ2HVoTg6AeNqR8qoXRpMVz-A8ft9wOnMtuCbgkpVk0-EqwA8PfOwl_G08-WdcCKAcz3SutH855ieuRbDfOkt0lOObRVgLn8knqYxibJaZAVpoJBHPGfiXIubwQrXo"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-primary text-sm">play_circle</span>
+<span class="text-[10px] font-mono text-white">3.4k Plays</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-sm uppercase tracking-wide group-hover:text-primary transition-colors">Audio Mixing Masterclass</h3>
+<span class="text-[9px] font-mono text-slate-500">05_AUG_2023</span>
+</div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">Audio_Engineering_03</p>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-6">
+<h2 class="text-sm font-black uppercase tracking-[0.3em] flex items-center gap-3">
+<span class="w-8 h-[1px] bg-primary"></span>
+                            Aktivitas Belajar
+                        </h2>
+<div class="bg-card-dark border border-white/5 rounded-2xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">insights</span>
+</div>
+<div class="flex flex-col md:flex-row gap-12">
+<div class="flex-1">
+<div class="text-[10px] font-mono text-slate-500 uppercase mb-4">Kemajuan_Kurikulum</div>
+<div class="h-2 w-full bg-white/5 rounded-full overflow-hidden mb-4">
+<div class="h-full w-[78%] bg-primary shadow-[0_0_15px_rgba(242,208,13,0.5)]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-mono">
+<span class="text-primary">78% COMPLETE</span>
+<span class="text-slate-500">TOTAL: 48 MODUL</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="text-[10px] font-mono text-slate-500 uppercase mb-4">Reputasi_Akademik</div>
+<div class="flex gap-1">
+<span class="w-4 h-4 rounded-sm bg-primary shadow-[0_0_8px_rgba(242,208,13,0.3)]"></span>
+<span class="w-4 h-4 rounded-sm bg-primary shadow-[0_0_8px_rgba(242,208,13,0.3)]"></span>
+<span class="w-4 h-4 rounded-sm bg-primary shadow-[0_0_8px_rgba(242,208,13,0.3)]"></span>
+<span class="w-4 h-4 rounded-sm bg-primary shadow-[0_0_8px_rgba(242,208,13,0.3)]"></span>
+<span class="w-4 h-4 rounded-sm bg-white/10"></span>
+</div>
+<div class="mt-4 text-xs font-bold uppercase tracking-widest">Level 04 Podcaster</div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h2 class="text-sm font-black uppercase tracking-[0.3em] flex items-center gap-3">
+<span class="w-8 h-[1px] bg-primary"></span>
+                            Pencapaian
+                        </h2>
+<div class="space-y-4">
+<div class="glow-card bg-card-dark p-6 rounded-2xl border border-white/5 relative group overflow-hidden">
+<div class="relative z-10">
+<div class="text-[9px] font-mono text-primary uppercase tracking-widest mb-1">Status_Selesai</div>
+<div class="text-3xl font-black tracking-tighter uppercase mb-1">24 Kursus</div>
+<div class="text-[10px] text-slate-500 uppercase tracking-widest">Verified_Certification</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-7xl">school</span>
+</div>
+</div>
+<div class="glow-card bg-card-dark p-6 rounded-2xl border border-white/5 relative group overflow-hidden">
+<div class="relative z-10">
+<div class="text-[9px] font-mono text-primary uppercase tracking-widest mb-1">Time_Invested</div>
+<div class="text-3xl font-black tracking-tighter uppercase mb-1">128 Jam</div>
+<div class="text-[10px] text-slate-500 uppercase tracking-widest">Total Belajar</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-7xl">schedule</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer class="p-12 border-t border-white/5 flex items-center justify-between opacity-30">
+<div class="text-[8px] font-mono uppercase tracking-[0.4em]">OZCADEMY_CORE_SYNC_V.4.2</div>
+<div class="flex items-center gap-8">
+<span class="text-[8px] font-mono uppercase tracking-[0.2em]">Privacy_Protocol</span>
+<span class="text-[8px] font-mono uppercase tracking-[0.2em]">Security_Locked</span>
+</div>
+</footer>
+</main>
+</div>
+
+</body></html>

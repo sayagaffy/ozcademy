@@ -1,0 +1,252 @@
+<html class="dark" lang="id"><head></head><body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">```html
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 20px rgba(242, 208, 13, 0.05);
+                border: 1px solid rgba(242, 208, 13, 0.1);
+            }
+            .glow-search {
+                box-shadow: 0 0 15px rgba(242, 208, 13, 0.15);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+
+
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden">
+<aside class="w-72 border-r border-white/5 bg-background-dark flex flex-col z-50">
+<div class="p-8 pb-12">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Skill_Platform</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-4 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 rounded-xl bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl font-black">search</span>
+<span class="text-[10px] tracking-[0.2em] uppercase font-black">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">local_library</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">forum</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Komunitas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">settings_applications</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Pengaturan &amp; Pembiayaan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">CATALOG_SYNC: ACTIVE</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">System_Online</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar relative z-10">
+<div class="p-10 pb-4">
+<div class="max-w-7xl mx-auto flex justify-between items-start">
+<div>
+<h1 class="text-4xl font-black tracking-tight uppercase leading-none">EKSPLORASI KATALOG</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.4em] mt-3">TEMUKAN KEAHLIAN BARU UNTUK MASA DEPAN DIGITAL ANDA</p>
+</div>
+<div class="text-right">
+<div class="text-[8px] font-mono text-primary uppercase tracking-[0.2em] mb-1">FILTER_ACTIVE: GLOBAL</div>
+<div class="text-xs font-bold text-slate-300 uppercase tracking-widest">128 SKILL TERSEDIA</div>
+</div>
+</div>
+</div>
+<div class="px-10 py-4">
+<div class="max-w-7xl mx-auto relative group">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-600 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="w-full bg-card-dark border border-white/10 focus:border-primary/50 text-white pl-16 pr-24 py-5 rounded-xl text-sm font-medium tracking-widest uppercase focus:ring-1 focus:ring-primary/20 glow-search transition-all outline-none placeholder:text-slate-600" placeholder="CARI SKILL ATAU MENTOR..." type="text"/>
+<div class="absolute inset-y-0 right-6 flex items-center">
+<kbd class="hidden md:flex items-center gap-1 px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-mono text-slate-500 uppercase">
+                            CMD + K
+                        </kbd>
+</div>
+</div>
+</div>
+<div class="px-10 mt-2">
+<div class="max-w-7xl mx-auto border-b border-white/5 flex items-center gap-8">
+<button class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 border-b-2 border-transparent pb-4 hover:text-slate-400 transition-all">Modul VOD &amp; Audio</button>
+<button class="text-[10px] font-black uppercase tracking-[0.2em] text-primary border-b-2 border-primary pb-4">Sesi Live Mentor</button>
+</div>
+</div>
+<div class="px-10 py-8">
+<div class="max-w-7xl mx-auto flex items-center gap-4 overflow-x-auto pb-4 custom-scrollbar">
+<button class="whitespace-nowrap px-10 py-3 rounded-full bg-primary text-background-dark text-[10px] font-black uppercase tracking-widest shadow-[0_0_15px_rgba(242,208,13,0.3)]">SEMUA</button>
+<button class="whitespace-nowrap px-10 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[10px] font-bold uppercase tracking-widest hover:border-primary/50 hover:text-white transition-all">PODCASTING</button>
+<button class="whitespace-nowrap px-10 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[10px] font-bold uppercase tracking-widest hover:border-primary/50 hover:text-white transition-all">LIVE STREAMING</button>
+<button class="whitespace-nowrap px-10 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[10px] font-bold uppercase tracking-widest hover:border-primary/50 hover:text-white transition-all">VOICE ACTING</button>
+<button class="whitespace-nowrap px-10 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[10px] font-bold uppercase tracking-widest hover:border-primary/50 hover:text-white transition-all">AUDIO PRODUCTION</button>
+<button class="whitespace-nowrap px-10 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[10px] font-bold uppercase tracking-widest hover:border-primary/50 hover:text-white transition-all">COPYWRITING</button>
+</div>
+</div>
+<div class="px-10 pb-20">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group bg-card-dark rounded-3xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden flex flex-col p-6">
+<div class="flex flex-col items-center mb-6">
+<div class="relative w-32 h-32 mb-4">
+<img alt="Aris Budiman" class="w-full h-full object-cover rounded-full grayscale transition-all duration-500 group-hover:grayscale-0 border-2 border-white/10 group-hover:border-primary/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoe9lx8FWj5eJcwghmlYPp2uX32V3Sp5Cn9bEcCWhTdt4mOrPBW9O-nwSBDpajJo9yygiPMYdkiSzMPImgK1KUyTXYA17hai6DCzyJX-EOqnBph0tSxS8Xh4GiyWwgL6G2kywB7sxkoA3-M2J7Hw-yRzQI4oDfj2Y_UeA50P5f1Pb3SNMOT7350lfVGj95WJm4hnou8REhmTxLOkivAgpEKGj8fDFK0ymemHPnHAw7NIQiCdtzA4P6OYlP5hQRBZGL_vn5P_7GCIc"/>
+<div class="absolute -top-2 -right-2">
+<span class="px-2 py-1 bg-primary text-background-dark text-[8px] font-black uppercase tracking-tighter rounded">AKSES PREMIUM</span>
+</div>
+</div>
+<h3 class="text-xl font-black tracking-tight uppercase leading-none text-white text-center">ARIS BUDIMAN</h3>
+<p class="text-[10px] text-primary uppercase tracking-[0.2em] font-bold mt-2">SENIOR BROADCASTER</p>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="h-[1px] w-full bg-white/5 mb-4"></div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[10px] fill-1">star</span>
+<span class="text-[10px] font-bold text-slate-300">4.9</span>
+</div>
+<div class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">MENTOR</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-dark rounded-3xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden flex flex-col p-6">
+<div class="flex flex-col items-center mb-6">
+<div class="relative w-32 h-32 mb-4">
+<img alt="Sarah Wijaya" class="w-full h-full object-cover rounded-full grayscale transition-all duration-500 group-hover:grayscale-0 border-2 border-white/10 group-hover:border-primary/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPcTAIccWJFhUByFJ3hsit_-fszezODGYRTb-W7xDLMFYYlRPN42yG7s1hXiIEvnZP1uPEFRlxR7UMBsgsHW5J2NDL2D_qJy4Hdl4zX_0xaxtB5P_6J-99e11YCJ5hFdwuo9NcntJPYm3xlEYgRm8PwjAxNd2aOP5bLcwjrzmci1BFWnR3fN_ufaMbU4T_XYwBXlEAnQPONOQrTYmIOFu7hgaX7JUnC1KEqsgbn6_GsxGc8JDju-1a6kmXpGDk8fIGbNl0yeZ43JU"/>
+<div class="absolute -top-2 -right-2">
+<span class="px-2 py-1 bg-primary text-background-dark text-[8px] font-black uppercase tracking-tighter rounded">AKSES PREMIUM</span>
+</div>
+</div>
+<h3 class="text-xl font-black tracking-tight uppercase leading-none text-white text-center">SARAH WIJAYA</h3>
+<p class="text-[10px] text-primary uppercase tracking-[0.2em] font-bold mt-2">AUDIO ENGINEER</p>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="h-[1px] w-full bg-white/5 mb-4"></div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[10px] fill-1">star</span>
+<span class="text-[10px] font-bold text-slate-300">4.8</span>
+</div>
+<div class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">MENTOR</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-dark rounded-3xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden flex flex-col p-6">
+<div class="flex flex-col items-center mb-6">
+<div class="relative w-32 h-32 mb-4">
+<img alt="Budi Santoso" class="w-full h-full object-cover rounded-full grayscale transition-all duration-500 group-hover:grayscale-0 border-2 border-white/10 group-hover:border-primary/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4f5UoFIZlHU36_DB24AkswYJXhFKqofAr_uFLFfLiJDzMuOlKM_7WBi6omfYtt_kgTp0_IKDIgk5lj6en8Uzos9zaUuM3-196qT1bKbqVb9Og5y_ucoGZhxNjFS0QDogb1wAVjCG0A2-nbwPYcBeY8q3e6drtF1mcfehUyTy_hWEeT-FWvQotKC-qZi1_LT7pexe4SgP2bN3zBCw6a9GBTpHo4w5OWwkTAy270zaUWVnXEXxzAaC3Q8UM_vLNPh6lMkBEzY8NVY"/>
+<div class="absolute -top-2 -right-2">
+<span class="px-2 py-1 bg-white/10 backdrop-blur-md text-white text-[8px] font-black uppercase tracking-tighter rounded border border-white/20">LIVE CLASS</span>
+</div>
+</div>
+<h3 class="text-xl font-black tracking-tight uppercase leading-none text-white text-center">BUDI SANTOSO</h3>
+<p class="text-[10px] text-primary uppercase tracking-[0.2em] font-bold mt-2">STREAMING SPECIALIST</p>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="mt-2 mb-4 p-2 bg-primary/5 rounded border border-primary/20">
+<span class="text-[8px] text-primary font-black uppercase tracking-widest block text-center uppercase">MULAI RP 100.000</span>
+</div>
+<div class="h-[1px] w-full bg-white/5 mb-4"></div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[10px] fill-1">star</span>
+<span class="text-[10px] font-bold text-slate-300">5.0</span>
+</div>
+<div class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">MENTOR</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-dark rounded-3xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden flex flex-col p-6">
+<div class="flex flex-col items-center mb-6">
+<div class="relative w-32 h-32 mb-4">
+<img alt="Maya Putri" class="w-full h-full object-cover rounded-full grayscale transition-all duration-500 group-hover:grayscale-0 border-2 border-white/10 group-hover:border-primary/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAygUdPbJW9lIXchx__SHqNzil7_FYTEEGTI4fnF8xlK4hJK2svubiZNcy3NzPpWcfNvqNwue2huHcAbvneyRQOO-z5pN4DWozc79LTtdOjg4E5i_ERiOvic6KabHpIFt_ZN5GZwD4VqDn_BDfw9Fa6x0M2XmFBaCvX6BUoSvO5bxqcZneRzy0ycoZUJkvl9soq0NnQCF5W3E54FkNjjtp2wRqpVZz__vHY0TuJLQEeuzruBGywOsKR3_n49R3V4cjCGUlE4umA5Og"/>
+<div class="absolute -top-2 -right-2">
+<span class="px-2 py-1 bg-primary text-background-dark text-[8px] font-black uppercase tracking-tighter rounded">AKSES PREMIUM</span>
+</div>
+</div>
+<h3 class="text-xl font-black tracking-tight uppercase leading-none text-white text-center">MAYA PUTRI</h3>
+<p class="text-[10px] text-primary uppercase tracking-[0.2em] font-bold mt-2">VOICE ARTIST</p>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="h-[1px] w-full bg-white/5 mb-4"></div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[10px] fill-1">star</span>
+<span class="text-[10px] font-bold text-slate-300">4.9</span>
+</div>
+<div class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">MENTOR</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+```</body></html>

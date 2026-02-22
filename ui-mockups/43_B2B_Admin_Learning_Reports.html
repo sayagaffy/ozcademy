@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.015) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.015) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 20px rgba(242, 208, 13, 0.03);
+                border: 1px solid rgba(242, 208, 13, 0.08);
+            }
+            .cinematic-glow {
+                background: radial-gradient(circle at 50% 0%, rgba(242, 208, 13, 0.1) 0%, transparent 70%);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(242, 208, 13, 0.3);
+                color: transparent;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden relative z-10">
+<aside class="w-72 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">analytics</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Admin_Nexus</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">class</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Manajemen Kelas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">monitoring</span>
+<span class="text-xs tracking-[0.2em] uppercase">Laporan Belajar</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Pengaturan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">NETWORK: SECURED</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">SYS_ADMIN: ADM-042</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar relative">
+<header class="p-8 border-b border-white/5 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-md z-20">
+<div class="flex items-center gap-8">
+<div>
+<h1 class="text-2xl font-black tracking-tighter uppercase">Laporan Belajar</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Analytics Engine • Dashboard V2.4</p>
+</div>
+<div class="h-10 w-px bg-white/10"></div>
+<div class="flex flex-col gap-1">
+<span class="text-[8px] text-primary uppercase font-mono tracking-widest">Date_Range_Filter</span>
+<div class="flex items-center gap-2 bg-card-dark border border-white/10 rounded px-3 py-1.5">
+<span class="material-symbols-outlined text-sm text-slate-400">calendar_month</span>
+<span class="text-[10px] font-bold text-slate-300 uppercase">01 MEI 2024 - 31 MEI 2024</span>
+<span class="material-symbols-outlined text-sm text-slate-500">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-white text-background-dark px-6 py-3 rounded-lg font-black text-xs tracking-[0.2em] transition-all duration-300 shadow-[0_10px_30px_rgba(242,208,13,0.15)] uppercase flex items-center gap-3">
+<span class="material-symbols-outlined text-lg">file_download</span>
+<span>Ekspor Laporan (CSV/PDF)</span>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-[1400px] mx-auto space-y-8">
+<div class="grid grid-cols-3 gap-6">
+<div class="bg-card-dark rounded-2xl p-6 glow-card cinematic-glow flex flex-col h-64 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tingkat Kelulusan</span>
+<span class="text-[8px] font-mono text-primary">ID: TKT_LULUS</span>
+</div>
+<div class="flex-1 flex items-center justify-center relative">
+<div class="relative w-32 h-32 border-[12px] border-white/5 rounded-full flex items-center justify-center">
+<div class="absolute inset-[-12px] border-[12px] border-primary border-t-transparent border-l-transparent rounded-full rotate-45"></div>
+<div class="flex flex-col items-center">
+<span class="text-3xl font-black text-white leading-none">84<span class="text-sm">%</span></span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-[9px] font-mono uppercase text-slate-500">
+<span>Target: 90%</span>
+<span class="text-green-500">+2.4% Δ</span>
+</div>
+</div>
+<div class="bg-card-dark rounded-2xl p-6 glow-card cinematic-glow flex flex-col h-64 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Rata-rata Waktu Belajar</span>
+<span class="text-[8px] font-mono text-primary">ID: AVG_TIME</span>
+</div>
+<div class="flex-1 flex items-end gap-1 px-2">
+<div class="flex-1 h-12 bg-primary/20 rounded-t-sm relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-primary"></div>
+</div>
+<div class="flex-1 h-16 bg-primary/20 rounded-t-sm relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-primary"></div>
+</div>
+<div class="flex-1 h-10 bg-primary/20 rounded-t-sm relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-primary"></div>
+</div>
+<div class="flex-1 h-20 bg-primary/20 rounded-t-sm relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-primary"></div>
+</div>
+<div class="flex-1 h-24 bg-primary/20 rounded-t-sm relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-primary shadow-[0_0_10px_rgba(242,208,13,0.5)]"></div>
+</div>
+</div>
+<div class="mt-4">
+<span class="text-2xl font-black text-white block">4.2 JAM<span class="text-[10px] font-normal text-slate-500 ml-2 uppercase">Per Hari</span></span>
+</div>
+</div>
+<div class="bg-card-dark rounded-2xl p-6 glow-card cinematic-glow flex flex-col h-64 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Keterlibatan Sesi Live</span>
+<span class="text-[8px] font-mono text-primary">ID: LIVE_ENG</span>
+</div>
+<div class="flex-1 flex items-end justify-between gap-4 py-4">
+<div class="w-full space-y-3">
+<div class="space-y-1">
+<div class="flex justify-between text-[8px] font-mono uppercase text-slate-400">
+<span>Morning Session</span>
+<span>72%</span>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 72%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[8px] font-mono uppercase text-slate-400">
+<span>Evening Session</span>
+<span>94%</span>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 94%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[8px] font-mono uppercase text-slate-400">
+<span>Weekend Review</span>
+<span>45%</span>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-2 text-[9px] font-mono uppercase text-primary">Real-time engagement tracking enabled</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-3xl font-black tracking-tight uppercase text-outline">Performa Individu</h2>
+<div class="flex gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+<input class="bg-card-dark border border-white/5 rounded-lg pl-9 pr-4 py-2 text-[10px] font-bold tracking-widest uppercase focus:border-primary focus:ring-0 w-64 text-slate-300" placeholder="CARI MAHASISWA..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border border-white/10 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                            Filter
+                        </button>
+</div>
+</div>
+<div class="bg-card-dark border border-white/5 rounded-2xl overflow-hidden glow-card">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/10 bg-white/5">
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Nama Mahasiswa</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Jalur Program</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Modul Selesai</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Nilai Kuis</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Login Terakhir</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="p-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-yellow-600 flex items-center justify-center font-black text-background-dark text-xs overflow-hidden border border-white/20">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_eNKj7cFfqYQWhrDgBajeyh0bH2WfvgLo75tBKpF23jmFml28cYuW9gzX93EbCmAemCP4FTYeOuv9GnGgQZWCb7ucEKYfI7Qkrta6qQYSLmIrilkkkS37JUq91PWqUx0xLmgU2WM4-Wzgz8Z5V8d-EHefQvzlxMdT1SC-vgubLmcXUSHQdk8bdaL2s4OqbwqQRd87cdA7RohspKRWwWx90q-YFgmpaSreg2SwG4kxZ5ijt8CSC5ExjL2qI3fVDPVPqedtIWmMl6I"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold tracking-tight">Aditya Pratama</span>
+<span class="text-[9px] text-slate-500 font-mono tracking-widest uppercase">ID: STU_20210082</span>
+</div>
+</div>
+</td>
+<td class="p-6">
+<span class="text-[10px] font-bold text-slate-300 uppercase bg-white/5 px-2 py-1 rounded">Digital Marketing</span>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-2">
+<span class="text-sm font-black text-primary">12</span>
+<span class="text-[9px] text-slate-500 uppercase font-mono">/ 15 Modul</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex items-end gap-1">
+<span class="text-lg font-black text-white">94</span>
+<span class="text-[9px] text-slate-500 mb-1">PTS</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-300">TODAY, 14:22</span>
+<span class="text-[8px] text-green-500 font-mono uppercase tracking-widest">Active_Now</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="p-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-yellow-600 flex items-center justify-center font-black text-background-dark text-xs overflow-hidden border border-white/20">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsiZ5W42Egfi41ByAOGY1sT8vEsoTyEB5T9uxLdB1OV7qx7vAmt0SmSwuuUE7-5yDQ-dE7j8Rf23yNsY2EL7A6ObdT1AGX8bk3f1C2Gf8r0sRtXqRYZF7yT-BNwcv9JfFlLtR0T1bU0Jhj0miugklZERLPLwfME0w-FBsW1-APWciBkaRo9EF0lwV5kDzEsPlQWt14NUqiPsf7SmifSBn2UWs6QxSmKr8LaiM_sNNMP5JOHq5MOdwVotvWoH7k4QZivcRPtpkfnfE"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold tracking-tight">Siska Amalia</span>
+<span class="text-[9px] text-slate-500 font-mono tracking-widest uppercase">ID: STU_20210045</span>
+</div>
+</div>
+</td>
+<td class="p-6">
+<span class="text-[10px] font-bold text-slate-300 uppercase bg-white/5 px-2 py-1 rounded">Data Science</span>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-2">
+<span class="text-sm font-black text-primary">08</span>
+<span class="text-[9px] text-slate-500 uppercase font-mono">/ 15 Modul</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex items-end gap-1">
+<span class="text-lg font-black text-white">88</span>
+<span class="text-[9px] text-slate-500 mb-1">PTS</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-300">YESTERDAY</span>
+<span class="text-[8px] text-slate-500 font-mono uppercase tracking-widest">Last_Seen</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="p-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-yellow-600 flex items-center justify-center font-black text-background-dark text-xs overflow-hidden border border-white/20">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_a-Bx9XsVlIXQpQtrszkPuwV6FkYZsfful2rKkfQXmuIPpDtmzmpTPfR0T31LprtqUY-HQkXGsXcAoUWhC0bel1gg4GkNEI9bNEc36_iNeKepGoLzGj9DlfT_uB3zNFGVw6CkzHMZHjtROUtDa_xaQ29l6IcNZK1M7KdzLCAhyjrqMMTJxMTyHkuL8n5EaRerNzjMgTgNlGwi0_9MnOdst5Zn8OaqMsTxvAdLC-4PbGmfpWULaQQQjaPtQvKDg5BgLMjohkQjp44"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold tracking-tight">Doni Kusuma</span>
+<span class="text-[9px] text-slate-500 font-mono tracking-widest uppercase">ID: STU_20210012</span>
+</div>
+</div>
+</td>
+<td class="p-6">
+<span class="text-[10px] font-bold text-slate-300 uppercase bg-white/5 px-2 py-1 rounded">Cyber Security</span>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-2">
+<span class="text-sm font-black text-red-500">03</span>
+<span class="text-[9px] text-slate-500 uppercase font-mono">/ 15 Modul</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex items-end gap-1">
+<span class="text-lg font-black text-slate-600">--</span>
+<span class="text-[9px] text-slate-500 mb-1">PTS</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-300">5 DAYS AGO</span>
+<span class="text-[8px] text-red-500/60 font-mono uppercase tracking-widest">Inactive_Warn</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between px-2 pt-4">
+<div class="text-[9px] font-mono text-slate-600 uppercase tracking-widest flex items-center gap-4">
+<span>DATA_STREAM: ENCRYPTED_SSL</span>
+<span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+<span>REPORTS: 1,240 TOTAL</span>
+<span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+<span>SERVER: SINGAPORE_CLUSTER_01</span>
+</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 text-slate-400 hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-background-dark font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 text-slate-400 hover:border-primary hover:text-primary transition-all text-xs">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 text-slate-400 hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

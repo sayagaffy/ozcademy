@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .text-outline {
+                -webkit-text-stroke: 1.5px #f2d00d;
+                color: transparent;
+            }
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.07) 1px, transparent 0);
+                background-size: 40px 40px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.03) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.03) 1px, transparent 1px);
+                background-size: 50px 50px;
+            }
+            .hero-glow {
+                background: radial-gradient(circle at 50% 50%, rgba(242, 208, 13, 0.08) 0%, transparent 70%);
+            }
+            .card-border-gradient {
+                background: linear-gradient(135deg, rgba(242, 208, 13, 0.2) 0%, transparent 100%);
+            }
+            .technical-label {
+                @apply text-[9px] tracking-[0.3em] font-mono text-primary/60 uppercase;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen overflow-x-hidden selection:bg-primary selection:text-background-dark">
+<div class="fixed inset-0 star-field pointer-events-none"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="fixed inset-0 hero-glow pointer-events-none"></div>
+<div class="relative z-10 flex flex-col min-h-screen">
+<header class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full border-b border-white/5 bg-background-dark/50 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary rounded-lg text-background-dark shadow-[0_0_15px_rgba(242,208,13,0.3)]">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none">OZCADEMY</span>
+<span class="technical-label">SYS_v2.5_PRO</span>
+</div>
+</div>
+<nav class="hidden lg:flex items-center gap-10 text-[11px] tracking-[0.25em] text-slate-400 font-bold uppercase">
+<a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary/50 pb-1" href="#">Program</a>
+<a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary/50 pb-1" href="#">Mentor</a>
+<a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary/50 pb-1" href="#">Harga</a>
+<a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary/50 pb-1 flex items-center gap-2" href="#">
+                    Untuk Kampus <span class="bg-primary/10 text-primary px-1.5 py-0.5 rounded text-[8px]">B2B</span>
+</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="bg-primary hover:bg-white text-background-dark px-8 py-2.5 rounded-sm font-black text-[11px] tracking-widest uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(242,208,13,0.2)]">
+                    Masuk / Daftar
+                </button>
+</div>
+</header>
+<main class="flex-1">
+<section class="flex flex-col items-center justify-center px-6 py-24 lg:py-32 max-w-6xl mx-auto w-full text-center">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-8">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-[9px] font-bold tracking-[0.4em] text-primary uppercase">Broadcast Signal: Live from Star Factory</span>
+</div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9] max-w-6xl">
+<span class="text-outline">BUKAN SEKADAR</span> <br/>
+                    BICARA. JADILAH <br/>
+                    DIDENGAR.
+                </h1>
+<p class="text-slate-400 max-w-2xl mx-auto text-lg md:text-xl tracking-wide mt-10 font-light leading-relaxed">
+                    Mulai Karir Digitalmu Bersama Legenda OZ Radio. <br class="hidden md:block"/>
+                    Akses blueprint industri broadcasting langsung dari sumbernya.
+                </p>
+<div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
+<button class="group relative bg-primary hover:bg-white text-background-dark py-5 px-12 rounded-sm font-black text-xs tracking-[0.3em] transition-all duration-300 w-full sm:w-auto shadow-[0_10px_40px_rgba(242,208,13,0.3)] uppercase">
+                        Pilih Jalurmu
+                    </button>
+<button class="group border border-white/20 hover:border-primary/50 text-white py-5 px-12 rounded-sm font-bold text-xs tracking-[0.3em] transition-all duration-300 flex items-center justify-center gap-3 w-full sm:w-auto bg-white/5 backdrop-blur-sm uppercase">
+<span class="material-symbols-outlined text-lg">play_circle</span>
+                        Tonton Trailer
+                    </button>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
+<div class="mb-16">
+<p class="technical-label mb-4 tracking-[0.5em]">Career_Track_Protocols</p>
+<h2 class="text-4xl font-bold tracking-tighter uppercase">Spesialisasi Digital</h2>
+</div>
+<div class="grid lg:grid-cols-2 gap-8">
+<div class="relative group bg-card-dark border border-white/10 p-10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/40">
+<div class="absolute top-0 right-0 p-6 opacity-10">
+<span class="material-symbols-outlined text-[120px]">mic</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-8">
+<span class="text-primary font-mono text-sm tracking-widest">[ TRACK_01 ]</span>
+<div class="h-px flex-1 bg-white/10"></div>
+</div>
+<h3 class="text-4xl font-black tracking-tighter uppercase mb-4">The Podcaster Track</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-10 max-w-md">Kuasai seni storytelling, teknik vokal, dan manajemen produksi podcast dari nol hingga monetisasi.</p>
+<div class="grid grid-cols-2 gap-6 mb-10">
+<div class="border-l border-primary/30 pl-4">
+<div class="technical-label mb-1">Modules</div>
+<div class="text-sm font-bold">12 Intensive Sessions</div>
+</div>
+<div class="border-l border-primary/30 pl-4">
+<div class="technical-label mb-1">Equipment</div>
+<div class="text-sm font-bold">Studio Standard Pro</div>
+</div>
+<div class="border-l border-primary/30 pl-4">
+<div class="technical-label mb-1">Certification</div>
+<div class="text-sm font-bold">OZ Verified Creator</div>
+</div>
+<div class="border-l border-primary/30 pl-4">
+<div class="technical-label mb-1">Output</div>
+<div class="text-sm font-bold">Pilot Episode Ready</div>
+</div>
+</div>
+<button class="w-full py-4 bg-white/5 border border-white/10 hover:border-primary hover:text-primary transition-all font-bold text-[10px] tracking-[0.3em] uppercase">
+                                Explore Curriculum
+                            </button>
+</div>
+</div>
+<div class="relative group bg-card-dark border border-white/10 p-10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/40">
+<div class="absolute top-0 right-0 p-6 opacity-10">
+<span class="material-symbols-outlined text-[120px]">sensors</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-8">
+<span class="text-primary font-mono text-sm tracking-widest">[ TRACK_02 ]</span>
+<div class="h-px flex-1 bg-white/10"></div>
+</div>
+<h3 class="text-4xl font-black tracking-tighter uppercase mb-4">The Live Streamer Track</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-10 max-w-md">Integrasi public speaking radio klasik dengan teknologi streaming modern untuk engagement maksimal.</p>
+<div class="grid grid-cols-2 gap-6 mb-10">
+<div class="border-l border-primary/30 pl-4">
+<div class="technical-label mb-1">Modules</div>
+<div class="text-sm font-bold">15 Real-time Labs</div>
+</div>
+<div class="border-l border-primary/30 pl-4">
+<div class="technical-label mb-1">Tech Stack</div>
+<div class="text-sm font-bold">OBS &amp; Multi-stream</div>
+</div>
+<div class="border-l border-primary/30 pl-4">
+<div class="technical-label mb-1">Focus</div>
+<div class="text-sm font-bold">Live Interaction UI</div>
+</div>
+<div class="border-l border-primary/30 pl-4">
+<div class="technical-label mb-1">Mentorship</div>
+<div class="text-sm font-bold">Live Review Sessions</div>
+</div>
+</div>
+<button class="w-full py-4 bg-white/5 border border-white/10 hover:border-primary hover:text-primary transition-all font-bold text-[10px] tracking-[0.3em] uppercase">
+                                Explore Curriculum
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-6 pb-24">
+<div class="relative bg-primary p-12 lg:p-16 rounded-3xl overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
+<div class="absolute inset-0 grid-pattern opacity-10 pointer-events-none"></div>
+<div class="relative z-10 text-center lg:text-left">
+<div class="inline-block px-3 py-1 bg-background-dark/10 border border-background-dark/20 rounded mb-6 text-[10px] font-black uppercase tracking-widest text-background-dark">
+                            University Partnership
+                        </div>
+<h2 class="text-4xl lg:text-5xl font-black tracking-tighter text-background-dark uppercase leading-tight mb-4">
+                            Bawa OZCADEMY ke <br class="hidden lg:block"/> Kampus Anda
+                        </h2>
+<p class="text-background-dark/70 font-medium max-w-xl text-lg">
+                            Program kurikulum industri yang disesuaikan untuk mahasiswa Ilmu Komunikasi dan Multimedia.
+                        </p>
+</div>
+<div class="relative z-10">
+<button class="bg-background-dark text-primary px-10 py-5 rounded-sm font-black text-xs tracking-[0.3em] uppercase hover:bg-slate-900 transition-all shadow-xl">
+                            Hubungi Tim Sales
+                        </button>
+</div>
+</div>
+</section>
+<section class="py-20 border-t border-white/5 text-center">
+<p class="technical-label mb-12">
+                    Didukung oleh warisan OZ Radio Bandung - <span class="text-primary italic">The Star Factory sejak 1971.</span>
+</p>
+<div class="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:opacity-60 transition-opacity">
+<div class="flex items-center gap-4">
+<div class="text-[10px] font-mono tracking-tighter">EST_IDN: 1971</div>
+<div class="h-4 w-px bg-white/20"></div>
+<div class="text-[10px] font-mono tracking-tighter">LOC: BDG_FACTORY</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-[10px] font-mono tracking-tighter">STATUS: BROADCASTING_LIVE</div>
+<div class="h-4 w-px bg-white/20"></div>
+<div class="text-[10px] font-mono tracking-tighter">NODE: OZ_01</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-8 left-8 pointer-events-none hidden lg:block z-50">
+<div class="text-[9px] font-mono leading-relaxed text-slate-600 uppercase tracking-widest">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-2 h-2 bg-primary animate-pulse"></div>
+<span>System Frequency: 103.1 MHz</span>
+</div>
+<div>Status: Education_Module_Active</div>
+<div>Encryption: OZ_SECURE_256</div>
+</div>
+</div>
+<div class="fixed bottom-8 right-8 pointer-events-none hidden lg:block z-50">
+<div class="text-[9px] font-mono text-slate-600 text-right uppercase tracking-widest">
+<div>© 2024 OZCADEMY</div>
+<div>Digital Career Hub</div>
+<div class="mt-1 text-primary/40">Broadcasting Excellence Since 1971</div>
+</div>
+</div>
+</div>
+
+</body></html>

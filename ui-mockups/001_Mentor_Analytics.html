@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.07);
+                border: 1px solid rgba(242, 208, 13, 0.15);
+            }
+            .glassmorphism {
+                background: rgba(12, 12, 12, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .chart-line {
+                filter: drop-shadow(0 0 8px rgba(242, 208, 13, 0.4));
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Creator_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">analytics</span>
+<span class="text-xs tracking-[0.2em] uppercase">Analitik</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">calendar_today</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Jadwal Saya</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">school</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Kursus Saya</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Profil</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">DATA_SYNC: ACTIVE</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400">ENCRYPTED_FEED</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar relative z-10">
+<header class="p-8 border-b border-white/5 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-md z-20">
+<div>
+<h1 class="text-2xl font-black tracking-tighter uppercase">Mentor Performance</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Advanced Creator Insights Dashboard</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<div class="text-xs font-bold uppercase tracking-widest">Andhika Pratama</div>
+<div class="text-[9px] text-primary uppercase font-mono">Mentor_ID: 882190</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center overflow-hidden">
+<img alt="Mentor" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bIykbemfUwIVaQUZUTm7yrSt8IbFIDKDbT0gsjak3eVUAW5uIp9E9liHE9gDPtuhfTL0NT3HeaoPhQG7c9yuMmWTRFQW6FxuYaeD_T-kXl3eFnfbPVN6DAmoIhK7DCRv23bfL4-KNdBXnSZ2HVoTg6AeNqR8qoXRpMVz-A8ft9wOnMtuCbgkpVk0-EqwA8PfOwl_G08-WdcCKAcz3SutH855ieuRbDfOkt0lOObRVgLn8knqYxibJaZAVpoJBHPGfiXIubwQrXo"/>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<div class="glow-card glassmorphism p-8 rounded-3xl relative overflow-hidden flex justify-between items-center">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent pointer-events-none"></div>
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">account_balance_wallet</span>
+<p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Total Saldo Tersedia</p>
+</div>
+<h3 class="text-4xl font-black text-white tracking-tighter">Rp 12.840.500</h3>
+</div>
+<div class="text-right">
+<button class="bg-primary text-background-dark px-6 py-2.5 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:brightness-110 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+                Tarik Saldo
+            </button>
+<p class="mt-2 text-[8px] font-mono text-slate-500 tracking-widest">NEXT_PAYOUT: 24_MAY_2024</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-3 px-2">
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Royalti VOD / Audio</h4>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glow-card glassmorphism p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-xl">play_circle</span>
+<span class="text-[8px] font-mono text-slate-500 tracking-widest">MINS_COUNT</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Total Menit Diputar</p>
+<h3 class="text-xl font-black text-white tracking-tighter">128.450 <span class="text-[10px] text-slate-500">Min</span></h3>
+<div class="mt-2 text-[9px] text-green-500 font-bold uppercase">+18% vs prev</div>
+</div>
+<div class="glow-card glassmorphism p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-xl">monetization_on</span>
+<span class="text-[8px] font-mono text-slate-500 tracking-widest">ROYALTY_POOL</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Estimasi Royalti (Rp)</p>
+<h3 class="text-xl font-black text-white tracking-tighter">Rp 8.420.000</h3>
+<div class="mt-2 text-[9px] text-slate-500 font-mono tracking-widest uppercase">Calc_Sync: Active</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3 px-2">
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Pendapatan Live</h4>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glow-card glassmorphism p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-xl">video_call</span>
+<span class="text-[8px] font-mono text-slate-500 tracking-widest">SESSION_COUNT</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Sesi Live Selesai</p>
+<h3 class="text-xl font-black text-white tracking-tighter">42 <span class="text-[10px] text-slate-500">Sesi</span></h3>
+<div class="mt-2 text-[9px] text-primary font-bold uppercase">100% Fulfilled</div>
+</div>
+<div class="glow-card glassmorphism p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+<span class="text-[8px] font-mono text-slate-500 tracking-widest">LIVE_EARNING</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Pendapatan Sesi Live (Rp)</p>
+<h3 class="text-xl font-black text-white tracking-tighter">Rp 4.420.500</h3>
+<div class="mt-2 text-[9px] text-green-500 font-bold uppercase">+Rp 250k today</div>
+</div>
+</div>
+</div>
+</div>
+<div class="glow-card glassmorphism p-8 rounded-2xl">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">query_stats</span>
+<h2 class="text-sm font-black uppercase tracking-[0.2em]">Pertumbuhan Pendapatan Bulanan</h2>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-[8px] font-mono border border-white/10 rounded-md text-slate-400 hover:text-primary transition-colors">1M</button>
+<button class="px-3 py-1 text-[8px] font-mono border border-primary/40 bg-primary/10 rounded-md text-primary transition-colors">6M</button>
+<button class="px-3 py-1 text-[8px] font-mono border border-white/10 rounded-md text-slate-400 hover:text-primary transition-colors">1Y</button>
+</div>
+</div>
+<div class="relative w-full h-64 bg-white/5 rounded-xl border border-white/5 p-4">
+<div class="absolute inset-0 grid grid-cols-6 pointer-events-none opacity-20">
+<div class="border-r border-white/10 h-full"></div>
+<div class="border-r border-white/10 h-full"></div>
+<div class="border-r border-white/10 h-full"></div>
+<div class="border-r border-white/10 h-full"></div>
+<div class="border-r border-white/10 h-full"></div>
+</div>
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20 py-4">
+<div class="border-b border-white/10 w-full"></div>
+<div class="border-b border-white/10 w-full"></div>
+<div class="border-b border-white/10 w-full"></div>
+<div class="border-b border-white/10 w-full"></div>
+</div>
+<svg class="w-full h-full overflow-visible" viewBox="0 0 1000 200">
+<defs>
+<linearGradient id="glow" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:rgba(242, 208, 13, 0.2); stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:rgba(242, 208, 13, 0); stop-opacity:1"></stop>
+</linearGradient>
+</defs>
+<path d="M0,150 Q150,140 250,100 T500,80 T750,40 T1000,20 L1000,200 L0,200 Z" fill="url(#glow)"></path>
+<path class="chart-line" d="M0,150 Q150,140 250,100 T500,80 T750,40 T1000,20" fill="none" stroke="#f2d00d" stroke-width="3"></path>
+<circle cx="250" cy="100" fill="#f2d00d" r="4"></circle>
+<circle cx="500" cy="80" fill="#f2d00d" r="4"></circle>
+<circle cx="750" cy="40" fill="#f2d00d" r="4"></circle>
+<circle cx="1000" cy="20" fill="#f2d00d" r="4"></circle>
+</svg>
+<div class="absolute bottom-2 left-4 right-4 flex justify-between text-[8px] font-mono text-slate-500 uppercase tracking-widest">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>Mei</span>
+<span>Jun</span>
+</div>
+</div>
+</div>
+<div class="glow-card glassmorphism rounded-2xl overflow-hidden">
+<div class="p-6 border-b border-white/5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">history</span>
+<h3 class="text-xs font-bold uppercase tracking-[0.2em]">Transaksi Terbaru</h3>
+</div>
+<button class="text-[9px] font-bold text-primary uppercase tracking-widest hover:underline transition-all">Export_Report.CSV</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-white/5">
+<th class="px-6 py-4 text-[9px] font-mono text-slate-500 uppercase tracking-widest">Nama Pengguna</th>
+<th class="px-6 py-4 text-[9px] font-mono text-slate-500 uppercase tracking-widest">Item Terbeli</th>
+<th class="px-6 py-4 text-[9px] font-mono text-slate-500 uppercase tracking-widest">Jumlah</th>
+<th class="px-6 py-4 text-[9px] font-mono text-slate-500 uppercase tracking-widest">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="text-[10px] font-bold text-primary">FR</span>
+</div>
+<span class="text-xs font-bold uppercase">Fahri Ramadhan</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-mono text-slate-400">SESSION: Mentorship v1.2</span>
+</td>
+<td class="px-6 py-4 text-xs font-black">Rp 250.000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-green-500/10 border border-green-500/20 text-[8px] font-mono text-green-500 uppercase tracking-widest">
+<span class="w-1 h-1 bg-green-500 rounded-full animate-pulse"></span>
+                                        Terverifikasi
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center border border-white/10">
+<span class="text-[10px] font-bold text-slate-400">SM</span>
+</div>
+<span class="text-xs font-bold uppercase">Sarah Mulyani</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-mono text-slate-400">COURSE: Advanced Mixing</span>
+</td>
+<td class="px-6 py-4 text-xs font-black">Rp 1.200.000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-primary/10 border border-primary/20 text-[8px] font-mono text-primary uppercase tracking-widest">
+<span class="w-1 h-1 bg-primary rounded-full animate-pulse"></span>
+                                        Terverifikasi
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center border border-white/10">
+<span class="text-[10px] font-bold text-slate-400">BK</span>
+</div>
+<span class="text-xs font-bold uppercase">Budi Kusuma</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-mono text-slate-400">SESSION: Portfolio Review</span>
+</td>
+<td class="px-6 py-4 text-xs font-black">Rp 250.000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-white/5 border border-white/10 text-[8px] font-mono text-slate-500 uppercase tracking-widest">
+<span class="w-1 h-1 bg-slate-500 rounded-full"></span>
+                                        Tertunda
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

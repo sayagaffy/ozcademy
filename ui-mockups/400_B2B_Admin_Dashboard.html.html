@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 20px rgba(242, 208, 13, 0.05);
+                border: 1px solid rgba(242, 208, 13, 0.1);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden">
+<aside class="w-72 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">hub</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Institution_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-xs tracking-[0.2em] uppercase">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Manajemen Mahasiswa</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">vpn_key</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Lisensi Akses</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">analytics</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Laporan Belajar</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Pengaturan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">B2B_PROTOCOL: AUTHORIZED</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">SYS_ACTIVE: HUB_NODE_01</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar relative z-10">
+<header class="p-8 border-b border-white/5 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-md z-20">
+<div>
+<h1 class="text-2xl font-black tracking-tighter uppercase">Panel Administrasi</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Universitas Indonesia • Mitra Institusi</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="flex items-center gap-4 pl-6 border-l border-white/10">
+<div class="text-right">
+<div class="text-xs font-bold uppercase tracking-widest">Admin Institusi</div>
+<div class="text-[9px] text-primary uppercase font-mono">AUTH_ID: UI-88291</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">admin_panel_settings</span>
+</div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-[1400px] mx-auto space-y-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glow-card bg-card-dark p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-6xl">shopping_cart</span>
+</div>
+<p class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">Total Lisensi Dibeli</p>
+<div class="flex items-end gap-2">
+<span class="text-4xl font-black text-white">500</span>
+<span class="text-xs text-primary mb-1 font-mono">UNIT</span>
+</div>
+<div class="mt-4 h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="w-full h-full bg-primary/40"></div>
+</div>
+</div>
+<div class="glow-card bg-card-dark p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-6xl">verified_user</span>
+</div>
+<p class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">Lisensi Aktif</p>
+<div class="flex items-end gap-2">
+<span class="text-4xl font-black text-white">432</span>
+<span class="text-xs text-green-500 mb-1 font-mono">86.4%</span>
+</div>
+<div class="mt-4 h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="w-[86.4%] h-full bg-green-500/60"></div>
+</div>
+</div>
+<div class="glow-card bg-card-dark p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-6xl">trending_up</span>
+</div>
+<p class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">Rata-rata Penyelesaian Kursus</p>
+<div class="flex items-end gap-2">
+<span class="text-4xl font-black text-white">78</span>
+<span class="text-xs text-primary mb-1 font-mono">%</span>
+</div>
+<div class="mt-4 h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="w-[78%] h-full bg-primary/60"></div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-xl font-bold tracking-tight uppercase">Daftar Mahasiswa</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Mengelola akses dan memantau progres belajar mahasiswa</p>
+</div>
+<button class="bg-primary hover:bg-white text-background-dark px-6 py-3 rounded-xl font-black text-xs tracking-[0.2em] transition-all duration-300 shadow-[0_10px_30px_rgba(242,208,13,0.15)] uppercase flex items-center gap-3">
+<span class="material-symbols-outlined text-lg">person_add</span>
+<span>Undang Mahasiswa / Generate Kode Akses</span>
+</button>
+</div>
+<div class="bg-card-dark border border-white/5 rounded-2xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/10 bg-white/5">
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Nama</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Email</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Jalur Program</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Progress (%)</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Status</th>
+<th class="p-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="p-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-[10px] font-bold border border-white/10">BR</div>
+<span class="text-sm font-medium">Bintang Ramadhan</span>
+</div>
+</td>
+<td class="p-6 text-sm text-slate-400 font-mono">bintang@univ.ac.id</td>
+<td class="p-6">
+<span class="text-[10px] px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold uppercase tracking-wider">Podcaster</span>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden min-w-[100px]">
+<div class="w-[92%] h-full bg-primary shadow-[0_0_10px_rgba(242,208,13,0.4)]"></div>
+</div>
+<span class="text-xs font-mono font-bold">92%</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+<span class="text-[10px] font-bold uppercase text-green-500">Aktif</span>
+</div>
+</td>
+<td class="p-6 text-right">
+<button class="p-2 text-slate-600 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="p-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-[10px] font-bold border border-white/10">ST</div>
+<span class="text-sm font-medium">Siti Taqiyya</span>
+</div>
+</td>
+<td class="p-6 text-sm text-slate-400 font-mono">taqiyya@univ.ac.id</td>
+<td class="p-6">
+<span class="text-[10px] px-2 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 font-bold uppercase tracking-wider">Streamer</span>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden min-w-[100px]">
+<div class="w-[45%] h-full bg-primary shadow-[0_0_10px_rgba(242,208,13,0.4)]"></div>
+</div>
+<span class="text-xs font-mono font-bold">45%</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+<span class="text-[10px] font-bold uppercase text-green-500">Aktif</span>
+</div>
+</td>
+<td class="p-6 text-right">
+<button class="p-2 text-slate-600 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="p-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-[10px] font-bold border border-white/10">AW</div>
+<span class="text-sm font-medium">Arya Wicaksana</span>
+</div>
+</td>
+<td class="p-6 text-sm text-slate-400 font-mono">arya.w@univ.ac.id</td>
+<td class="p-6">
+<span class="text-[10px] px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold uppercase tracking-wider">Podcaster</span>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden min-w-[100px]">
+<div class="w-[12%] h-full bg-primary shadow-[0_0_10px_rgba(242,208,13,0.4)]"></div>
+</div>
+<span class="text-xs font-mono font-bold">12%</span>
+</div>
+</td>
+<td class="p-6">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-slate-600 rounded-full"></span>
+<span class="text-[10px] font-bold uppercase text-slate-500">Inaktif</span>
+</div>
+</td>
+<td class="p-6 text-right">
+<button class="p-2 text-slate-600 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between px-2">
+<div class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Showing: 3 of 432 Authorized Entries</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 text-slate-400 hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-background-dark font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 text-slate-400 hover:border-primary hover:text-primary transition-all text-xs">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 text-slate-400 hover:border-primary hover:text-primary transition-all text-xs">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 text-slate-400 hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

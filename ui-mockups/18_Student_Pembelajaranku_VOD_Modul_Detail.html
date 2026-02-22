@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 20px rgba(242, 208, 13, 0.05);
+                border: 1px solid rgba(242, 208, 13, 0.1);
+            }
+            .video-glow {
+                box-shadow: 0 0 40px rgba(242, 208, 13, 0.15);
+                border: 1px solid rgba(242, 208, 13, 0.3);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .glass-morphism {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden">
+<aside class="w-72 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Learning_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">play_circle</span>
+<span class="text-xs tracking-[0.2em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Komunitas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">badge</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Pengaturan &amp; Pembiayaan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto border-t border-white/5">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="flex justify-between items-center">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">System_Data</div>
+<div class="text-[8px] font-mono text-slate-500 uppercase">v.3.4.0</div>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between text-[9px] font-mono text-slate-400">
+<span>BUFFER_STREAM</span>
+<span class="text-primary">100%</span>
+</div>
+<div class="flex items-center justify-between text-[9px] font-mono text-slate-400">
+<span>LATENCY</span>
+<span class="text-green-500">12ms</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar relative z-10 bg-background-dark">
+<header class="p-8 border-b border-white/5 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-md z-20">
+<div>
+<h1 class="text-2xl font-black tracking-tighter uppercase">Fundamental Audio Engineering</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Modul 04: Mixing &amp; Mastering Essentials</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<div class="text-right">
+<div class="text-xs font-bold uppercase tracking-widest">Fahri Ramadhan</div>
+<div class="text-[9px] text-primary uppercase font-mono">LEVEL_PRO_02</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsqynNEIFRr_eFaYgy2TDeyxUof-ISiDGJnE8iwM1IeWBAFFWnTHw2dTHXWR57dsaWaCx-c--pAD4-8Xv42DAkkRCMLeuTtVSZ0wOGhRvmr2zmsztpOmrMkKw-WAnGqHpKlUH7FYpqdENyXY5Xv9Z0c3k7Hp206JGEIhq4PGWr6ae9zJ_68bhHtHwWNLa_ryI_VRAM03YqpmDarFIcY9YblVqYYXpnKBdkcQO1yv8MlvhdKwj0j8L7wt5RhicysLoL9ahOC64XedU"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-[1600px] mx-auto">
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="w-full lg:w-2/3 space-y-8">
+<div class="video-glow relative aspect-video bg-black rounded-2xl overflow-hidden group">
+<img alt="Video Placeholder" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bIykbemfUwIVaQUZUTm7yrSt8IbFIDKDbT0gsjak3eVUAW5uIp9E9liHE9gDPtuhfTL0NT3HeaoPhQG7c9yuMmWTRFQW6FxuYaeD_T-kXl3eFnfbPVN6DAmoIhK7DCRv23bfL4-KNdBXnSZ2HVoTg6AeNqR8qoXRpMVz-A8ft9wOnMtuCbgkpVk0-EqwA8PfOwl_G08-WdcCKAcz3SutH855ieuRbDfOkt0lOObRVgLn8knqYxibJaZAVpoJBHPGfiXIubwQrXo"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-20 h-20 bg-primary/90 text-background-dark rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_30px_rgba(242,208,13,0.4)]">
+<span class="material-symbols-outlined text-4xl font-black">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex items-center gap-4 text-[10px] font-mono text-white/70 mb-4">
+<span class="text-primary">LIVE_STREAM</span>
+<span>•</span>
+<span>14:32 / 45:00</span>
+<div class="flex-1 h-[2px] bg-white/20 relative">
+<div class="absolute top-0 left-0 h-full w-1/3 bg-primary"></div>
+</div>
+<span class="material-symbols-outlined text-sm">hd</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex border-b border-white/10">
+<button class="px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase border-b-2 border-primary text-primary transition-all">
+                                Ringkasan
+                            </button>
+<button class="px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase border-b-2 border-transparent text-slate-500 hover:text-white transition-all">
+                                Sumber Daya
+                            </button>
+</div>
+<div class="bg-card-dark/40 p-8 rounded-2xl border border-white/5 min-h-[300px]">
+<h3 class="text-lg font-bold mb-4 uppercase tracking-tight">Deskripsi Sesi</h3>
+<div class="prose prose-invert max-w-none text-slate-400 leading-relaxed text-sm">
+<p class="mb-4">Dalam modul "Mixing &amp; Mastering Essentials" ini, kita akan mendalami teknik-teknik fundamental untuk menciptakan kejernihan (clarity) dan kedalaman (depth) dalam produksi audio Anda. Fokus utama pada sesi kali ini meliputi:</p>
+<ul class="list-disc pl-5 space-y-2 mb-4">
+<li>Pengaturan Gain Staging yang optimal dalam lingkungan Digital Audio Workstation (DAW).</li>
+<li>Penerapan Subtractive EQ untuk membersihkan frekuensi yang bertabrakan.</li>
+<li>Teknik Kompresi Paralel untuk mempertahankan dinamika vokal.</li>
+<li>Pengantar Signal Chain untuk proses Mastering akhir.</li>
+</ul>
+<p>Pastikan Anda telah mengunduh project file yang tersedia di tab 'Sumber Daya' sebelum memulai praktik langsung di DAW masing-masing.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/3">
+<div class="glass-morphism rounded-2xl p-6 sticky top-32">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+<h2 class="text-sm font-bold uppercase tracking-[0.2em]">Proyek Akhir</h2>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-3">Deskripsi Proyek</label>
+<textarea class="w-full h-40 bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-slate-300 focus:border-primary/50 focus:ring-0 transition-all placeholder:text-slate-600 resize-none" placeholder="Jelaskan konsep karya audio Anda..."></textarea>
+</div>
+<div>
+<label class="block text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-3">Link Portofolio (Spotify/YouTube)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-lg">link</span>
+<input class="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-sm text-slate-300 focus:border-primary/50 focus:ring-0 transition-all placeholder:text-slate-600" placeholder="https://open.spotify.com/..." type="url"/>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-primary/5 border border-primary/10 space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">info</span>
+<span class="text-[9px] font-mono text-primary uppercase">Submission_Rules</span>
+</div>
+<p class="text-[9px] text-slate-500 leading-relaxed">Pastikan link dapat diakses secara publik. Batas waktu pengumpulan adalah 7 hari kalender setelah modul selesai.</p>
+</div>
+<button class="w-full bg-primary hover:bg-white text-background-dark py-5 rounded-xl font-black text-sm tracking-[0.3em] transition-all duration-300 shadow-[0_10px_30px_rgba(242,208,13,0.2)] uppercase flex items-center justify-center gap-3 group">
+<span>Kirim Proyek</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</div>
+<div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between opacity-30">
+<div class="text-[8px] font-mono uppercase tracking-widest">Token: OZ_772_ACK</div>
+<div class="text-[8px] font-mono uppercase tracking-widest">Secure_Layer: ON</div>
+</div>
+</div>
+<div class="mt-6 p-6 border border-white/5 rounded-2xl bg-white/5">
+<div class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-4">Mentor Feedback_Queue</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-xs font-mono text-primary italic">#1</div>
+<div class="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="w-full h-full bg-primary/40"></div>
+</div>
+<div class="text-[10px] font-mono text-slate-500 uppercase">IN_REVIEW</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

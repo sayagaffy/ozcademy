@@ -1,0 +1,287 @@
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 20px rgba(242, 208, 13, 0.05);
+                border: 1px solid rgba(242, 208, 13, 0.1);
+            }
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                color: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden">
+<aside class="w-72 border-r border-white/5 bg-background-dark flex flex-col z-50">
+<div class="p-8 pb-12">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none text-white">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Skill_Platform</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20 transition-all" href="#">
+<span class="material-symbols-outlined text-xl font-bold">search</span>
+<span class="text-[10px] tracking-[0.2em] uppercase font-bold">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">local_library</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">forum</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Komunitas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">settings_applications</span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">Pengaturan &amp; Pembiayaan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">MENTOR_VERIFIED: TRUE</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">Status_Online</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar relative z-10">
+<header class="relative w-full h-[400px] overflow-hidden border-b border-white/5">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent z-10"></div>
+<div class="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&amp;fit=crop&amp;q=80')] bg-cover bg-center grayscale"></div>
+<div class="relative z-20 h-full max-w-7xl mx-auto px-10 flex items-end pb-12">
+<div class="flex items-center gap-10">
+<div class="relative">
+<div class="w-48 h-48 rounded-full border-4 border-primary p-1 bg-background-dark overflow-hidden">
+<img alt="Aris Budiman" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoe9lx8FWj5eJcwghmlYPp2uX32V3Sp5Cn9bEcCWhTdt4mOrPBW9O-nwSBDpajJo9yygiPMYdkiSzMPImgK1KUyTXYA17hai6DCzyJX-EOqnBph0tSxS8Xh4GiyWwgL6G2kywB7sxkoA3-M2J7Hw-yRzQI4oDfj2Y_UeA50P5f1Pb3SNMOT7350lfVGj95WJm4hnou8REhmTxLOkivAgpEKGj8fDFK0ymemHPnHAw7NIQiCdtzA4P6OYlP5hQRBZGL_vn5P_7GCIc"/>
+</div>
+<div class="absolute -bottom-2 right-4 px-3 py-1 bg-primary text-background-dark text-[10px] font-black uppercase tracking-widest rounded shadow-xl">
+                            PRO_MENTOR
+                        </div>
+</div>
+<div>
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-mono text-primary uppercase tracking-[0.4em]">MENTOR_ID: AB-2024-X</span>
+<div class="h-[1px] w-12 bg-primary/30"></div>
+</div>
+<h1 class="text-7xl font-black tracking-tighter text-outline hover:text-white transition-all cursor-default uppercase">
+                            Aris Budiman
+                        </h1>
+<div class="flex items-center gap-6 mt-4">
+<div class="flex flex-col">
+<span class="text-primary text-sm font-black tracking-widest uppercase">Senior Broadcaster</span>
+</div>
+<div class="w-px h-8 bg-white/10"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary fill-1 text-2xl">star</span>
+<span class="text-2xl font-black text-white">5.0</span>
+<span class="text-xs text-slate-500 uppercase tracking-widest font-bold">(124 Ulasan)</span>
+</div>
+</div>
+<p class="mt-6 text-slate-400 max-w-2xl text-sm leading-relaxed">
+                            Berpengalaman lebih dari 15 tahun di industri penyiaran nasional. Fokus pada pengembangan karakter vokal, teknik interview, dan produksi podcast berkualitas tinggi untuk platform digital modern.
+                        </p>
+</div>
+</div>
+</div>
+</header>
+<div class="max-w-7xl mx-auto px-10 py-12 grid grid-cols-12 gap-12">
+<div class="col-span-8 space-y-12">
+<div class="border-b border-white/5 flex gap-10">
+<button class="text-xs font-black uppercase tracking-[0.2em] text-primary border-b-2 border-primary pb-5">
+                        Tentang Mentor
+                    </button>
+<button class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 hover:text-slate-300 border-b-2 border-transparent pb-5 transition-all">
+                        Ulasan Siswa
+                    </button>
+</div>
+<div class="space-y-6 text-slate-300">
+<p class="text-sm leading-relaxed">
+                        Aris Budiman mengawali karirnya sebagai radio announcer di stasiun radio legendaris. Kini, ia berfokus membagikan ilmunya kepada generasi baru broadcaster digital. Kurikulum yang disusunnya menitikberatkan pada sisi praktis dan mentalitas seorang penampil di depan mikrofon.
+                    </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-white/5 border border-white/5">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest mb-1">KEAHLIAN_01</div>
+<div class="text-sm font-bold text-white uppercase tracking-wider">Voice Characterizing</div>
+</div>
+<div class="p-4 rounded-xl bg-white/5 border border-white/5">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest mb-1">KEAHLIAN_02</div>
+<div class="text-sm font-bold text-white uppercase tracking-wider">Podcast Mastering</div>
+</div>
+</div>
+</div>
+<div class="pt-8">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-xl font-black tracking-tight uppercase leading-none">Modul VOD oleh Mentor Ini</h2>
+<p class="text-[8px] text-slate-500 uppercase tracking-[0.4em] mt-2">AKSES MATERI REKAMAN KAPAN SAJA</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full border border-white/10 hover:border-primary text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 rounded-full border border-white/10 hover:border-primary text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-hidden pb-4">
+<div class="min-w-[300px] group">
+<div class="relative aspect-video rounded-2xl overflow-hidden border border-white/10 group-hover:border-primary/50 transition-all mb-4">
+<img alt="Course" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmaKZWa8YEGWH68LWSGzzQzsrlQiqPRVilcgRnavYVPZFAion5oCuj4hS7bZ9Y0E6lS4GdDiI_gyM6ChTi3JefcOkksFPjouMIwmc3VCjT-frISKRNRmoPsUoS_8zkU_yPYcaomH2DDTecnvYpx4dqiNLGQPsr0kYIeShAj9BwTQ8TQpZ790-2jMMi2B65Oq9XB7VCucV3H1F3DPyePMiEBZtiHmXSKFt6l6VwSpqqFEdp7vqMRJ5N-wUowySJqSOb7uJWQsJwFvQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2">
+<span class="px-2 py-0.5 bg-primary text-background-dark text-[8px] font-black rounded">12 MATERI</span>
+</div>
+</div>
+<h3 class="font-bold text-sm text-white group-hover:text-primary transition-colors uppercase tracking-tight">Fundamental Broadcasting v1.0</h3>
+<div class="flex items-center gap-3 mt-2 text-[9px] font-mono text-slate-500 uppercase">
+<span>245 Siswa</span>
+<span class="w-1 h-1 bg-slate-800 rounded-full"></span>
+<span>8 Jam Total</span>
+</div>
+</div>
+<div class="min-w-[300px] group">
+<div class="relative aspect-video rounded-2xl overflow-hidden border border-white/10 group-hover:border-primary/50 transition-all mb-4">
+<img alt="Course" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcMhRoe4cWhjwONR8K5F6aA7WG5ANbLmoNqldQ90LNBRKDxt3kFLKStc0QAyxH8G7wYxYocra_syBOfJGIIiRJqDunOQiz-ylLtNktuW0FR-bS3xHW5FIyrHVxJr4LVB-9DHpfqUfHMuT6hcKvWIEyfxwQ8_AorVL5rV7_EOm3nsR7PxeeXOL1InRTytyXXL6DEHOzQO15eybPulDZ988wePl-v_C8QnY1RRYY_ChuY9__9S6oOiY5RLwa2dGklKFFBd2c65Jg5kk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2">
+<span class="px-2 py-0.5 bg-primary text-background-dark text-[8px] font-black rounded">08 MATERI</span>
+</div>
+</div>
+<h3 class="font-bold text-sm text-white group-hover:text-primary transition-colors uppercase tracking-tight">Audio Engineering for Podcasters</h3>
+<div class="flex items-center gap-3 mt-2 text-[9px] font-mono text-slate-500 uppercase">
+<span>189 Siswa</span>
+<span class="w-1 h-1 bg-slate-800 rounded-full"></span>
+<span>5 Jam Total</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-4">
+<div class="sticky top-12 bg-card-dark border border-white/10 rounded-3xl p-8 glow-card">
+<div class="mb-8">
+<div class="text-[8px] font-mono text-primary uppercase tracking-[0.3em] mb-2">SCHEDULING_SYSTEM</div>
+<h2 class="text-2xl font-black text-white uppercase tracking-tight">Pesan Sesi Live</h2>
+<p class="text-xs text-slate-500 mt-2 uppercase tracking-widest font-bold">Pilih Tipe Sesi Mentoring</p>
+</div>
+<div class="space-y-4 mb-10">
+<label class="block cursor-pointer group">
+<input checked="" class="hidden peer" name="tier" type="radio"/>
+<div class="p-5 rounded-2xl border border-white/10 peer-checked:border-primary peer-checked:bg-primary/5 group-hover:border-white/20 transition-all relative">
+<div class="flex justify-between items-center mb-1">
+<span class="text-xs font-black text-white uppercase tracking-wider">Privat 1-on-1</span>
+<div class="w-4 h-4 rounded-full border-2 border-white/20 flex items-center justify-center peer-checked:border-primary">
+<div class="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<div class="text-lg font-black text-primary">Rp 500rb</div>
+<div class="text-[9px] font-mono text-slate-500 mt-2 uppercase">Durasi 60 Menit • Video Call</div>
+</div>
+</label>
+<label class="block cursor-pointer group">
+<input class="hidden peer" name="tier" type="radio"/>
+<div class="p-5 rounded-2xl border border-white/10 peer-checked:border-primary peer-checked:bg-primary/5 group-hover:border-white/20 transition-all relative">
+<div class="flex justify-between items-center mb-1">
+<span class="text-xs font-black text-white uppercase tracking-wider">Grup Maks 5</span>
+<div class="w-4 h-4 rounded-full border-2 border-white/20 flex items-center justify-center peer-checked:border-primary">
+<div class="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<div class="text-lg font-black text-primary">Rp 250rb</div>
+<div class="text-[9px] font-mono text-slate-500 mt-2 uppercase">Durasi 90 Menit • Interaktif</div>
+</div>
+</label>
+<label class="block cursor-pointer group">
+<input class="hidden peer" name="tier" type="radio"/>
+<div class="p-5 rounded-2xl border border-white/10 peer-checked:border-primary peer-checked:bg-primary/5 group-hover:border-white/20 transition-all relative">
+<div class="flex justify-between items-center mb-1">
+<span class="text-xs font-black text-white uppercase tracking-wider">Grup Maks 10</span>
+<div class="w-4 h-4 rounded-full border-2 border-white/20 flex items-center justify-center peer-checked:border-primary">
+<div class="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<div class="text-lg font-black text-primary">Rp 100rb</div>
+<div class="text-[9px] font-mono text-slate-500 mt-2 uppercase">Durasi 90 Menit • Webinar Mode</div>
+</div>
+</label>
+</div>
+<button class="w-full bg-primary text-background-dark py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(242,208,13,0.2)] hover:shadow-[0_15px_40px_rgba(242,208,13,0.3)] hover:-translate-y-1 transition-all active:translate-y-0">
+                        Lihat Jadwal &amp; Booking
+                    </button>
+<div class="mt-6 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-slate-600">verified_user</span>
+<span class="text-[8px] font-mono text-slate-600 uppercase tracking-widest">TRANSACTION_SECURED: END-TO-END</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

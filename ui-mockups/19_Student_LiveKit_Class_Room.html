@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-border {
+                box-shadow: 0 0 15px rgba(242, 208, 13, 0.3);
+                border: 1px solid rgba(242, 208, 13, 0.5);
+            }
+            .glassmorphism {
+                background: rgba(12, 12, 12, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen relative overflow-hidden">
+<main class="flex-1 relative flex flex-col bg-black overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Mentor Feed" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa3ebxJqWeKTogKvp7UYnRoDzgO1jD-rkPQj16J34fN_nLcsdHyYBqkXPgGmQiHNFRTvbqSvgJWEu9Zo4LI3Y4EnIezMfGv3m3DwGuvsSSFJUeFZz6VjyuE1nDK6Jim9BMPj7Yw0tBJDaI64XmUCn2NbJ-fl3NI485wAvDigbFCDJJqNEHKZEJu-ARUNb9vojSRPD3dxGSf-a_i5Rz53EVO7wT3KyQqRSBUCww14gz75sI57Ro_RGRJ9ga5W_4iGSlj5qp70AY4ak"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-20 p-8 flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-xl font-black">bolt</span>
+</div>
+<div>
+<h1 class="text-xl font-black tracking-tighter uppercase leading-none">OZCADEMY LIVE</h1>
+<p class="text-[10px] tracking-[0.3em] text-primary font-medium uppercase mt-1">1-on-1 Mentor Session</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex gap-4">
+<div class="px-3 py-1 bg-black/40 border border-white/10 rounded-md backdrop-blur-md">
+<span class="text-[9px] font-mono text-slate-400 tracking-widest uppercase">Latency: <span class="text-primary">24ms</span></span>
+</div>
+<div class="px-3 py-1 bg-black/40 border border-white/10 rounded-md backdrop-blur-md">
+<span class="text-[9px] font-mono text-slate-400 tracking-widest uppercase">Encryption: <span class="text-primary">AES-256</span></span>
+</div>
+</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">REC 01:42:12</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-32 right-8 z-30 w-64 aspect-video rounded-xl overflow-hidden glow-border bg-card-dark">
+<img alt="Student Feed" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArCGOoOVhTP8dUwoi3wjmKcNi5_F3EErUDFmlI9HQExOsB3HRitGOdUe61qzVty_8rdlclg6zWQNh7tS1xOok9XF5T-u49n6_rL7jMO9S6czjRXpYGjzjOZ5NWBqM4YUF9aeKOzjb4LmwzHPiHwZXWnGS_LKJrHwV-CVYqgVk4Jj_qg8NII2B7re5CRDmzkBDjgkj0qVjk6Xovwa0ImMlvHGA4VAkj9EiS-adpIeWNnzeHrCTKRAcWFBdbxCT-OHA5MKPZjDuD6xw"/>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 bg-black/60 backdrop-blur-sm rounded text-[9px] font-bold tracking-widest uppercase border border-white/10">
+                    Fahri Ramadhan (Anda)
+                </div>
+</div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-40 flex items-center gap-4 px-8 py-4 glassmorphism rounded-2xl">
+<button class="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10 hover:border-primary/50 text-slate-300 hover:text-primary transition-all group">
+<span class="material-symbols-outlined text-2xl">mic</span>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black text-[9px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">MUTE</span>
+</button>
+<button class="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10 hover:border-primary/50 text-slate-300 hover:text-primary transition-all group">
+<span class="material-symbols-outlined text-2xl">videocam</span>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black text-[9px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">KAMERA</span>
+</button>
+<button class="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10 hover:border-primary/50 text-slate-300 hover:text-primary transition-all group">
+<span class="material-symbols-outlined text-2xl">present_to_all</span>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black text-[9px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap uppercase">Bagikan Layar</span>
+</button>
+<div class="w-px h-8 bg-white/10 mx-2"></div>
+<button class="px-6 h-12 rounded-xl bg-red-600/20 border border-red-500/50 text-red-500 hover:bg-red-600 hover:text-white font-bold text-xs tracking-widest uppercase transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">call_end</span>
+                    AKHIRI SESI
+                </button>
+</div>
+</main>
+<aside class="w-96 border-l border-white/5 bg-background-dark flex flex-col z-50">
+<div class="flex border-b border-white/5">
+<button class="flex-1 py-6 text-[10px] font-black tracking-[0.2em] uppercase text-primary border-b-2 border-primary">
+                    Chat Langsung
+                </button>
+<button class="flex-1 py-6 text-[10px] font-black tracking-[0.2em] uppercase text-slate-500 hover:text-slate-300 border-b-2 border-transparent transition-all">
+                    Catatan Sesi
+                </button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
+<div class="space-y-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Mentor Sarah</span>
+<span class="text-[9px] font-mono text-slate-500">14:02:11</span>
+</div>
+<div class="p-3 rounded-xl rounded-tl-none bg-white/5 border border-white/5 text-sm text-slate-300 leading-relaxed">
+                            Selamat siang Fahri! Bagaimana progress tugas editing audio podcast minggu lalu?
+                        </div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Fahri Ramadhan</span>
+<span class="text-[9px] font-mono text-slate-500">14:03:45</span>
+</div>
+<div class="p-3 rounded-xl rounded-tr-none bg-primary/10 border border-primary/20 text-sm text-slate-200 leading-relaxed">
+                            Siang Kak Sarah. Masih ada kendala di bagian noise reduction untuk vokal yang terlalu 'boxy'. Apa ada plugin khusus yang disarankan?
+                        </div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Mentor Sarah</span>
+<span class="text-[9px] font-mono text-slate-500">14:04:12</span>
+</div>
+<div class="p-3 rounded-xl rounded-tl-none bg-white/5 border border-white/5 text-sm text-slate-300 leading-relaxed">
+                            Coba gunakan dynamic EQ di area 200-400Hz. Saya akan tunjukkan lewat screen share sebentar lagi.
+                        </div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Fahri Ramadhan</span>
+<span class="text-[9px] font-mono text-slate-500">14:05:01</span>
+</div>
+<div class="p-3 rounded-xl rounded-tr-none bg-primary/10 border border-primary/20 text-sm text-slate-200 leading-relaxed">
+                            Baik Kak, saya sudah siap mencatat.
+                        </div>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-white/5">
+<div class="relative">
+<input class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs tracking-widest focus:outline-none focus:border-primary/50 text-slate-200 placeholder:text-slate-600" placeholder="KETIK PESAN..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-primary">
+<span class="material-symbols-outlined text-xl">send</span>
+</button>
+</div>
+<div class="mt-4 flex items-center justify-between text-[8px] font-mono text-slate-500 tracking-widest uppercase">
+<span>Session_ID: 0X92A1</span>
+<span class="flex items-center gap-1">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+                        Status: Secure
+                    </span>
+</div>
+</div>
+</aside>
+</div>
+
+</body></html>

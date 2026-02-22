@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.05);
+            }
+            .cinematic-glow {
+                background: radial-gradient(circle at top left, rgba(242, 208, 13, 0.03), transparent);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+                height: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                color: transparent;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden relative">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase text-white">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Admin_Hub</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-xs tracking-[0.2em] uppercase font-bold">DASHBOARD</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">PENGGUNA</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">library_books</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">KONTEN</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">KEUANGAN</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">NODE_ACCESS: AUTHORIZED</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">SYSTEM_STABLE</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden relative z-10">
+<header class="h-24 border-b border-white/5 flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md z-20">
+<div class="flex flex-col">
+<h1 class="text-3xl font-black tracking-tighter uppercase text-outline">MANAJEMEN PENGGUNA</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Directory / Administrative / Users</p>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-background-dark px-6 py-2.5 rounded flex items-center gap-2 font-bold text-xs tracking-widest uppercase hover:brightness-110 transition-all shadow-[0_0_15px_rgba(242,208,13,0.3)]">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                    TAMBAH MENTOR BARU
+                </button>
+</div>
+</header>
+<div class="px-8 border-b border-white/5 bg-background-dark/40">
+<div class="flex gap-8">
+<button class="py-4 border-b-2 border-primary text-primary text-[11px] font-bold tracking-[0.2em] uppercase flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                    MENTOR
+                </button>
+<button class="py-4 border-b-2 border-transparent text-slate-500 hover:text-slate-300 text-[11px] font-bold tracking-[0.2em] uppercase transition-all">
+                    SISWA
+                </button>
+</div>
+</div>
+<div class="flex-1 overflow-auto custom-scrollbar p-8">
+<div class="bg-card-dark/40 border border-white/5 rounded-2xl overflow-hidden glow-card">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-white/[0.02] border-b border-white/5">
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">PROFIL MENTOR</th>
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">SPESIALISASI</th>
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest text-center">KURSUS AKTIF</th>
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest text-center">TOTAL SESI</th>
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest text-right">AKSI</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/[0.01] transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDot3gyoZOtCoiSLQwPl_YqBeOBqo9qMy8Pm0jlhgb1rJfE2-dKtkA0rRf6Lf3t2kTTZlre4k4WvbXvq8iU8hRIYZinTLgahX3zdxQQTuoz286K3QX7oGf-ruBzw3jnv0OFkhnrfGiyZxupPdLLjNF_n2-lDTR-V6QZtRw7YeMV3Z6gJVh94CjRupTU1SFrNgB_drPT3jaAIekbP2rxxe3ELBNC8HUyY1D67eggeAQGIl3PF_oSrjl7TIZINXVBGTZtaTjcW7LN6uA"/>
+</div>
+<div>
+<div class="text-sm font-bold text-white uppercase tracking-tight">Andi Arifin</div>
+<div class="text-[9px] font-mono text-slate-500">UID_MNT_7721</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-medium uppercase">Radio Engineering</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm font-mono font-bold text-primary">12</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm font-mono text-slate-300">842</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="p-1.5 rounded hover:bg-primary/20 text-slate-400 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">edit_square</span>
+</button>
+<button class="p-1.5 rounded hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.01] transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC97NsL4b7ZnTkuHI2v2eYP6nr5Bf7h-eng0iDakxj_iimIxpyJh-U7LuSdAk1r-tqct5LBkzm11QYoQNiEf60qa5i0sZeVUA1UXaV9yNqX6_ltmkMzQdpwe1YmZ63rYxpfbs0Z7a3uTg7JdireH6INWhs9hejLjmlXmDP5Npa5oUNRorepv4U6FqwMUFSr6aEdHPBLeF0wTzSEYfcNbKQ6TcNaQvySxmrsward9xxNUvmcuCZw1vVbp_xE23n6-oK8_JAidfyi4pE"/>
+</div>
+<div>
+<div class="text-sm font-bold text-white uppercase tracking-tight">Siska Pratama</div>
+<div class="text-[9px] font-mono text-slate-500">UID_MNT_8812</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-medium uppercase">Audio Production</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm font-mono font-bold text-primary">08</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm font-mono text-slate-300">512</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="p-1.5 rounded hover:bg-primary/20 text-slate-400 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">edit_square</span>
+</button>
+<button class="p-1.5 rounded hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.01] transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGTT7cmwTC5As4nyoCE7Q3CFvA5x8XC1B3VGR8CMR6qrNEkuUBLp_QeKpIlAHAiGoF4VKmq2U-By990QAy9804xeZdudht5l6EW-duMUNFZBUkd6iPbionepxsjGW4toxb_XI7z0WmHgTvxnjQ8sW6TIDc503RdQUUbkxZzPyJHm8T66V2WKHKhoXgC8O4ioBvUrQGpH0RqyWpaWQ_IPAtH096HsFx8KxjjTyTCz5SSWLe5S1iYKtzdoVy8UM5ChTgqE1uhFzJcUI"/>
+</div>
+<div>
+<div class="text-sm font-bold text-white uppercase tracking-tight">Budi Santoso</div>
+<div class="text-[9px] font-mono text-slate-500">UID_MNT_3390</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-medium uppercase">Broadcast Tech</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm font-mono font-bold text-primary">05</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm font-mono text-slate-300">221</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="p-1.5 rounded hover:bg-primary/20 text-slate-400 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">edit_square</span>
+</button>
+<button class="p-1.5 rounded hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.01] transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-kRIX_6AQA0JxpPcrc7ZUjNA5pIDvNxlg7RoJnmyHOgLpuaOXi75A71eR_tIccR8rmWoszco4m1P3LFzZbfCKzwxdVsTBvIHtxbCG-98pfNWG2hbLFN7fxlVHxT1r6ULy4PcswCSZbQWznzdZAHHNm8S3VrOGTOvSyLOaQgrIcHFMSvCyap2YGCNtjjCLkzvHdT-Bw--4de0cyzJdUUVacaUTE_lhJy3Z_npshZLJufehM4xTqIMnUQM5Bw7GYaAN9zBD-ESxsQg"/>
+</div>
+<div>
+<div class="text-sm font-bold text-white uppercase tracking-tight">Lestari Wahyuni</div>
+<div class="text-[9px] font-mono text-slate-500">UID_MNT_4410</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-medium uppercase">Music Theory</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm font-mono font-bold text-primary">15</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="text-sm font-mono text-slate-300">1,105</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="p-1.5 rounded hover:bg-primary/20 text-slate-400 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">edit_square</span>
+</button>
+<button class="p-1.5 rounded hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="px-6 py-4 bg-white/[0.02] border-t border-white/5 flex items-center justify-between">
+<div class="text-[10px] font-mono text-slate-500 uppercase">Menampilkan 1-4 dari 158 Mentor</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] font-mono uppercase text-slate-400 hover:text-white transition-all">Sebelumnya</button>
+<button class="px-3 py-1 bg-primary text-background-dark border border-primary rounded text-[9px] font-mono font-bold uppercase">1</button>
+<button class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] font-mono uppercase text-slate-400 hover:text-white transition-all">2</button>
+<button class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] font-mono uppercase text-slate-400 hover:text-white transition-all">3</button>
+<button class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] font-mono uppercase text-slate-400 hover:text-white transition-all">Selanjutnya</button>
+</div>
+</div>
+</div>
+</div>
+<footer class="h-10 border-t border-white/5 bg-background-dark/80 backdrop-blur-md px-8 flex items-center justify-between text-[8px] font-mono text-slate-600 tracking-[0.3em] uppercase">
+<div class="flex gap-8">
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> SERVER_NODE: SG_01</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-green-500 rounded-full"></span> NETWORK: SECURE</span>
+<span class="flex items-center gap-2 text-slate-400">UTC+7: 14:15:22</span>
+</div>
+<div>
+<span>OZCADEMY_ADMIN_V3.0.1</span>
+</div>
+</footer>
+</main>
+</div>
+
+</body></html>

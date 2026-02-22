@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.07);
+            }
+            .outlined-text {
+                -webkit-text-stroke: 1px rgba(242, 208, 13, 0.5);
+                color: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen overflow-hidden relative">
+<aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none uppercase">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Mentor_Portal</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">calendar_month</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Jadwal</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-xs tracking-[0.2em] uppercase">Murid</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">Pendapatan</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+<div class="text-[8px] font-mono text-primary uppercase tracking-widest">SYSTEM_STATUS: ONLINE</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[9px] font-mono text-slate-400 uppercase">MNT_ID: 772-OZ</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden relative z-10">
+<header class="p-8 border-b border-white/5 flex items-center justify-between bg-background-dark/80 backdrop-blur-md z-20">
+<div>
+<h1 class="text-4xl font-black tracking-tighter uppercase outlined-text mb-1">REVIEW TUGAS SISWA</h1>
+<div class="flex items-center gap-4">
+<span class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Project Review Matrix</span>
+<span class="w-1 h-1 bg-slate-800 rounded-full"></span>
+<span class="text-[9px] font-mono text-primary uppercase tracking-widest">PROJECT_HASH: 772-OZ</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<select class="appearance-none bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-xl focus:ring-1 focus:ring-primary focus:border-primary outline-none cursor-pointer pr-10">
+<option>Semua</option>
+<option>Tertunda</option>
+<option>Selesai</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary pointer-events-none">expand_more</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-primary/20 p-0.5">
+<img alt="Mentor" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSKfMBNs88or2RH7CE1IZhA_TA8YEeppjqlr2X6wQo3q4CpPFkOxo0xmCCBFj_c9jX2DFx6czwWLMXZVOkpO9p4bt930p2VjUdTVpfEwdFgDiOAXY-KG8d1yf9VDK4q-0RMt9-vls1doovgGliYTA0jAaXg19cPQWaZ8dqEclo4kRefFACnCI1h4vCA1ah9gx2s9dPsPi2AwOGEbda0etVm-aCCGcN0JlmUwCcyQnvOPjdO9YNrQ3dzIiKjrSn0z_iRYpqubepXIM"/>
+</div>
+</div>
+</header>
+<div class="flex-1 flex overflow-hidden">
+<div class="flex-1 p-8 overflow-y-auto custom-scrollbar">
+<table class="w-full text-left border-separate border-spacing-y-4">
+<thead>
+<tr class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+<th class="px-6 py-2">NAMA SISWA</th>
+<th class="px-6 py-2">JUDUL PROYEK</th>
+<th class="px-6 py-2 text-center">TANGGAL SUBMIT</th>
+<th class="px-6 py-2 text-center">LINK PORTOFOLIO</th>
+<th class="px-6 py-2 text-right">AKSI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="group">
+<td class="bg-white/5 px-6 py-4 rounded-l-2xl border-y border-l border-white/5 group-hover:bg-white/10 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrV0Kx071bilPOQKxFxr_4DptcmmR02ENVf-BCqbbvAVYmLgQhzur9CVmfojEvMO8cepdNqB76KuV-kFN28cu0gyBU7Aimi67gWieHbFAB069gzZI8sa3xy3v9OUonL1TE4l-B1X6upOtZbUTkz0nFdI50z0VVfg9TZF3OMTXqPu15tG35ZS8uTdBi1RTDplUiDoX7L7UgUYzJSZJS8xHgnrYYVgfffR89-Nj2CJIHSE1ciVjB0cgVmezGimup4yRU3A_eWkgPFnk"/>
+</div>
+<div>
+<div class="text-xs font-bold uppercase tracking-wider">Ahmad Satria</div>
+<div class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">ID: OZ-9921</div>
+</div>
+</div>
+</td>
+<td class="bg-white/5 px-6 py-4 border-y border-white/5 group-hover:bg-white/10 transition-colors">
+<div class="text-xs font-medium uppercase leading-tight">Spatial Audio Interface Design for VR</div>
+<div class="text-[8px] font-mono text-primary/60 mt-1 uppercase">MODUL_AUDIO_04</div>
+</td>
+<td class="bg-white/5 px-6 py-4 border-y border-white/5 text-center group-hover:bg-white/10 transition-colors">
+<div class="text-[10px] font-mono uppercase">24 Nov 2023</div>
+<div class="text-[8px] font-mono text-slate-500">14:20:01</div>
+</td>
+<td class="bg-white/5 px-6 py-4 border-y border-white/5 text-center group-hover:bg-white/10 transition-colors">
+<div class="flex items-center justify-center gap-3 text-slate-400">
+<span class="material-symbols-outlined text-lg hover:text-primary cursor-pointer">play_circle</span>
+<span class="material-symbols-outlined text-lg hover:text-primary cursor-pointer">link</span>
+</div>
+</td>
+<td class="bg-white/5 px-6 py-4 rounded-r-2xl border-y border-r border-white/5 text-right group-hover:bg-white/10 transition-colors">
+<button class="bg-primary text-background-dark text-[10px] font-black px-4 py-2 rounded-lg hover:shadow-[0_0_15px_rgba(242,208,13,0.4)] transition-all uppercase tracking-widest">
+                                        BERI PENILAIAN
+                                    </button>
+</td>
+</tr>
+<tr class="group">
+<td class="bg-white/5 px-6 py-4 rounded-l-2xl border-y border-l border-white/5 group-hover:bg-white/10 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKHiFv5mgD_xbE6_ttfD0XUMolHNgfLLxPqGw0VMdAVuN4wPG4SKGzX-xLjvuWA8JJEwO3sfpHlCXcNsk7V2tB4ieiZo9H7J0aT0R4VSQCQAbd956IiLtBa-rDVfJhInbgoav4DE-lE7ZfZnyVy6b2CYTe6vrbHCX_QANI1pcMiYr4Jq_Oc9DoRgQQZvHO9zoPFBzJqp6vSONbWoYEBBSXE6bkNbyxU3Uh_CaUjkHAV85TLIkm-VvNmEiT3GtYZXV8VyU2kuNRQao"/>
+</div>
+<div>
+<div class="text-xs font-bold uppercase tracking-wider">Jessica Veranda</div>
+<div class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">ID: OZ-8812</div>
+</div>
+</div>
+</td>
+<td class="bg-white/5 px-6 py-4 border-y border-white/5 group-hover:bg-white/10 transition-colors">
+<div class="text-xs font-medium uppercase leading-tight">Cyberpunk Landscape Photography</div>
+<div class="text-[8px] font-mono text-primary/60 mt-1 uppercase">MODUL_VISUAL_02</div>
+</td>
+<td class="bg-white/5 px-6 py-4 border-y border-white/5 text-center group-hover:bg-white/10 transition-colors">
+<div class="text-[10px] font-mono uppercase">23 Nov 2023</div>
+<div class="text-[8px] font-mono text-slate-500">09:15:44</div>
+</td>
+<td class="bg-white/5 px-6 py-4 border-y border-white/5 text-center group-hover:bg-white/10 transition-colors">
+<div class="flex items-center justify-center gap-3 text-slate-400">
+<span class="material-symbols-outlined text-lg hover:text-primary cursor-pointer">grid_view</span>
+<span class="material-symbols-outlined text-lg hover:text-primary cursor-pointer">movie</span>
+</div>
+</td>
+<td class="bg-white/5 px-6 py-4 rounded-r-2xl border-y border-r border-white/5 text-right group-hover:bg-white/10 transition-colors">
+<button class="bg-primary text-background-dark text-[10px] font-black px-4 py-2 rounded-lg hover:shadow-[0_0_15px_rgba(242,208,13,0.4)] transition-all uppercase tracking-widest">
+                                        BERI PENILAIAN
+                                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="w-[400px] bg-card-dark/40 backdrop-blur-sm border-l border-white/5 p-8 flex flex-col">
+<div class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-black uppercase tracking-[0.2em] flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">fact_check</span>
+                                Panel Penilaian
+                            </h2>
+<button class="text-slate-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="h-px w-full bg-gradient-to-r from-primary/20 to-transparent"></div>
+</div>
+<div class="flex-1 space-y-8">
+<div class="space-y-4">
+<label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">UMPAN BALIK MENTOR</label>
+<textarea class="w-full h-48 bg-white/5 border border-white/10 rounded-2xl p-4 text-xs font-medium text-slate-300 focus:ring-1 focus:ring-primary focus:border-primary outline-none custom-scrollbar placeholder:text-slate-700 uppercase" placeholder="Masukkan ulasan teknis Anda di sini..."></textarea>
+</div>
+<div class="space-y-4">
+<label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">NILAI AKHIR</label>
+<div class="grid grid-cols-4 gap-3">
+<button class="py-4 border border-primary text-primary rounded-xl font-black text-lg bg-primary/5 hover:bg-primary hover:text-background-dark transition-all">A</button>
+<button class="py-4 border border-white/10 text-slate-500 rounded-xl font-black text-lg hover:border-primary/50 hover:text-primary transition-all">B</button>
+<button class="py-4 border border-white/10 text-slate-500 rounded-xl font-black text-lg hover:border-primary/50 hover:text-primary transition-all">C</button>
+<button class="py-4 border border-white/10 text-slate-500 rounded-xl font-black text-lg hover:border-primary/50 hover:text-primary transition-all">D</button>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-white/5">
+<div class="text-[8px] font-mono text-slate-600 mb-4 uppercase tracking-[0.2em] leading-relaxed">
+                            VERIFIED_BY: MNT_772<br/>
+                            TIMESTAMP: 2023-11-24_16:01:00<br/>
+                            ENCRYPTION: AES_256
+                        </div>
+<button class="w-full bg-primary text-background-dark font-black py-4 rounded-xl shadow-[0_0_20px_rgba(242,208,13,0.3)] hover:scale-[1.02] transition-all uppercase text-xs tracking-[0.2em] flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-sm">save</span>
+                            SIMPAN PENILAIAN
+                        </button>
+</div>
+</aside>
+</div>
+<footer class="px-8 py-3 border-t border-white/5 bg-background-dark/50 flex justify-between items-center text-[8px] font-mono text-slate-600 tracking-[0.3em] uppercase">
+<div class="flex gap-8">
+<span>Node: OZ-MENTOR-PRO</span>
+<span class="flex items-center gap-1.5"><span class="w-1 h-1 bg-green-500 rounded-full animate-pulse"></span> Encrypted</span>
+<span>Cloud: Synchronized</span>
+</div>
+<div>
+<span>OZCADEMY_MNT_V1.2_BUILD_772</span>
+</div>
+</footer>
+</main>
+</div>
+
+</body></html>

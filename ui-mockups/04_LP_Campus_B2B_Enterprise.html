@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .text-outline {
+                -webkit-text-stroke: 1.5px #f2d00d;
+                color: transparent;
+            }
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.07) 1px, transparent 0);
+                background-size: 40px 40px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.03) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.03) 1px, transparent 1px);
+                background-size: 50px 50px;
+            }
+            .hero-glow {
+                background: radial-gradient(circle at 50% 50%, rgba(242, 208, 13, 0.08) 0%, transparent 70%);
+            }
+            .technical-label {
+                @apply text-[9px] tracking-[0.3em] font-mono text-primary/60 uppercase;
+            }
+            .form-input-custom {
+                @apply bg-white/5 border border-white/10 rounded-sm py-4 px-5 focus:border-primary/50 focus:ring-0 text-white placeholder:text-slate-600 transition-all;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen overflow-x-hidden selection:bg-primary selection:text-background-dark">
+<div class="fixed inset-0 star-field pointer-events-none"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="fixed inset-0 hero-glow pointer-events-none"></div>
+<div class="relative z-10 flex flex-col min-h-screen">
+<header class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full border-b border-white/5 bg-background-dark/50 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary rounded-lg text-background-dark shadow-[0_0_15px_rgba(242,208,13,0.3)]">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold tracking-tighter leading-none">OZCADEMY</span>
+<span class="technical-label">B2B_CAMPUS_V1</span>
+</div>
+</div>
+<nav class="hidden lg:flex items-center gap-10 text-[11px] tracking-[0.25em] text-slate-400 font-bold uppercase">
+<a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary/50 pb-1" href="#">Solusi</a>
+<a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary/50 pb-1" href="#">Fitur</a>
+<a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary/50 pb-1" href="#">Testimoni</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="bg-primary hover:bg-white text-background-dark px-8 py-2.5 rounded-sm font-black text-[11px] tracking-widest uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(242,208,13,0.2)]">
+                    Hubungi Sales
+                </button>
+</div>
+</header>
+<main class="flex-1">
+<section class="flex flex-col items-center justify-center px-6 py-24 lg:py-32 max-w-6xl mx-auto w-full text-center">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-8">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-[9px] font-bold tracking-[0.4em] text-primary uppercase">Bridging Academia &amp; Industry</span>
+</div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9] max-w-6xl">
+<span class="text-outline">BAWA KURIKULUM</span> <br/>
+                    INDUSTRI KE <br/>
+                    KAMPUS ANDA.
+                </h1>
+<p class="text-slate-400 max-w-2xl mx-auto text-lg md:text-xl tracking-wide mt-10 font-light leading-relaxed">
+                    Menjembatani gap antara akademisi dan industri penyiaran digital melalui ekosistem pembelajaran terintegrasi.
+                </p>
+<div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
+<button class="group relative bg-primary hover:bg-white text-background-dark py-5 px-12 rounded-sm font-black text-xs tracking-[0.3em] transition-all duration-300 w-full sm:w-auto shadow-[0_10px_40px_rgba(242,208,13,0.3)] uppercase">
+                        Jadwalkan Demo
+                    </button>
+</div>
+</section>
+<section class="py-20 border-y border-white/5 bg-white/[0.02]">
+<div class="max-w-7xl mx-auto px-8">
+<p class="text-center technical-label mb-12">Dipercaya oleh institusi pendidikan terkemuka</p>
+<div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-30 grayscale contrast-125">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">account_balance</span>
+<span class="font-bold tracking-tighter uppercase">Univ_Placeholder_01</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">school</span>
+<span class="font-bold tracking-tighter uppercase">Inst_Placeholder_02</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">foundation</span>
+<span class="font-bold tracking-tighter uppercase">Academy_Global_03</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">architecture</span>
+<span class="font-bold tracking-tighter uppercase">Polytechnic_04</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">science</span>
+<span class="font-bold tracking-tighter uppercase">Research_Inst_05</span>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-6 py-24">
+<div class="mb-16">
+<p class="technical-label mb-4 tracking-[0.5em]">Enterprise_Suite_Features</p>
+<h2 class="text-4xl font-bold tracking-tighter uppercase">Solusi Skala Institusi</h2>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="relative group bg-card-dark border border-white/10 p-10 rounded-2xl transition-all duration-500 hover:border-primary/40">
+<div class="mb-8">
+<span class="material-symbols-outlined text-5xl text-primary mb-6">group_add</span>
+<h3 class="text-2xl font-black tracking-tighter uppercase mb-4">Manajemen Lisensi Massal</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Kelola ribuan akun mahasiswa dengan satu dashboard kontrol pusat yang efisien.</p>
+</div>
+<div class="pt-6 border-t border-white/5 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+                            Module_ID: LIC-MGMT-001
+                        </div>
+</div>
+<div class="relative group bg-card-dark border border-white/10 p-10 rounded-2xl transition-all duration-500 hover:border-primary/40">
+<div class="mb-8">
+<span class="material-symbols-outlined text-5xl text-primary mb-6">dashboard_customize</span>
+<h3 class="text-2xl font-black tracking-tighter uppercase mb-4">Dashboard Dosen Kustom</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Fitur pemantauan kurikulum dan alat penilaian yang disesuaikan dengan kebutuhan akademik.</p>
+</div>
+<div class="pt-6 border-t border-white/5 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+                            Module_ID: INSTR-CTR-002
+                        </div>
+</div>
+<div class="relative group bg-card-dark border border-white/10 p-10 rounded-2xl transition-all duration-500 hover:border-primary/40">
+<div class="mb-8">
+<span class="material-symbols-outlined text-5xl text-primary mb-6">query_stats</span>
+<h3 class="text-2xl font-black tracking-tighter uppercase mb-4">Analitik Progres</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Visualisasi data real-time untuk memantau performa dan keterlibatan mahasiswa secara mendalam.</p>
+</div>
+<div class="pt-6 border-t border-white/5 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+                            Module_ID: ANLYTC-V3-003
+                        </div>
+</div>
+</div>
+</section>
+<section class="max-w-4xl mx-auto px-6 pb-32">
+<div class="relative bg-card-dark border border-white/10 p-8 md:p-16 rounded-3xl overflow-hidden">
+<div class="absolute inset-0 grid-pattern opacity-10 pointer-events-none"></div>
+<div class="relative z-10">
+<div class="text-center mb-12">
+<p class="technical-label mb-4 tracking-[0.5em]">Secure_Registration_Portal</p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tighter uppercase mb-4">Hubungi Tim Strategis Kami</h2>
+<p class="text-slate-400">Dapatkan penawaran khusus untuk institusi Anda dan mulai transformasi digital hari ini.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Nama Lengkap</label>
+<input class="form-input-custom" placeholder="Contoh: Budi Santoso" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Nama Institusi</label>
+<input class="form-input-custom" placeholder="Universitas ..." type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Jabatan</label>
+<input class="form-input-custom" placeholder="Contoh: Dekan / Kaprodi" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Ukuran Tim</label>
+<select class="form-input-custom">
+<option value="">Pilih Ukuran Tim</option>
+<option value="1-50">1 - 50 Mahasiswa</option>
+<option value="51-200">51 - 200 Mahasiswa</option>
+<option value="200+">200+ Mahasiswa</option>
+</select>
+</div>
+<div class="md:col-span-2 mt-4">
+<button class="w-full bg-primary hover:bg-white text-background-dark py-5 px-12 rounded-sm font-black text-xs tracking-[0.3em] transition-all duration-300 shadow-[0_10px_40px_rgba(242,208,13,0.3)] uppercase" type="submit">
+                                    Kirim Permintaan
+                                </button>
+<p class="text-center text-[9px] text-slate-600 mt-6 tracking-widest uppercase">
+                                    Data Anda dienkripsi dengan standar keamanan OZ_SECURE_256
+                                </p>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="py-12 border-t border-white/5 bg-background-dark">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary/20 text-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-xl font-black">bolt</span>
+</div>
+<span class="text-lg font-bold tracking-tighter uppercase">OZCADEMY <span class="text-primary/60 font-light">Campus</span></span>
+</div>
+<div class="flex gap-10 text-[9px] font-bold tracking-widest uppercase text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Support Center</a>
+</div>
+<div class="text-[9px] font-mono text-slate-600 uppercase tracking-widest text-right">
+<div>© 2024 OZCADEMY ENTERPRISE</div>
+<div class="text-primary/40">Built for Future Educators</div>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-8 left-8 pointer-events-none hidden lg:block z-50">
+<div class="text-[9px] font-mono leading-relaxed text-slate-600 uppercase tracking-widest">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-2 h-2 bg-primary animate-pulse"></div>
+<span>Network: Institutional_Link_Ready</span>
+</div>
+<div>Server_Status: Operational</div>
+<div>B2B_PROTOCOL: ENABLED</div>
+</div>
+</div>
+</div>
+
+</body></html>

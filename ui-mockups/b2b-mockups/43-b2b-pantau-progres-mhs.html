@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pantau Progres Mahasiswa | OZCADEMY</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FFD700",
+                        "background-dark": "#000000",
+                        "surface-dark": "#0D0D0D",
+                        "border-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        .grid-bg {
+            background-image: radial-gradient(circle at 1px 1px, #1A1A1A 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .yellow-glow {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+        .yellow-glow-strong {
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+        .glass-dropdown {
+            background: rgba(13, 13, 13, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        .progress-glow {
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A1A1A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2A2A2A;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-sans text-slate-100 min-h-screen overflow-hidden">
+    <div class="flex h-screen">
+        <aside class="w-72 bg-black border-r border-border-dark flex flex-col z-20">
+            <div class="p-8 flex items-center space-x-3">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center yellow-glow">
+                    <span class="material-symbols-outlined text-black font-bold">school</span>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-xl tracking-tighter leading-none text-white uppercase">
+                        OZCADEMY</h1>
+                    <p class="text-[10px] font-bold text-slate-500 tracking-[0.2em] mt-1 uppercase">Institution_Hub</p>
+                </div>
+            </div>
+            <nav class="flex-1 px-6 mt-4 space-y-2">
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">dashboard</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Dashboard</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">workspace_premium</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Lisensi
+                        Kursi</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">route</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Tugaskan
+                        Jalur</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg bg-primary yellow-glow-strong group"
+                    href="#">
+                    <span class="material-symbols-outlined text-black text-xl">monitoring</span>
+                    <span class="font-bold text-[11px] tracking-widest text-black uppercase">Progres Mahasiswa</span>
+                </a>
+            </nav>
+            <div class="p-6 mt-auto">
+                <div class="p-4 rounded-xl border border-border-dark bg-surface-dark/50">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">System
+                            Active</span>
+                    </div>
+                    <p class="text-[11px] font-mono text-slate-500 tracking-tight">B2B_PROTOCOL: AUTHORIZED</p>
+                    <p class="text-[11px] font-mono text-slate-500 tracking-tight">HUB_NODE_01</p>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 overflow-y-auto grid-bg relative bg-background-dark">
+            <header class="px-10 pt-10 pb-6">
+                <h2 class="font-display text-3xl font-bold tracking-tight text-white uppercase">Pantau Progres Mahasiswa
+                </h2>
+                <p class="text-[10px] text-slate-500 font-bold mt-1 tracking-widest uppercase">Analitik Real-time
+                    Capaian Pembelajaran</p>
+                <div class="mt-8">
+                    <div class="relative max-w-xl group">
+                        <label
+                            class="absolute -top-2.5 left-4 px-2 bg-background-dark text-[9px] font-black text-primary uppercase tracking-widest z-10">Menampilkan
+                            Jalur Belajar</label>
+                        <select
+                            class="glass-dropdown w-full px-5 py-4 rounded-xl text-sm font-bold text-white uppercase tracking-wider appearance-none cursor-pointer focus:ring-1 focus:ring-primary/50 outline-none">
+                            <option>The Professional Podcaster Track</option>
+                            <option>Broadcast Journalism Masterclass</option>
+                            <option>Digital Audio Engineering</option>
+                            <option>Radio Program Directing</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-primary pointer-events-none group-hover:scale-110 transition-transform">expand_more</span>
+                    </div>
+                </div>
+            </header>
+            <div class="px-10 pb-10">
+                <div class="bg-surface-dark/40 border border-border-dark rounded-2xl overflow-hidden backdrop-blur-sm">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-border-dark bg-surface-dark">
+                                <th class="px-8 py-5 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                                    Nama Mahasiswa</th>
+                                <th class="px-6 py-5 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                                    Level Saat Ini</th>
+                                <th class="px-6 py-5 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                                    Modul Wajib Selesai</th>
+                                <th class="px-6 py-5 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                                    Progres Keseluruhan</th>
+                                <th
+                                    class="px-8 py-5 text-[10px] font-black text-slate-500 uppercase tracking-widest text-right">
+                                    Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-border-dark/50">
+                            <tr class="hover:bg-white/[0.02] transition-colors group">
+                                <td class="px-8 py-5">
+                                    <div class="flex items-center space-x-3">
+                                        <img alt="Bintang Ramadhan"
+                                            class="w-9 h-9 rounded-full border border-border-dark object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAst-t-DsplkvaiwfAoiH6A8H1RABjaTChZQSCPQ-mQ8xMvL5xY1MRBJ5mkezhNGViukIF_LBXsozhXNXeWUB4TAI2roa-pATzFF0EB0vzZj04HIiKnAF-WxL4oD83Dj_1yEY3xhizp-ZauVTxVRKxCCQlBKyBmWkACndKAZTT2QGeNWbmed0pUGc3vNqdyk_Yymv7_EvX9IlPUKVdyKo_wpU2yRnMmGC1BtavqNMGjaAhK-lOT5XsO14CajWWTaOizZwuL2kbaRx8" />
+                                        <div class="flex flex-col">
+                                            <span class="text-sm font-bold text-white">Bintang Ramadhan</span>
+                                            <span class="text-[10px] text-slate-500 font-mono">NIM: 20210811022</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span class="text-[11px] font-bold text-primary uppercase tracking-wider">Level 4 -
+                                        Advanced</span>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-sm font-bold text-white">4</span>
+                                        <span class="text-xs text-slate-500">/ 5</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary progress-glow rounded-full"
+                                                style="width: 80%"></div>
+                                        </div>
+                                        <span class="text-xs font-bold text-primary w-8">80%</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 text-right">
+                                    <a class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-all border-b border-transparent hover:border-primary pb-0.5"
+                                        href="#">Lihat Detail Rapor</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors group">
+                                <td class="px-8 py-5">
+                                    <div class="flex items-center space-x-3">
+                                        <img alt="Siti Taqiyya"
+                                            class="w-9 h-9 rounded-full border border-border-dark object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkUHKL-2c_Ex_i_qXVyHHOkH2QUanxKGvnjPeJpDAuPN0UIkpnauy7HgluqDVC982HqM9otZ-IfW6WD2VBLNBU3vyj1Hkj0uIJzcQPALwcNNrJOw6gUq6e4m7FG_LWCHiVTNyzqV8tZjEdkwvB0gWIGqR2QGjk5oDtyLOWqf4FjG48Yuq8hxyjFunndO74pIuDGLRvrvekrXePdLst9b4KMkjkRo1jjdozlMHPpd5AtQ14LviE0CUnJSVFU8cMPUB6zHdb6F0Prvs" />
+                                        <div class="flex flex-col">
+                                            <span class="text-sm font-bold text-white">Siti Taqiyya</span>
+                                            <span class="text-[10px] text-slate-500 font-mono">NIM: 20210811045</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">Level 2
+                                        - Intermediate</span>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-sm font-bold text-white">2</span>
+                                        <span class="text-xs text-slate-500">/ 5</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary progress-glow rounded-full"
+                                                style="width: 45%"></div>
+                                        </div>
+                                        <span class="text-xs font-bold text-primary w-8">45%</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 text-right">
+                                    <a class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-all border-b border-transparent hover:border-primary pb-0.5"
+                                        href="#">Lihat Detail Rapor</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors group">
+                                <td class="px-8 py-5">
+                                    <div class="flex items-center space-x-3">
+                                        <img alt="Nabila Dwi"
+                                            class="w-9 h-9 rounded-full border border-border-dark object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUV3tjXjjKc9P2NncWLh-GUXcSt7u728UMUkNlQ8mnwio2ydQEBWLHH7-DyxZswxrH5cMQ1EQpln1ToqwTYHy8690WLzpPjHJPpWc0c6XGrR1cXVMyT3eWRYRHmFOBZj9mb4_o0N3fJ0v3EUUfWclm-mJHRBjsFH1ADO3zX7jD7W78s9OeLnpnsinRuQx3MB9u6lHPIt8Y2MHehZh83ATv-V5SvPQe2OI65eDLM2i7G83Q_2H-9M_bS51BADBMIJbD2Mks9az-q-w" />
+                                        <div class="flex flex-col">
+                                            <span class="text-sm font-bold text-white">Nabila Dwi</span>
+                                            <span class="text-[10px] text-slate-500 font-mono">NIM: 20210811012</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span class="text-[11px] font-bold text-primary uppercase tracking-wider">Level 5 -
+                                        Expert</span>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-sm font-bold text-white">5</span>
+                                        <span class="text-xs text-slate-500">/ 5</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary progress-glow rounded-full"
+                                                style="width: 100%"></div>
+                                        </div>
+                                        <span class="text-xs font-bold text-primary w-8">100%</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 text-right">
+                                    <a class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-all border-b border-transparent hover:border-primary pb-0.5"
+                                        href="#">Lihat Detail Rapor</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors group">
+                                <td class="px-8 py-5">
+                                    <div class="flex items-center space-x-3">
+                                        <img alt="Rizky Pratama"
+                                            class="w-9 h-9 rounded-full border border-border-dark object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeW61lHCLw6E56AXMyl-I4mKghNSndCulzsN6d8zRRLlLPiofpnciSgmf_NTMqNjYJ0S5JvF1zpsQsk-SQfLgTc-et7TUfrPI0uWiKxWdc5pLqFGJnsDanPu_4tpE_NH3ISRhPgOqMZySXli9b8pH-FVuxHvmslLbve8h5D3tY1jYYQF-uD8nP81ZuPY-9yDsxpBBYwj6gueTks-uI8lTyGzQQQzrM3nt1zge5Q6a533EA-CKO76wKpCcf9gbnohA8_oLXhoaAzsg" />
+                                        <div class="flex flex-col">
+                                            <span class="text-sm font-bold text-white">Rizky Pratama</span>
+                                            <span class="text-[10px] text-slate-500 font-mono">NIM: 20210811001</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">Level 3
+                                        - Professional</span>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-sm font-bold text-white">3</span>
+                                        <span class="text-xs text-slate-500">/ 5</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary progress-glow rounded-full"
+                                                style="width: 65%"></div>
+                                        </div>
+                                        <span class="text-xs font-bold text-primary w-8">65%</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 text-right">
+                                    <a class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-all border-b border-transparent hover:border-primary pb-0.5"
+                                        href="#">Lihat Detail Rapor</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div
+                    class="mt-8 flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                    <div class="flex items-center space-x-6">
+                        <p>Menampilkan <span class="text-primary">25</span> dari <span class="text-white">128</span>
+                            Mahasiswa Aktif</p>
+                        <div class="w-px h-4 bg-border-dark"></div>
+                        <p>Rata-rata Progres: <span class="text-white">72.4%</span></p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button
+                            class="w-8 h-8 flex items-center justify-center border border-border-dark rounded hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                        </button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center bg-primary text-black rounded font-black">1</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center border border-border-dark rounded hover:bg-white/5 transition-colors">2</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center border border-border-dark rounded hover:bg-white/5 transition-colors">3</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center border border-border-dark rounded hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <footer
+                class="px-10 pb-10 pt-4 border-t border-border-dark flex flex-col md:flex-row justify-between items-center text-[9px] font-bold text-slate-500 uppercase tracking-[0.2em] gap-4">
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                        <span>Monitoring Status: Active</span>
+                    </div>
+                    <span>Data Synchronized: 2m ago</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a class="hover:text-primary transition-colors" href="#">Pusat Bantuan</a>
+                    <a class="hover:text-primary transition-colors" href="#">Panduan Akademik</a>
+                    <span class="text-slate-700">© 2024 OZCADEMY</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+</body>
+
+</html>

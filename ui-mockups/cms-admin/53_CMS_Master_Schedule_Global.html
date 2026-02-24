@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>OZCADEMY Global Master Schedule</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F5D020",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#050505",
+                        "surface-dark": "#121212",
+                        "border-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(245, 208, 32, 0.15);
+        }
+
+        .line-chart-gradient {
+            background: linear-gradient(180deg, rgba(245, 208, 32, 0.1) 0%, rgba(245, 208, 32, 0) 100%);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-300 antialiased overflow-hidden h-screen flex">
+    <aside class="w-64 border-r border-border-dark flex flex-col bg-background-dark shrink-0">
+        <div class="p-8 pb-10">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-1.5 rounded text-black">
+                    <span class="material-symbols-outlined block">calendar_month</span>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-lg tracking-tighter text-white leading-none">OZCADEMY</h1>
+                    <p class="text-[10px] font-medium tracking-[0.2em] text-primary/70 mt-1 uppercase">Admin_CMS</p>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 px-4 space-y-1 overflow-y-auto custom-scrollbar">
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">grid_view</span>
+                <span class="text-xs uppercase tracking-widest">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">group</span>
+                <span class="text-xs uppercase tracking-widest">Pengguna &amp; Mentor</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">corporate_fare</span>
+                <span class="text-xs uppercase tracking-widest">Mitra B2B</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">movie</span>
+                <span class="text-xs uppercase tracking-widest">Content Studio</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">map</span>
+                <span class="text-xs uppercase tracking-widest">Journey Builder</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded bg-primary text-black font-semibold transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">event_note</span>
+                <span class="text-xs uppercase tracking-widest">Master Schedule</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">account_balance_wallet</span>
+                <span class="text-xs uppercase tracking-widest">Royalty &amp; Payouts</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">description</span>
+                <span class="text-xs uppercase tracking-widest">Laporan Keuangan</span>
+            </a>
+        </nav>
+        <div class="p-6 border-t border-border-dark">
+            <div class="p-4 rounded border border-border-dark bg-surface-dark/50">
+                <p class="text-[10px] font-bold tracking-widest text-primary/60 mb-1 uppercase">Access: Global Admin</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <p class="text-[10px] text-slate-500 font-medium">SYSTEM_ONLINE</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <header
+            class="h-24 border-b border-border-dark flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md sticky top-0 z-10 shrink-0">
+            <div class="space-y-1">
+                <h2 class="text-3xl font-display font-bold tracking-tight text-white uppercase italic">Master Schedule
+                    Global</h2>
+                <div class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase">
+                    <span>CMS Admin</span>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <span class="text-primary">Penjadwalan Terpusat</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center bg-surface-dark border border-border-dark rounded overflow-hidden">
+                    <div class="px-3 py-2 border-r border-border-dark flex items-center gap-2">
+                        <span class="material-symbols-outlined text-xs text-primary">filter_alt</span>
+                        <select
+                            class="bg-transparent border-none text-[10px] font-bold uppercase tracking-widest text-slate-300 focus:ring-0 cursor-pointer py-0">
+                            <option>Filter Kategori</option>
+                            <option>Music Production</option>
+                            <option>Vocal Training</option>
+                            <option>Audio Engineering</option>
+                        </select>
+                    </div>
+                    <div class="px-4 py-2 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-xs text-slate-500">calendar_month</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-300">23 Okt - 29 Okt
+                            2023</span>
+                        <span class="material-symbols-outlined text-xs text-slate-500 cursor-pointer">expand_more</span>
+                    </div>
+                </div>
+                <button
+                    class="bg-primary hover:bg-white text-black font-bold px-5 py-2.5 rounded text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 transition-all">
+                    <span class="material-symbols-outlined text-sm">add_circle</span>
+                    Buat Jadwal Baru
+                </button>
+            </div>
+        </header>
+        <div class="flex-1 overflow-auto custom-scrollbar bg-black/40">
+            <div class="min-w-[1200px] h-full flex flex-col">
+                <div class="flex sticky top-0 z-20 bg-background-dark border-b border-border-dark">
+                    <div class="w-20 shrink-0 bg-background-dark"></div>
+                    <div class="flex-1 grid grid-cols-7">
+                        <div class="px-4 py-6 border-l border-border-dark text-center">
+                            <p class="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase">Senin</p>
+                            <p class="text-lg font-display font-bold text-white">23</p>
+                        </div>
+                        <div class="px-4 py-6 border-l border-border-dark text-center">
+                            <p class="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase">Selasa</p>
+                            <p class="text-lg font-display font-bold text-white">24</p>
+                        </div>
+                        <div class="px-4 py-6 border-l border-border-dark text-center bg-primary/5">
+                            <p class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Rabu</p>
+                            <p class="text-lg font-display font-bold text-primary">25</p>
+                        </div>
+                        <div class="px-4 py-6 border-l border-border-dark text-center">
+                            <p class="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase">Kamis</p>
+                            <p class="text-lg font-display font-bold text-white">26</p>
+                        </div>
+                        <div class="px-4 py-6 border-l border-border-dark text-center">
+                            <p class="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase">Jumat</p>
+                            <p class="text-lg font-display font-bold text-white">27</p>
+                        </div>
+                        <div class="px-4 py-6 border-l border-border-dark text-center">
+                            <p class="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase text-red-500/70">
+                                Sabtu</p>
+                            <p class="text-lg font-display font-bold text-white">28</p>
+                        </div>
+                        <div class="px-4 py-6 border-l border-border-dark text-center">
+                            <p class="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase text-red-500/70">
+                                Minggu</p>
+                            <p class="text-lg font-display font-bold text-white">29</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-1 relative">
+                    <div class="w-20 shrink-0 flex flex-col bg-background-dark/50 border-r border-border-dark">
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            08:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            09:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            10:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            11:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            12:00</div>
+                        <div
+                            class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600 border-t border-dashed border-border-dark/30">
+                            13:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            14:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            15:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            16:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            17:00</div>
+                        <div class="h-24 flex items-start justify-center pt-2 text-[10px] font-bold text-slate-600">
+                            18:00</div>
+                    </div>
+                    <div class="flex-1 grid grid-cols-7 relative">
+                        <div class="absolute inset-0 pointer-events-none">
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                            <div class="h-24 border-b border-border-dark/50"></div>
+                        </div>
+                        <div class="border-r border-border-dark/50 relative p-2">
+                            <div class="schedule-card absolute top-24 left-2 right-2 h-40 p-3 shadow-2xl z-10">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-[8px] font-bold text-primary uppercase tracking-widest">1-on-1
+                                        Coaching</span>
+                                    <div class="flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span class="text-[8px] font-bold text-red-500 uppercase">LIVE</span>
+                                    </div>
+                                </div>
+                                <h4 class="text-xs font-bold text-white mb-1">Arief Widjayanto</h4>
+                                <p class="text-[9px] text-slate-400">Siswa: Kevin Sanjaya</p>
+                                <div class="mt-3 flex gap-1">
+                                    <span
+                                        class="text-[8px] px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300">Audio
+                                        Prod</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-r border-border-dark/50 relative p-2">
+                            <div class="schedule-card absolute top-48 left-2 right-2 h-32 p-3 opacity-90">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-[8px] font-bold text-primary uppercase tracking-widest">Feedback
+                                        Session</span>
+                                </div>
+                                <h4 class="text-xs font-bold text-white mb-1">Sarah Amalia</h4>
+                                <p class="text-[9px] text-slate-400">Siswa: Putri Indah</p>
+                            </div>
+                        </div>
+                        <div class="border-r border-border-dark/50 relative p-2 bg-primary/5">
+                            <div
+                                class="schedule-card absolute top-12 left-2 right-2 h-48 p-3 shadow-[0_0_30px_rgba(245,208,32,0.15)] ring-1 ring-primary/30">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span
+                                        class="text-[8px] font-bold text-primary uppercase tracking-widest">Masterclass
+                                        Live</span>
+                                    <div class="flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span class="text-[8px] font-bold text-red-500 uppercase">LIVE</span>
+                                    </div>
+                                </div>
+                                <h4 class="text-xs font-bold text-white mb-1">Bambang Hartono</h4>
+                                <p class="text-[9px] text-slate-400">Siswa: Global Group (12)</p>
+                                <div class="mt-3">
+                                    <button
+                                        class="w-full py-1 text-[8px] font-bold bg-primary text-black rounded uppercase">Pantau
+                                        Sesi</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-r border-border-dark/50 relative p-2">
+                            <div class="schedule-card absolute top-[400px] left-2 right-2 h-32 p-3">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span
+                                        class="text-[8px] font-bold text-primary uppercase tracking-widest">Consultation</span>
+                                </div>
+                                <h4 class="text-xs font-bold text-white mb-1">Rina Kartika</h4>
+                                <p class="text-[9px] text-slate-400">Siswa: Denny Caknan</p>
+                            </div>
+                        </div>
+                        <div class="border-r border-border-dark/50 relative p-2">
+                            <div class="schedule-card absolute top-24 left-2 right-2 h-32 p-3">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-[8px] font-bold text-primary uppercase tracking-widest">Vocal
+                                        Review</span>
+                                </div>
+                                <h4 class="text-xs font-bold text-white mb-1">Sarah Amalia</h4>
+                                <p class="text-[9px] text-slate-400">Siswa: Lyodra G.</p>
+                            </div>
+                        </div>
+                        <div class="border-r border-border-dark/50 relative p-2 bg-white/[0.02]"></div>
+                        <div class="relative p-2 bg-white/[0.02]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer
+            class="h-10 border-t border-border-dark flex items-center justify-between px-8 bg-background-dark text-[9px] font-bold tracking-widest text-slate-600 shrink-0">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    <span>SERVER_STATUS: OPTIMAL</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <span>SYNC_TIME: REALTIME</span>
+                </div>
+                <span>UTC+7: <span id="clock">14:15:22</span></span>
+            </div>
+            <div class="uppercase tracking-[0.2em]">OZCADEMY_SCHEDULER_V2.1.0</div>
+        </footer>
+    </main>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' +
+                now.getMinutes().toString().padStart(2, '0') + ':' +
+                now.getSeconds().toString().padStart(2, '0');
+            const clockEl = document.getElementById('clock');
+            if (clockEl) clockEl.textContent = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+
+</html>

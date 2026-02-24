@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>OZCADEMY Main Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F5D020",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#050505",
+                        "surface-dark": "#121212",
+                        "border-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(245, 208, 32, 0.15);
+        }
+
+        .line-chart-gradient {
+            background: linear-gradient(180deg, rgba(245, 208, 32, 0.1) 0%, rgba(245, 208, 32, 0) 100%);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-300 antialiased overflow-hidden h-screen flex">
+    <aside class="w-64 border-r border-border-dark flex flex-col bg-background-dark shrink-0">
+        <div class="p-8 pb-10">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-1.5 rounded">
+                    <span class="material-icons-round text-black text-2xl">bolt</span>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-lg tracking-tighter text-white leading-none">OZCADEMY</h1>
+                    <p class="text-[10px] font-medium tracking-[0.2em] text-primary/70 mt-1 uppercase">Admin_Hub</p>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 px-4 space-y-1 overflow-y-auto custom-scrollbar">
+            <a class="flex items-center gap-3 px-4 py-3 rounded bg-primary text-black font-semibold transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">grid_view</span>
+                <span class="text-xs uppercase tracking-widest">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">group</span>
+                <span class="text-xs uppercase tracking-widest">Pengguna &amp; Mentor</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">corporate_fare</span>
+                <span class="text-xs uppercase tracking-widest">Mitra B2B</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">movie</span>
+                <span class="text-xs uppercase tracking-widest">Content Studio</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">map</span>
+                <span class="text-xs uppercase tracking-widest">Journey Builder</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">event_note</span>
+                <span class="text-xs uppercase tracking-widest">Master Schedule</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">account_balance_wallet</span>
+                <span class="text-xs uppercase tracking-widest">Royalty &amp; Payouts</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">description</span>
+                <span class="text-xs uppercase tracking-widest">Laporan Keuangan</span>
+            </a>
+        </nav>
+        <div class="p-6 border-t border-border-dark">
+            <div class="p-4 rounded border border-border-dark bg-surface-dark/50">
+                <p class="text-[10px] font-bold tracking-widest text-primary/60 mb-1">NODE_ACCESS: AUTHORIZED</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                    <p class="text-[10px] text-slate-500 font-medium">SYSTEM_STABLE</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <header
+            class="h-24 border-b border-border-dark flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md sticky top-0 z-10">
+            <div class="space-y-1">
+                <h2 class="text-3xl font-display font-bold tracking-tight text-white uppercase ">Analytics
+                    Dashboard</h2>
+                <div class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-slate-500">
+                    <span class="uppercase">DIRECTORY</span>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                    <span class="uppercase">ADMINISTRATIVE</span>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                    <span class="uppercase text-primary">ANALYTICS</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="px-5 py-2.5 bg-primary text-black font-bold flex items-center gap-2 rounded transition-transform active:scale-95 hover:brightness-110">
+                    <span class="material-icons-round text-lg">download</span>
+                    <span class="text-[11px] uppercase tracking-widest">Generate Report</span>
+                </button>
+                <div class="w-10 h-10 rounded border border-border-dark overflow-hidden bg-surface-dark">
+                    <img alt="Admin Profile"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-5BTNZZGHiVDLgCHYbN_p4holy6jv7i-RdcCbm0fs-v3U7T8GuyL6zRWrXRGgdpwgKtYm9ziAZ2-jlhIPRGEhM7C6e0M--JmGnTI9Mr3OxCW3jRoSon5wSZHM0MhFASTjybj9ogUgNkPHXdJOmanTmRov3UN3VbLQx0DtHhqs7vBnJxKnRWw30HQfvdDA14XWIL-WdNMcvfYeYdExEXaWvYixEWgpzq9Tgqa0Tpe4d9r9UrfJ9RMBGYxuxaal-kr2iQru2yAnQoo" />
+                </div>
+            </div>
+        </header>
+        <div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="p-6 rounded border border-border-dark bg-surface-dark/40 relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <span class="material-icons-round text-8xl">payments</span>
+                    </div>
+                    <p class="text-[11px] font-bold tracking-widest text-slate-500 uppercase mb-4">Total Pendapatan (Rp)
+                    </p>
+                    <div class="flex items-end gap-2">
+                        <h3 class="text-2xl font-display font-bold text-white">4.285.500.000</h3>
+                        <span class="text-green-500 text-[10px] font-bold pb-1">+12.4%</span>
+                    </div>
+                </div>
+                <div class="p-6 rounded border border-border-dark bg-surface-dark/40 relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <span class="material-icons-round text-8xl">group_add</span>
+                    </div>
+                    <p class="text-[11px] font-bold tracking-widest text-slate-500 uppercase mb-4">Pelanggan Aktif B2C
+                    </p>
+                    <div class="flex items-end gap-2">
+                        <h3 class="text-2xl font-display font-bold text-white">84.221</h3>
+                        <span class="text-green-500 text-[10px] font-bold pb-1">+8.1%</span>
+                    </div>
+                </div>
+                <div class="p-6 rounded border border-border-dark bg-surface-dark/40 relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <span class="material-icons-round text-8xl">business</span>
+                    </div>
+                    <p class="text-[11px] font-bold tracking-widest text-slate-500 uppercase mb-4">Kampus B2B Aktif</p>
+                    <div class="flex items-end gap-2">
+                        <h3 class="text-2xl font-display font-bold text-white">128</h3>
+                        <span class="text-primary text-[10px] font-bold pb-1">STABLE</span>
+                    </div>
+                </div>
+                <div class="p-6 rounded border border-border-dark bg-surface-dark/40 relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <span class="material-icons-round text-8xl">savings</span>
+                    </div>
+                    <p class="text-[11px] font-bold tracking-widest text-slate-500 uppercase mb-4">Total Royalty Pool
+                    </p>
+                    <div class="flex items-end gap-2">
+                        <h3 class="text-2xl font-display font-bold text-white">850.400.000</h3>
+                        <span class="text-primary text-[10px] font-bold pb-1">MONTHLY</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                <div
+                    class="lg:col-span-2 p-8 rounded border border-border-dark bg-surface-dark/40 flex flex-col h-[400px]">
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <h4 class="text-sm font-bold tracking-widest text-white uppercase">Pertumbuhan
+                                Pendapatan Bulanan</h4>
+                            <p class="text-[10px] text-slate-500 mt-1 uppercase font-medium">Data source: Finance API /
+                                Verified transactions</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="px-2 py-1 rounded border border-border-dark text-[10px] font-bold text-slate-400">1H</span>
+                            <span class="px-2 py-1 rounded bg-primary text-[10px] font-bold text-black">1Y</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 relative">
+                        <div class="absolute inset-0 flex items-end gap-4 pb-4">
+                            <div
+                                class="flex-1 bg-white/5 h-[40%] rounded-sm relative group cursor-pointer hover:bg-primary/20 transition-all">
+                                <div
+                                    class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100">
+                                    Jan</div>
+                            </div>
+                            <div
+                                class="flex-1 bg-white/5 h-[55%] rounded-sm relative group cursor-pointer hover:bg-primary/20 transition-all">
+                                <div
+                                    class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100">
+                                    Feb</div>
+                            </div>
+                            <div
+                                class="flex-1 bg-white/5 h-[45%] rounded-sm relative group cursor-pointer hover:bg-primary/20 transition-all">
+                                <div
+                                    class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100">
+                                    Mar</div>
+                            </div>
+                            <div
+                                class="flex-1 bg-white/5 h-[70%] rounded-sm relative group cursor-pointer hover:bg-primary/20 transition-all">
+                                <div
+                                    class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100">
+                                    Apr</div>
+                            </div>
+                            <div
+                                class="flex-1 bg-white/5 h-[85%] rounded-sm relative group cursor-pointer hover:bg-primary/20 transition-all">
+                                <div
+                                    class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100">
+                                    May</div>
+                            </div>
+                            <div
+                                class="flex-1 bg-primary/40 h-[95%] rounded-sm relative group cursor-pointer hover:bg-primary transition-all shadow-[0_0_20px_rgba(245,208,32,0.2)]">
+                                <div
+                                    class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary">
+                                    Jun</div>
+                            </div>
+                            <div
+                                class="flex-1 bg-white/5 h-[60%] rounded-sm relative group cursor-pointer hover:bg-primary/20 transition-all">
+                                <div
+                                    class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100">
+                                    Jul</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 flex flex-col justify-between pointer-events-none border-b border-border-dark">
+                            <div class="w-full border-t border-white/5 border-dashed h-0"></div>
+                            <div class="w-full border-t border-white/5 border-dashed h-0"></div>
+                            <div class="w-full border-t border-white/5 border-dashed h-0"></div>
+                            <div class="w-full border-t border-white/5 border-dashed h-0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 rounded border border-border-dark bg-surface-dark/40 flex flex-col">
+                    <h4 class="text-sm font-bold tracking-widest text-white uppercase mb-6">Distribusi Konten
+                    </h4>
+                    <div class="flex-1 flex flex-col justify-center items-center">
+                        <div
+                            class="w-48 h-48 rounded-full border-[16px] border-surface-dark border-t-primary border-l-primary relative flex items-center justify-center">
+                            <div class="text-center">
+                                <p class="text-2xl font-display font-bold text-white">72%</p>
+                                <p class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Video High Res
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-8 grid grid-cols-2 gap-x-8 gap-y-2 w-full">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-primary"></div>
+                                <span class="text-[10px] font-bold tracking-widest uppercase">Video Production</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                                <span class="text-[10px] font-bold tracking-widest uppercase">Audio Stems</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-slate-400"></div>
+                                <span class="text-[10px] font-bold tracking-widest uppercase">Live Streams</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                                <span class="text-[10px] font-bold tracking-widest uppercase">E-Books</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 rounded border border-border-dark bg-surface-dark/40">
+                <div class="flex items-center justify-between mb-8">
+                    <h4 class="text-sm font-bold tracking-widest text-white uppercase">Transaksi Terbaru</h4>
+                    <button
+                        class="text-[10px] font-bold tracking-widest text-primary uppercase border-b border-primary/20 hover:border-primary transition-all">Lihat
+                        Semua</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-border-dark">
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">Nama
+                                    Pengguna</th>
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">Item
+                                    Pembelian</th>
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">Jumlah
+                                </th>
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">Metode
+                                </th>
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-border-dark">
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <img alt="Andi Arifin" class="w-8 h-8 rounded border border-border-dark"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwUpkWKBrNlsoyb_tO0Drc5zX2sCdsdOiDvfuuxg4ZQDzrWq1h6CZ4H7iDXcGgXtPePrnYdSp7jlDeWXqcTAHCwDboVKI21RaVdmJUE5jf5goUtNe2rhygWCWxd0vi7qnoqKgQINj4xYJxMwk4YClkAbwVH9Cpj5qC3TS2NMZ3Lu72LOjvOXOfkceFIa9LYDAoOlhJSkYCKCZX8wXQCwkRSoF0a3KXELbkIVMdnL8RaCDqGoeYvMFxIZJiOeNRam7Mu0p3n4joy1w" />
+                                        <div>
+                                            <p class="text-xs font-bold text-white">ANDI ARIFIN</p>
+                                            <p class="text-[9px] text-slate-500 uppercase">UID_MNT_7721</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-xs font-medium text-slate-400">Audio Engineering Masterclass</td>
+                                <td class="py-4 text-xs font-bold text-white">Rp 1.250.000</td>
+                                <td class="py-4 text-[10px] font-bold text-slate-500">VA MANDIRI</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-2 py-0.5 rounded-full border border-primary/30 text-primary text-[9px] font-black tracking-widest uppercase bg-primary/5">Verified</span>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <img alt="Siska Pratama" class="w-8 h-8 rounded border border-border-dark"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC22Kg6-c589JlChUEUY5y-3NGuiZtY0bfJhAbPGnUhKHDgAMSxQvjcMbe8VdHp05uQTtUV0lt6aeV1dJ3_EmdiFKIZ9H-_VQiuPwEOIfwNWNw7t0ox5qBidF4ve3Uidbqdu9QAIIo_UbPlzIa549zwOjj-k1FaSIOUdmj_LH375ZMN2S_uvpP7CcsEx-BNw6pbXSQPqFgPKMHImDRC-MM1lalVP-IMn7Vj-E8v8Fg8CkNanF59TFin5ufRxuVEOpMxEpcD6b3DkOM" />
+                                        <div>
+                                            <p class="text-xs font-bold text-white">SISKA PRATAMA</p>
+                                            <p class="text-[9px] text-slate-500 uppercase">UID_MNT_8812</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-xs font-medium text-slate-400">Music Theory Pro - Level 1</td>
+                                <td class="py-4 text-xs font-bold text-white">Rp 450.000</td>
+                                <td class="py-4 text-[10px] font-bold text-slate-500">QRIS</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-2 py-0.5 rounded-full border border-primary/30 text-primary text-[9px] font-black tracking-widest uppercase bg-primary/5">Verified</span>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <img alt="Budi Santoso" class="w-8 h-8 rounded border border-border-dark"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdTFKjWCkwgJ73WHpox3TDfP1N6SYkjdH6Eu5z5ZCP0E2nKUuQH7mM3MzQ97-payW0pgiLSDC3f_AzOdIFFp6DARj5XR7Jun0ZoTCDtWw6fcW2QM5ccWaqmPcDTedkJO0cOGz2dkMmzcQGwzKZvNslIN196epApUWy4FCqyUCsXOzHjajrrgNmw6VlHIgvM4nPLBjattokex2sipUbrqyMBRu6NW7UdNo8DB8HK5TMLf-9OMqD7nnIaKb8IkHNNVtd8vM-_JRoWMw" />
+                                        <div>
+                                            <p class="text-xs font-bold text-white">BUDI SANTOSO</p>
+                                            <p class="text-[9px] text-slate-500 uppercase">UID_MNT_3390</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-xs font-medium text-slate-400">Vocal Production Secrets</td>
+                                <td class="py-4 text-xs font-bold text-white">Rp 890.000</td>
+                                <td class="py-4 text-[10px] font-bold text-slate-500">CREDIT CARD</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-2 py-0.5 rounded-full border border-primary/30 text-primary text-[9px] font-black tracking-widest uppercase bg-primary/5">Verified</span>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <img alt="Lestari Wahyuni" class="w-8 h-8 rounded border border-border-dark"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMSmy-P1u4OFpwIJLp_R0lftqXBZJbHW47J-Yl98ikKoswxcjAuBCZrwt_-xDU9e8wUpbGBPxYP50jHwVsm5TxgaCObCeBdVjyzJ0FN0ZITmidCAuWbU_3Fl1lhNqxBwp-iP4hvs69J2H0RdGKseNqw_pkvPYzVWm8FSXNRMLysVFj7nhixJC6Ph59SYIZVlybW_mjIZJxF-EHh1GCge54Kn6q5efx-hKQ5xPOp2ARUTBSb1QUufLWiwp64bepKBPTEYn-BIekiKo" />
+                                        <div>
+                                            <p class="text-xs font-bold text-white">LESTARI WAHYUNI</p>
+                                            <p class="text-[9px] text-slate-500 uppercase">UID_MNT_4410</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-xs font-medium text-slate-400">Sound Design for Cinema</td>
+                                <td class="py-4 text-xs font-bold text-white">Rp 2.100.000</td>
+                                <td class="py-4 text-[10px] font-bold text-slate-500">BANK TRANSFER</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-2 py-0.5 rounded-full border border-primary/30 text-primary text-[9px] font-black tracking-widest uppercase bg-primary/5">Verified</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer
+            class="h-10 border-t border-border-dark flex items-center justify-between px-8 bg-background-dark text-[9px] font-bold tracking-widest text-slate-600">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    <span>SERVER_NODE: SG_01</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <span>NETWORK: SECURE</span>
+                </div>
+                <span>UTC+7: <span id="clock">14:15:22</span></span>
+            </div>
+            <div class="uppercase">OZCADEMY_ADMIN_V3.0.1</div>
+        </footer>
+    </main>
+    <script>
+        // Simple Clock script
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' +
+                now.getMinutes().toString().padStart(2, '0') + ':' +
+                now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+
+</html>

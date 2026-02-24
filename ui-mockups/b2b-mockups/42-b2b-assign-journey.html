@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tugaskan Jalur Belajar | OZCADEMY</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FFD700",
+                        "background-dark": "#000000",
+                        "surface-dark": "#0D0D0D",
+                        "border-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        .grid-bg {
+            background-image: radial-gradient(circle at 1px 1px, #1A1A1A 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .yellow-glow {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+        .yellow-glow-strong {
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+        .card-selected {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.05);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+        }
+        .sticky-action-bar {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid #1A1A1A;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A1A1A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-sans text-slate-100 min-h-screen overflow-hidden">
+    <div class="flex h-screen">
+        <aside class="w-72 bg-black border-r border-border-dark flex flex-col z-20">
+            <div class="p-8 flex items-center space-x-3">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center yellow-glow">
+                    <span class="material-symbols-outlined text-black font-bold">school</span>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-xl tracking-tighter leading-none text-white uppercase">
+                        OZCADEMY</h1>
+                    <p class="text-[10px] font-bold text-slate-500 tracking-[0.2em] mt-1 uppercase">Institution_Hub</p>
+                </div>
+            </div>
+            <nav class="flex-1 px-6 mt-4 space-y-2">
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">dashboard</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Dashboard</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">workspace_premium</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Lisensi
+                        Kursi</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg bg-primary yellow-glow-strong group"
+                    href="#">
+                    <span class="material-symbols-outlined text-black text-xl">route</span>
+                    <span class="font-bold text-[11px] tracking-widest text-black uppercase">Tugaskan Jalur</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">monitoring</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Progres
+                        Mahasiswa</span>
+                </a>
+            </nav>
+            <div class="p-6 mt-auto">
+                <div class="p-4 rounded-xl border border-border-dark bg-surface-dark/50">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">System
+                            Active</span>
+                    </div>
+                    <p class="text-[11px] font-mono text-slate-500 tracking-tight">B2B_PROTOCOL: AUTHORIZED</p>
+                    <p class="text-[11px] font-mono text-slate-500 tracking-tight">HUB_NODE_01</p>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 flex flex-col overflow-hidden grid-bg relative bg-background-dark">
+            <header class="px-10 pt-10 pb-6 border-b border-border-dark">
+                <h2 class="font-display text-3xl font-bold tracking-tight text-white uppercase">Tugaskan Jalur Belajar
+                </h2>
+                <p class="text-[10px] text-slate-500 font-bold mt-1 tracking-widest uppercase">Pilih jalur belajar dan
+                    delegasikan kepada mahasiswa terpilih</p>
+            </header>
+            <div class="flex-1 flex overflow-hidden">
+                <section class="w-[400px] border-r border-border-dark flex flex-col bg-black/40 backdrop-blur-sm">
+                    <div class="p-6 border-b border-border-dark flex items-center justify-between">
+                        <h3 class="text-[11px] font-black text-slate-400 uppercase tracking-widest">Pilih Jalur Belajar
+                        </h3>
+                        <span class="text-[10px] font-bold text-primary">04 Tersedia</span>
+                    </div>
+                    <div class="flex-1 overflow-y-auto p-4 space-y-3">
+                        <label class="block cursor-pointer group">
+                            <input checked="" class="hidden peer" name="track" type="radio" />
+                            <div
+                                class="p-4 rounded-xl border border-border-dark bg-surface-dark transition-all peer-checked:card-selected group-hover:bg-white/[0.02]">
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-primary">mic_external_on</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-sm font-bold text-white mb-1">The Professional Podcaster
+                                            </h4>
+                                            <div
+                                                class="w-4 h-4 rounded-full border-2 border-slate-700 flex items-center justify-center peer-checked:border-primary">
+                                                <div
+                                                    class="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Kuasai teknik produksi
+                                            audio, editing, dan storytelling digital secara profesional.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="block cursor-pointer group">
+                            <input class="hidden peer" name="track" type="radio" />
+                            <div
+                                class="p-4 rounded-xl border border-border-dark bg-surface-dark transition-all peer-checked:card-selected group-hover:bg-white/[0.02]">
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-slate-400">record_voice_over</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-sm font-bold text-white mb-1">Voice Acting 101</h4>
+                                            <div class="w-4 h-4 rounded-full border-2 border-slate-700"></div>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Fondasi teknik olah vokal,
+                                            intonasi, dan karakterisasi suara untuk media.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="block cursor-pointer group">
+                            <input class="hidden peer" name="track" type="radio" />
+                            <div
+                                class="p-4 rounded-xl border border-border-dark bg-surface-dark transition-all peer-checked:card-selected group-hover:bg-white/[0.02]">
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+                                        <span
+                                            class="material-symbols-outlined text-slate-400">broadcast_on_personal</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-sm font-bold text-white mb-1">Radio Program Directing</h4>
+                                            <div class="w-4 h-4 rounded-full border-2 border-slate-700"></div>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Strategi pemrograman
+                                            siaran, manajemen konten, dan analisis audiens.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="block cursor-pointer group">
+                            <input class="hidden peer" name="track" type="radio" />
+                            <div
+                                class="p-4 rounded-xl border border-border-dark bg-surface-dark transition-all peer-checked:card-selected group-hover:bg-white/[0.02]">
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-slate-400">equalizer</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-sm font-bold text-white mb-1">Audio Engineering</h4>
+                                            <div class="w-4 h-4 rounded-full border-2 border-slate-700"></div>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Teknik mixing, mastering,
+                                            dan konfigurasi perangkat keras siaran profesional.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+                <section class="flex-1 flex flex-col bg-background-dark">
+                    <div class="p-6 border-b border-border-dark flex items-center justify-between">
+                        <h3 class="text-[11px] font-black text-slate-400 uppercase tracking-widest">Pilih Mahasiswa</h3>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+                            <input
+                                class="bg-surface-dark border-border-dark rounded-lg pl-9 pr-4 py-1.5 text-xs text-slate-300 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all w-64"
+                                placeholder="Cari Nama atau NIM..." type="text" />
+                        </div>
+                    </div>
+                    <div class="flex-1 overflow-y-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="sticky top-0 z-10">
+                                <tr class="bg-surface-dark border-b border-border-dark">
+                                    <th class="px-8 py-4 w-12">
+                                        <div class="flex items-center">
+                                            <input
+                                                class="w-4 h-4 rounded border-slate-700 bg-black text-primary focus:ring-primary focus:ring-offset-black"
+                                                type="checkbox" />
+                                        </div>
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                                        Nama Mahasiswa</th>
+                                    <th
+                                        class="px-6 py-4 text-[10px] font-black text-slate-500 uppercase tracking-widest text-center">
+                                        NIM / ID</th>
+                                    <th
+                                        class="px-6 py-4 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                                        Jalur Saat Ini</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-border-dark/50">
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-8 py-4">
+                                        <input checked=""
+                                            class="w-4 h-4 rounded border-slate-700 bg-black text-primary focus:ring-primary focus:ring-offset-black"
+                                            type="checkbox" />
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img alt="Bintang Ramadhan"
+                                                class="w-8 h-8 rounded-full border border-border-dark object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAst-t-DsplkvaiwfAoiH6A8H1RABjaTChZQSCPQ-mQ8xMvL5xY1MRBJ5mkezhNGViukIF_LBXsozhXNXeWUB4TAI2roa-pATzFF0EB0vzZj04HIiKnAF-WxL4oD83Dj_1yEY3xhizp-ZauVTxVRKxCCQlBKyBmWkACndKAZTT2QGeNWbmed0pUGc3vNqdyk_Yymv7_EvX9IlPUKVdyKo_wpU2yRnMmGC1BtavqNMGjaAhK-lOT5XsO14CajWWTaOizZwuL2kbaRx8" />
+                                            <span class="text-sm font-bold text-white">Bintang Ramadhan</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span
+                                            class="text-[10px] text-slate-500 font-mono tracking-wider">20210811022</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2 py-1 bg-slate-900 rounded">Belum
+                                            Ditugaskan</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-8 py-4">
+                                        <input checked=""
+                                            class="w-4 h-4 rounded border-slate-700 bg-black text-primary focus:ring-primary focus:ring-offset-black"
+                                            type="checkbox" />
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img alt="Siti Taqiyya"
+                                                class="w-8 h-8 rounded-full border border-border-dark object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkUHKL-2c_Ex_i_qXVyHHOkH2QUanxKGvnjPeJpDAuPN0UIkpnauy7HgluqDVC982HqM9otZ-IfW6WD2VBLNBU3vyj1Hkj0uIJzcQPALwcNNrJOw6gUq6e4m7FG_LWCHiVTNyzqV8tZjEdkwvB0gWIGqR2QGjk5oDtyLOWqf4FjG48Yuq8hxyjFunndO74pIuDGLRvrvekrXePdLst9b4KMkjkRo1jjdozlMHPpd5AtQ14LviE0CUnJSVFU8cMPUB6zHdb6F0Prvs" />
+                                            <span class="text-sm font-bold text-white">Siti Taqiyya</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span
+                                            class="text-[10px] text-slate-500 font-mono tracking-wider">20210811045</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/10 rounded">Podcast
+                                            Mastery</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-8 py-4">
+                                        <input checked=""
+                                            class="w-4 h-4 rounded border-slate-700 bg-black text-primary focus:ring-primary focus:ring-offset-black"
+                                            type="checkbox" />
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img alt="Nabila Dwi"
+                                                class="w-8 h-8 rounded-full border border-border-dark object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUV3tjXjjKc9P2NncWLh-GUXcSt7u728UMUkNlQ8mnwio2ydQEBWLHH7-DyxZswxrH5cMQ1EQpln1ToqwTYHy8690WLzpPjHJPpWc0c6XGrR1cXVMyT3eWRYRHmFOBZj9mb4_o0N3fJ0v3EUUfWclm-mJHRBjsFH1ADO3zX7jD7W78s9OeLnpnsinRuQx3MB9u6lHPIt8Y2MHehZh83ATv-V5SvPQe2OI65eDLM2i7G83Q_2H-9M_bS51BADBMIJbD2Mks9az-q-w" />
+                                            <span class="text-sm font-bold text-white">Nabila Dwi</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span
+                                            class="text-[10px] text-slate-500 font-mono tracking-wider">20210811012</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2 py-1 bg-slate-900 rounded">Belum
+                                            Ditugaskan</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-8 py-4">
+                                        <input checked=""
+                                            class="w-4 h-4 rounded border-slate-700 bg-black text-primary focus:ring-primary focus:ring-offset-black"
+                                            type="checkbox" />
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img alt="Rizky Pratama"
+                                                class="w-8 h-8 rounded-full border border-border-dark object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeW61lHCLw6E56AXMyl-I4mKghNSndCulzsN6d8zRRLlLPiofpnciSgmf_NTMqNjYJ0S5JvF1zpsQsk-SQfLgTc-et7TUfrPI0uWiKxWdc5pLqFGJnsDanPu_4tpE_NH3ISRhPgOqMZySXli9b8pH-FVuxHvmslLbve8h5D3tY1jYYQF-uD8nP81ZuPY-9yDsxpBBYwj6gueTks-uI8lTyGzQQQzrM3nt1zge5Q6a533EA-CKO76wKpCcf9gbnohA8_oLXhoaAzsg" />
+                                            <span class="text-sm font-bold text-white">Rizky Pratama</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span
+                                            class="text-[10px] text-slate-500 font-mono tracking-wider">20210811001</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-1 bg-primary/10 rounded">Voice
+                                            Acting 101</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-8 py-4"><input
+                                            class="w-4 h-4 rounded border-slate-700 bg-black text-primary focus:ring-primary focus:ring-offset-black"
+                                            type="checkbox" /></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-slate-800 border border-border-dark flex items-center justify-center text-[10px] font-bold">
+                                                AR</div><span class="text-sm font-bold text-white">Aditya Rayyan</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center"><span
+                                            class="text-[10px] text-slate-500 font-mono">20210811055</span></td>
+                                    <td class="px-6 py-4"><span
+                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2 py-1 bg-slate-900 rounded">Belum
+                                            Ditugaskan</span></td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-8 py-4"><input
+                                            class="w-4 h-4 rounded border-slate-700 bg-black text-primary focus:ring-primary focus:ring-offset-black"
+                                            type="checkbox" /></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-slate-800 border border-border-dark flex items-center justify-center text-[10px] font-bold">
+                                                MK</div><span class="text-sm font-bold text-white">Maya Kusuma</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center"><span
+                                            class="text-[10px] text-slate-500 font-mono">20210811060</span></td>
+                                    <td class="px-6 py-4"><span
+                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2 py-1 bg-slate-900 rounded">Belum
+                                            Ditugaskan</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <div class="sticky-action-bar px-10 py-6 flex items-center justify-between z-30">
+                <div class="flex flex-col">
+                    <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Ringkasan
+                        Penugasan</span>
+                    <div class="flex items-center space-x-4 mt-1">
+                        <p class="text-sm font-bold text-white">Terpilih: <span class="text-primary">12 Mahasiswa</span>
+                        </p>
+                        <div class="w-px h-4 bg-border-dark"></div>
+                        <p class="text-sm font-bold text-white italic">Target: The Professional Podcaster</p>
+                    </div>
+                </div>
+                <button
+                    class="bg-primary text-black font-black text-xs uppercase tracking-widest px-10 py-4 rounded-xl yellow-glow-strong hover:scale-105 transition-transform active:scale-95 flex items-center space-x-3">
+                    <span>Tugaskan Journey ke Terpilih</span>
+                    <span class="material-symbols-outlined text-[18px]">send</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

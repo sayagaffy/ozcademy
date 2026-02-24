@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>OZCADEMY B2B Partner Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F5D020",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#050505",
+                        "surface-dark": "#121212",
+                        "border-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(245, 208, 32, 0.15);
+        }
+
+        .line-chart-gradient {
+            background: linear-gradient(180deg, rgba(245, 208, 32, 0.1) 0%, rgba(245, 208, 32, 0) 100%);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-300 antialiased overflow-hidden h-screen flex">
+    <aside class="w-64 border-r border-border-dark flex flex-col bg-background-dark shrink-0">
+        <div class="p-8 pb-10">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-1.5 rounded">
+                    <span class="material-symbols-outlined text-black text-2xl font-bold">bolt</span>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-lg tracking-tighter text-white leading-none">OZCADEMY</h1>
+                    <p class="text-[10px] font-medium tracking-[0.2em] text-primary/70 mt-1 uppercase">Admin_Hub</p>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 px-4 space-y-1 overflow-y-auto custom-scrollbar">
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">grid_view</span>
+                <span class="text-xs uppercase tracking-widest">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">group</span>
+                <span class="text-xs uppercase tracking-widest">Pengguna &amp; Mentor</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded bg-primary text-black font-semibold transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">corporate_fare</span>
+                <span class="text-xs uppercase tracking-widest">Mitra B2B</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">movie</span>
+                <span class="text-xs uppercase tracking-widest">Content Studio</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">map</span>
+                <span class="text-xs uppercase tracking-widest">Journey Builder</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">event_note</span>
+                <span class="text-xs uppercase tracking-widest">Master Schedule</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">account_balance_wallet</span>
+                <span class="text-xs uppercase tracking-widest">Royalty &amp; Payouts</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">description</span>
+                <span class="text-xs uppercase tracking-widest">Laporan Keuangan</span>
+            </a>
+        </nav>
+        <div class="p-6 border-t border-border-dark">
+            <div class="p-4 rounded border border-border-dark bg-surface-dark/50">
+                <p class="text-[10px] font-bold tracking-widest text-primary/60 mb-1">NODE_ACCESS: AUTHORIZED</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <p class="text-[10px] text-slate-500 font-medium">SYSTEM_STABLE</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <header
+            class="h-28 border-b border-border-dark flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md sticky top-0 z-10 shrink-0">
+            <div class="space-y-1">
+                <h2 class="text-3xl font-display font-bold tracking-tight text-white uppercase ">Manajemen Mitra
+                    B2B</h2>
+                <div class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-slate-500">
+                    <span class="uppercase">Enterprise Relations &amp; Institutional Access Control</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="px-5 py-3 bg-primary text-black font-bold flex items-center gap-2 rounded transition-transform active:scale-95 hover:brightness-110 shadow-[0_0_20px_rgba(245,208,32,0.2)]">
+                    <span class="material-symbols-outlined font-bold text-xl">add_business</span>
+                    <span class="text-[11px] uppercase tracking-[0.15em]">Daftarkan Kampus/Mitra Baru</span>
+                </button>
+                <div class="w-10 h-10 rounded border border-border-dark overflow-hidden bg-surface-dark">
+                    <img alt="Admin Profile"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-5BTNZZGHiVDLgCHYbN_p4holy6jv7i-RdcCbm0fs-v3U7T8GuyL6zRWrXRGgdpwgKtYm9ziAZ2-jlhIPRGEhM7C6e0M--JmGnTI9Mr3OxCW3jRoSon5wSZHM0MhFASTjybj9ogUgNkPHXdJOmanTmRov3UN3VbLQx0DtHhqs7vBnJxKnRWw30HQfvdDA14XWIL-WdNMcvfYeYdExEXaWvYixEWgpzq9Tgqa0Tpe4d9r9UrfJ9RMBGYxuxaal-kr2iQru2yAnQoo" />
+                </div>
+            </div>
+        </header>
+        <div class="px-8 pt-8 flex gap-6 overflow-x-auto custom-scrollbar shrink-0">
+            <div
+                class="min-w-[280px] flex-1 p-6 rounded border border-border-dark bg-surface-dark/40 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="material-symbols-outlined text-5xl text-primary">handshake</span>
+                </div>
+                <p class="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-4">Total Mitra Aktif</p>
+                <div class="flex items-end justify-between">
+                    <h3 class="text-4xl font-display font-bold text-white">42</h3>
+                    <div
+                        class="text-[10px] font-bold text-green-500 flex items-center gap-1 bg-green-500/10 px-2 py-1 rounded">
+                        <span class="material-symbols-outlined text-xs">trending_up</span> +3 BLN INI
+                    </div>
+                </div>
+            </div>
+            <div
+                class="min-w-[280px] flex-1 p-6 rounded border border-border-dark bg-surface-dark/40 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="material-symbols-outlined text-5xl text-primary">confirmation_number</span>
+                </div>
+                <p class="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-4">Total Lisensi Kursi
+                    Terjual</p>
+                <div class="flex items-end justify-between">
+                    <h3 class="text-4xl font-display font-bold text-white">8,450</h3>
+                    <div
+                        class="text-[10px] font-bold text-primary flex items-center gap-1 bg-primary/10 px-2 py-1 rounded">
+                        <span class="material-symbols-outlined text-xs">analytics</span> 92% FILL RATE
+                    </div>
+                </div>
+            </div>
+            <div
+                class="min-w-[280px] flex-1 p-6 rounded border border-border-dark bg-surface-dark/40 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="material-symbols-outlined text-5xl text-red-500">event_busy</span>
+                </div>
+                <p class="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-4">Kontrak Mendekati
+                    Kedaluwarsa</p>
+                <div class="flex items-end justify-between">
+                    <h3 class="text-4xl font-display font-bold text-red-500">07</h3>
+                    <p class="text-[9px] font-bold text-slate-500 uppercase mb-1 tracking-tighter">&lt; 30 HARI LAGI</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+            <div class="flex flex-col md:flex-row gap-4 mb-8">
+                <div class="relative flex-1 group">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors">search</span>
+                    <input
+                        class="w-full bg-surface-dark/40 border-border-dark rounded py-3 pl-12 pr-4 text-xs font-medium text-slate-300 focus:ring-1 focus:ring-primary focus:border-primary transition-all placeholder:text-slate-600"
+                        placeholder="Cari Institusi, Kampus, atau PIC..." type="text" />
+                </div>
+                <button
+                    class="px-6 py-3 border border-border-dark bg-surface-dark/20 text-slate-400 hover:text-white hover:bg-surface-dark/40 rounded flex items-center gap-2 transition-all">
+                    <span class="material-symbols-outlined text-lg">filter_alt</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Filter Status</span>
+                </button>
+            </div>
+            <div class="p-8 rounded border border-border-dark bg-surface-dark/40">
+                <div class="flex items-center justify-between mb-8">
+                    <h4 class="text-sm font-bold tracking-widest text-white uppercase">Direktori Mitra Institusi
+                    </h4>
+                    <div
+                        class="flex items-center gap-2 text-[10px] text-slate-500 uppercase font-bold tracking-tighter">
+                        Sorted by: <span class="text-primary">Status Kontrak</span>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-border-dark">
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">Nama
+                                    Institusi / Kampus</th>
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">PIC /
+                                    Admin B2B</th>
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">Lisensi
+                                    Terpakai</th>
+                                <th class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase">Status
+                                    Kontrak</th>
+                                <th
+                                    class="pb-4 text-[10px] font-bold tracking-widest text-slate-500 uppercase text-right">
+                                    Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-border-dark">
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-5">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded border border-border-dark bg-white/5 flex items-center justify-center overflow-hidden">
+                                            <span
+                                                class="material-symbols-outlined text-primary/40">account_balance</span>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-xs font-bold text-white group-hover:text-primary transition-colors">
+                                                UNIVERSITAS INDONESIA RAYA</p>
+                                            <p class="text-[9px] text-slate-500 uppercase">ID_PARTNER_0012</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-300">RUDY KURNIAWAN</p>
+                                        <p class="text-[9px] text-slate-500">rudy.k@uir.ac.id</p>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <div class="w-48">
+                                        <div class="flex justify-between items-end mb-1.5">
+                                            <span class="text-[10px] font-bold text-white tracking-tighter">450 <span
+                                                    class="text-slate-500">/ 500</span></span>
+                                            <span class="text-[9px] font-bold text-primary">90%</span>
+                                        </div>
+                                        <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full border border-green-500/20 bg-green-500/10 text-green-500 text-[9px] font-bold uppercase tracking-widest">Aktif</span>
+                                </td>
+                                <td class="py-5 text-right">
+                                    <button
+                                        class="px-4 py-2 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-black transition-all text-[10px] font-bold uppercase tracking-widest rounded">
+                                        Kelola / Top-up
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-5">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded border border-border-dark bg-white/5 flex items-center justify-center overflow-hidden">
+                                            <span class="material-symbols-outlined text-primary/40">school</span>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-xs font-bold text-white group-hover:text-primary transition-colors">
+                                                ACADEMY BROADCAST ASIA</p>
+                                            <p class="text-[9px] text-slate-500 uppercase">ID_PARTNER_0088</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-300">SANTI WIJAYA</p>
+                                        <p class="text-[9px] text-slate-500">santi@aba.edu</p>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <div class="w-48">
+                                        <div class="flex justify-between items-end mb-1.5">
+                                            <span class="text-[10px] font-bold text-white tracking-tighter">120 <span
+                                                    class="text-slate-500">/ 1000</span></span>
+                                            <span class="text-[9px] font-bold text-primary">12%</span>
+                                        </div>
+                                        <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary" style="width: 12%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full border border-red-500/20 bg-red-500/10 text-red-500 text-[9px] font-bold uppercase tracking-widest">Kedaluwarsa</span>
+                                </td>
+                                <td class="py-5 text-right">
+                                    <button
+                                        class="px-4 py-2 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-black transition-all text-[10px] font-bold uppercase tracking-widest rounded">
+                                        Kelola / Top-up
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-5">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded border border-border-dark bg-white/5 flex items-center justify-center overflow-hidden">
+                                            <span class="material-symbols-outlined text-primary/40">apartment</span>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-xs font-bold text-white group-hover:text-primary transition-colors">
+                                                TELCOM GLOBAL CENTER</p>
+                                            <p class="text-[9px] text-slate-500 uppercase">ID_PARTNER_0231</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-300">AHMAD SUWANDI</p>
+                                        <p class="text-[9px] text-slate-500">suwandi@tgc.com</p>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <div class="w-48">
+                                        <div class="flex justify-between items-end mb-1.5">
+                                            <span class="text-[10px] font-bold text-white tracking-tighter">840 <span
+                                                    class="text-slate-500">/ 850</span></span>
+                                            <span class="text-[9px] font-bold text-orange-500">98%</span>
+                                        </div>
+                                        <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-orange-500" style="width: 98%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-5">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full border border-green-500/20 bg-green-500/10 text-green-500 text-[9px] font-bold uppercase tracking-widest">Aktif</span>
+                                </td>
+                                <td class="py-5 text-right">
+                                    <button
+                                        class="px-4 py-2 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-black transition-all text-[10px] font-bold uppercase tracking-widest rounded">
+                                        Kelola / Top-up
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-8 flex items-center justify-between">
+                    <p class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Menampilkan 3 dari 42
+                        Mitra Institusi</p>
+                    <div class="flex gap-2">
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded border border-border-dark text-slate-500 hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-sm">chevron_left</span>
+                        </button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded bg-primary text-black font-bold text-[10px]">1</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded border border-border-dark text-slate-500 hover:bg-white/5 transition-colors text-[10px] font-bold">2</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded border border-border-dark text-slate-500 hover:bg-white/5 transition-colors text-[10px] font-bold">3</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded border border-border-dark text-slate-500 hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-sm">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer
+            class="h-10 border-t border-border-dark flex items-center justify-between px-8 bg-background-dark text-[9px] font-bold tracking-widest text-slate-600 shrink-0">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span>SERVER_NODE: SG_01</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <span>NETWORK: SECURE_ENTERPRISE</span>
+                </div>
+            </div>
+            <div class="uppercase">OZCADEMY_B2B_PARTNER_V4.0.1</div>
+        </footer>
+    </main>
+
+</body>
+
+</html>

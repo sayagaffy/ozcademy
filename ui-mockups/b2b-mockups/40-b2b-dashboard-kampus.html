@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard Kampus OZCADEMY</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FFD700",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#000000",
+                        "surface-dark": "#0D0D0D",
+                        "border-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .grid-bg {
+            background-image: radial-gradient(circle at 1px 1px, #1A1A1A 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .yellow-glow {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .yellow-glow-strong {
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        input:focus {
+            outline: none !important;
+            border-color: #FFD700 !important;
+            box-shadow: 0 0 0 1px #FFD700 !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1A1A1A;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2A2A2A;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-sans text-slate-100 min-h-screen overflow-hidden">
+    <div class="flex h-screen">
+        <aside class="w-72 bg-black border-r border-border-dark flex flex-col z-20">
+            <div class="p-8 flex items-center space-x-3">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center yellow-glow">
+                    <span class="material-symbols-outlined text-black font-bold">school</span>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-xl tracking-tighter leading-none text-white">OZCADEMY</h1>
+                    <p class="text-[10px] font-bold text-slate-500 tracking-[0.2em] mt-1 uppercase">Institution_Hub</p>
+                </div>
+            </div>
+            <nav class="flex-1 px-6 mt-4 space-y-4">
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg bg-primary yellow-glow-strong group"
+                    href="#">
+                    <span class="material-symbols-outlined text-black text-xl">dashboard</span>
+                    <span class="font-bold text-[11px] tracking-widest text-black uppercase">Dashboard</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">workspace_premium</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Lisensi
+                        Kursi</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">route</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Tugaskan
+                        Jalur</span>
+                </a>
+                <a class="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl">monitoring</span>
+                    <span
+                        class="font-bold text-[11px] tracking-widest text-slate-400 group-hover:text-slate-200 transition-colors uppercase">Progres
+                        Mahasiswa</span>
+                </a>
+            </nav>
+            <div class="p-6 mt-auto">
+                <div class="p-4 rounded-xl border border-border-dark bg-surface-dark/50">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">System
+                            Active</span>
+                    </div>
+                    <p class="text-[11px] font-mono text-slate-500 tracking-tight">B2B_PROTOCOL: AUTHORIZED</p>
+                    <p class="text-[11px] font-mono text-slate-500 tracking-tight">HUB_NODE_01</p>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 overflow-y-auto grid-bg relative bg-background-dark">
+            <header
+                class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-md px-10 py-6 border-b border-border-dark flex justify-between items-center">
+                <div>
+                    <h2 class="font-display text-2xl font-bold tracking-tight text-white uppercase">Dashboard Kampus
+                    </h2>
+                    <p class="text-[10px] text-slate-500 font-bold mt-1 tracking-widest">SISTEM MONITORING INSTITUSI
+                        V.1.0.4</p>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="flex flex-col items-end">
+                        <p class="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Admin Institusi</p>
+                        <p class="text-sm font-bold text-white uppercase">ID: UI-88291</p>
+                    </div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-surface-dark border border-border-dark flex items-center justify-center overflow-hidden">
+                        <span class="material-symbols-outlined text-slate-400">shield_person</span>
+                    </div>
+                </div>
+            </header>
+            <div class="p-10 space-y-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-surface-dark p-6 rounded-2xl border border-border-dark relative overflow-hidden group">
+                        <div class="flex justify-between items-start relative z-10">
+                            <div>
+                                <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Total
+                                    Kursi Dialokasikan</h3>
+                                <div class="flex items-baseline space-x-2">
+                                    <span class="text-4xl font-bold text-white">450</span>
+                                    <span class="text-lg text-slate-500">/ 500</span>
+                                </div>
+                            </div>
+                            <div class="relative w-16 h-16">
+                                <svg class="w-full h-full transform -rotate-90">
+                                    <circle class="text-border-dark" cx="32" cy="32" fill="transparent" r="28"
+                                        stroke="currentColor" stroke-width="6"></circle>
+                                    <circle class="text-primary" cx="32" cy="32" fill="transparent" r="28"
+                                        stroke="currentColor" stroke-dasharray="175" stroke-dashoffset="17"
+                                        stroke-width="6"></circle>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="text-[10px] font-bold text-primary">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-surface-dark p-6 rounded-2xl border border-border-dark relative overflow-hidden">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Mahasiswa Aktif
+                            Pekan Ini</h3>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-4xl font-bold text-white">3,284</span>
+                            <div
+                                class="flex items-center px-2 py-0.5 rounded bg-green-500/10 text-green-500 text-[10px] font-bold">
+                                <span class="material-symbols-outlined text-[14px] mr-1">trending_up</span>
+                                +12%
+                            </div>
+                        </div>
+                        <div class="mt-6 flex -space-x-2 overflow-hidden">
+                            <div class="w-7 h-7 rounded-full border-2 border-surface-dark bg-slate-700"></div>
+                            <div class="w-7 h-7 rounded-full border-2 border-surface-dark bg-slate-600"></div>
+                            <div class="w-7 h-7 rounded-full border-2 border-surface-dark bg-slate-500"></div>
+                            <div
+                                class="w-7 h-7 rounded-full border-2 border-surface-dark bg-primary flex items-center justify-center text-[9px] text-black font-black uppercase">
+                                +2k</div>
+                        </div>
+                    </div>
+                    <div class="bg-surface-dark p-6 rounded-2xl border border-border-dark relative overflow-hidden">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Rata-rata
+                            Penyelesaian Jalur</h3>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-4xl font-bold text-white">78%</span>
+                        </div>
+                        <div class="mt-6 w-full h-2 bg-border-dark rounded-full overflow-hidden">
+                            <div class="h-full bg-primary yellow-glow w-[78%]"></div>
+                        </div>
+                        <div
+                            class="mt-4 flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+                            <span>Target: 85%</span>
+                            <span>Sisa: 7%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-surface-dark p-8 rounded-2xl border border-border-dark h-full">
+                            <div class="flex justify-between items-center mb-10">
+                                <div>
+                                    <h3 class="text-[11px] font-bold text-white uppercase tracking-wider">Keterlibatan
+                                        Mahasiswa</h3>
+                                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-tight">
+                                        Aktivitas belajar 30 hari terakhir</p>
+                                </div>
+                                <div class="relative">
+                                    <select
+                                        class="bg-background-dark border border-border-dark text-[10px] font-bold px-4 py-2 rounded-lg text-slate-400 cursor-pointer appearance-none pr-8 focus:ring-1 focus:ring-primary uppercase">
+                                        <option>Bulan Ini</option>
+                                        <option>Bulan Lalu</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[16px] pointer-events-none text-slate-500">expand_more</span>
+                                </div>
+                            </div>
+                            <div class="relative h-[280px] w-full mt-4 group">
+                                <div class="absolute inset-0 flex flex-col justify-between opacity-5">
+                                    <div class="border-b border-slate-400 w-full"></div>
+                                    <div class="border-b border-slate-400 w-full"></div>
+                                    <div class="border-b border-slate-400 w-full"></div>
+                                    <div class="border-b border-slate-400 w-full"></div>
+                                </div>
+                                <svg class="absolute bottom-0 w-full h-[80%] overflow-visible" viewBox="0 0 1000 200">
+                                    <defs>
+                                        <linearGradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:rgba(255, 215, 0, 0.4);stop-opacity:1">
+                                            </stop>
+                                            <stop offset="100%" style="stop-color:rgba(255, 215, 0, 0);stop-opacity:1">
+                                            </stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path class="drop-shadow-[0_0_12px_rgba(255,215,0,0.6)]"
+                                        d="M0,150 C100,145 200,175 300,110 C400,30 500,130 600,90 C700,50 800,165 900,125 L1000,145"
+                                        fill="none" stroke="#FFD700" stroke-linecap="round" stroke-width="4"></path>
+                                    <path
+                                        d="M0,150 C100,145 200,175 300,110 C400,30 500,130 600,90 C700,50 800,165 900,125 L1000,145 V200 H0 Z"
+                                        fill="url(#chartGradient)"></path>
+                                </svg>
+                                <div
+                                    class="absolute top-[35%] left-[58%] bg-primary text-black text-[10px] font-black px-2 py-1 rounded shadow-lg yellow-glow-strong transform -translate-x-1/2 z-20">
+                                    Peak Activity: 4.2k
+                                </div>
+                            </div>
+                            <div
+                                class="flex justify-between mt-8 px-2 text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">
+                                <span>Minggu 01</span>
+                                <span>Minggu 02</span>
+                                <span>Minggu 03</span>
+                                <span>Minggu 04</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-surface-dark p-8 rounded-2xl border border-border-dark h-full">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-[11px] font-bold text-white uppercase tracking-wider">Mahasiswa
+                                    Berprestasi</h3>
+                                <span class="material-symbols-outlined text-primary">emoji_events</span>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex items-center group cursor-pointer">
+                                    <div class="relative">
+                                        <div
+                                            class="w-11 h-11 rounded-full bg-slate-800 border-2 border-primary overflow-hidden yellow-glow">
+                                            <img alt="Bintang Ramadhan" class="w-full h-full object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAst-t-DsplkvaiwfAoiH6A8H1RABjaTChZQSCPQ-mQ8xMvL5xY1MRBJ5mkezhNGViukIF_LBXsozhXNXeWUB4TAI2roa-pATzFF0EB0vzZj04HIiKnAF-WxL4oD83Dj_1yEY3xhizp-ZauVTxVRKxCCQlBKyBmWkACndKAZTT2QGeNWbmed0pUGc3vNqdyk_Yymv7_EvX9IlPUKVdyKo_wpU2yRnMmGC1BtavqNMGjaAhK-lOT5XsO14CajWWTaOizZwuL2kbaRx8" />
+                                        </div>
+                                        <div
+                                            class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center text-[9px] font-black text-black">
+                                            1</div>
+                                    </div>
+                                    <div class="ml-4 flex-1 min-w-0">
+                                        <h4
+                                            class="text-[13px] font-bold text-white truncate group-hover:text-primary transition-colors">
+                                            Bintang Ramadhan</h4>
+                                        <p
+                                            class="text-[9px] text-slate-500 font-bold uppercase tracking-tight truncate">
+                                            Voice Acting Masterclass</p>
+                                    </div>
+                                    <div class="text-right ml-4">
+                                        <div class="w-20 h-1.5 bg-border-dark rounded-full overflow-hidden mb-1">
+                                            <div class="h-full bg-primary w-[98%]"></div>
+                                        </div>
+                                        <p class="text-[10px] font-bold text-slate-300 uppercase">98% Done</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center group cursor-pointer">
+                                    <div class="relative">
+                                        <div
+                                            class="w-11 h-11 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden">
+                                            <img alt="Siti Taqiyya" class="w-full h-full object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkUHKL-2c_Ex_i_qXVyHHOkH2QUanxKGvnjPeJpDAuPN0UIkpnauy7HgluqDVC982HqM9otZ-IfW6WD2VBLNBU3vyj1Hkj0uIJzcQPALwcNNrJOw6gUq6e4m7FG_LWCHiVTNyzqV8tZjEdkwvB0gWIGqR2QGjk5oDtyLOWqf4FjG48Yuq8hxyjFunndO74pIuDGLRvrvekrXePdLst9b4KMkjkRo1jjdozlMHPpd5AtQ14LviE0CUnJSVFU8cMPUB6zHdb6F0Prvs" />
+                                        </div>
+                                        <div
+                                            class="absolute -bottom-1 -right-1 w-4 h-4 bg-slate-400 rounded-full flex items-center justify-center text-[9px] font-black text-black">
+                                            2</div>
+                                    </div>
+                                    <div class="ml-4 flex-1 min-w-0">
+                                        <h4
+                                            class="text-[13px] font-bold text-white truncate group-hover:text-primary transition-colors">
+                                            Siti Taqiyya</h4>
+                                        <p
+                                            class="text-[9px] text-slate-500 font-bold uppercase tracking-tight truncate">
+                                            Professional Podcaster</p>
+                                    </div>
+                                    <div class="text-right ml-4">
+                                        <div class="w-20 h-1.5 bg-border-dark rounded-full overflow-hidden mb-1">
+                                            <div class="h-full bg-slate-400 w-[92%]"></div>
+                                        </div>
+                                        <p class="text-[10px] font-bold text-slate-400 uppercase">92% Done</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center group cursor-pointer">
+                                    <div class="relative">
+                                        <div
+                                            class="w-11 h-11 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden">
+                                            <img alt="Arya Wicaksana" class="w-full h-full object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3ZKJGBS2lHiC1V8JyEsxws4Wa9ckGB-C2qT4bmtIUpFSnbVQQq0hdOTQxXcDSMsoZAqyE0tw34GymagTVQ3lDguFSNA2HQ0Eq1cLiGJdAUqSihmIB76ESbEw-OkSIhIYmygLCAw5OJ5FH5tVo2SQMs7ENixwV2XkXAtBPMn0salwPbmWfBlH1a-m7hnVAfkj--3pZbfxR9JIiNI0zzL1G19xauA3UKtACjl9JSdT_-7E_ncDyuVlJQLDF0_JSnvVdfDsFGeb4-qs" />
+                                        </div>
+                                        <div
+                                            class="absolute -bottom-1 -right-1 w-4 h-4 bg-amber-700 rounded-full flex items-center justify-center text-[9px] font-black text-white">
+                                            3</div>
+                                    </div>
+                                    <div class="ml-4 flex-1 min-w-0">
+                                        <h4
+                                            class="text-[13px] font-bold text-white truncate group-hover:text-primary transition-colors">
+                                            Arya Wicaksana</h4>
+                                        <p
+                                            class="text-[9px] text-slate-500 font-bold uppercase tracking-tight truncate">
+                                            Streaming Masterclass</p>
+                                    </div>
+                                    <div class="text-right ml-4">
+                                        <div class="w-20 h-1.5 bg-border-dark rounded-full overflow-hidden mb-1">
+                                            <div class="h-full bg-slate-400 w-[85%]"></div>
+                                        </div>
+                                        <p class="text-[10px] font-bold text-slate-400 uppercase">85% Done</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center group cursor-pointer">
+                                    <div class="relative">
+                                        <div
+                                            class="w-11 h-11 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden">
+                                            <img alt="Nabila Dwi" class="w-full h-full object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUV3tjXjjKc9P2NncWLh-GUXcSt7u728UMUkNlQ8mnwio2ydQEBWLHH7-DyxZswxrH5cMQ1EQpln1ToqwTYHy8690WLzpPjHJPpWc0c6XGrR1cXVMyT3eWRYRHmFOBZj9mb4_o0N3fJ0v3EUUfWclm-mJHRBjsFH1ADO3zX7jD7W78s9OeLnpnsinRuQx3MB9u6lHPIt8Y2MHehZh83ATv-V5SvPQe2OI65eDLM2i7G83Q_2H-9M_bS51BADBMIJbD2Mks9az-q-w" />
+                                        </div>
+                                    </div>
+                                    <div class="ml-4 flex-1 min-w-0">
+                                        <h4
+                                            class="text-[13px] font-bold text-white truncate group-hover:text-primary transition-colors">
+                                            Nabila Dwi</h4>
+                                        <p
+                                            class="text-[9px] text-slate-500 font-bold uppercase tracking-tight truncate">
+                                            Professional Podcaster</p>
+                                    </div>
+                                    <div class="text-right ml-4">
+                                        <div class="w-20 h-1.5 bg-border-dark rounded-full overflow-hidden mb-1">
+                                            <div class="h-full bg-slate-400 w-[78%]"></div>
+                                        </div>
+                                        <p class="text-[10px] font-bold text-slate-400 uppercase">78% Done</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center group cursor-pointer">
+                                    <div class="relative">
+                                        <div
+                                            class="w-11 h-11 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden">
+                                            <img alt="Rizky Pratama" class="w-full h-full object-cover"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeW61lHCLw6E56AXMyl-I4mKghNSndCulzsN6d8zRRLlLPiofpnciSgmf_NTMqNjYJ0S5JvF1zpsQsk-SQfLgTc-et7TUfrPI0uWiKxWdc5pLqFGJnsDanPu_4tpE_NH3ISRhPgOqMZySXli9b8pH-FVuxHvmslLbve8h5D3tY1jYYQF-uD8nP81ZuPY-9yDsxpBBYwj6gueTks-uI8lTyGzQQQzrM3nt1zge5Q6a533EA-CKO76wKpCcf9gbnohA8_oLXhoaAzsg" />
+                                        </div>
+                                    </div>
+                                    <div class="ml-4 flex-1 min-w-0">
+                                        <h4
+                                            class="text-[13px] font-bold text-white truncate group-hover:text-primary transition-colors">
+                                            Rizky Pratama</h4>
+                                        <p
+                                            class="text-[9px] text-slate-500 font-bold uppercase tracking-tight truncate">
+                                            Voice Acting 101</p>
+                                    </div>
+                                    <div class="text-right ml-4">
+                                        <div class="w-20 h-1.5 bg-border-dark rounded-full overflow-hidden mb-1">
+                                            <div class="h-full bg-slate-400 w-[75%]"></div>
+                                        </div>
+                                        <p class="text-[10px] font-bold text-slate-400 uppercase">75% Done</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full mt-10 py-3 border border-border-dark rounded-xl text-[10px] font-black text-slate-500 uppercase tracking-widest hover:bg-white/5 hover:text-white transition-all">
+                                Lihat Semua Mahasiswa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <footer
+                    class="pb-10 pt-4 border-t border-border-dark flex flex-col md:flex-row justify-between items-center text-[9px] font-bold text-slate-500 uppercase tracking-[0.2em] gap-4">
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                            <span>Server: Optimal</span>
+                        </div>
+                        <span>Update: Baru Saja</span>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <a class="hover:text-primary transition-colors" href="#">Legal</a>
+                        <a class="hover:text-primary transition-colors" href="#">Support</a>
+                        <span class="text-slate-700">© 2024 OZCADEMY</span>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>OZCADEMY Royalty &amp; Payouts Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F5D020",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#050505",
+                        "surface-dark": "#121212",
+                        "border-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(245, 208, 32, 0.15);
+        }
+
+        .line-chart-gradient {
+            background: linear-gradient(180deg, rgba(245, 208, 32, 0.1) 0%, rgba(245, 208, 32, 0) 100%);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-300 antialiased overflow-hidden h-screen flex">
+    <aside class="w-64 border-r border-border-dark flex flex-col bg-background-dark shrink-0">
+        <div class="p-8 pb-10">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-1.5 rounded text-black">
+                    <span class="material-symbols-outlined block">payments</span>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-lg tracking-tighter text-white leading-none">OZCADEMY</h1>
+                    <p class="text-[10px] font-medium tracking-[0.2em] text-primary/70 mt-1 uppercase">Finance_Hub</p>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 px-4 space-y-1 overflow-y-auto custom-scrollbar">
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">grid_view</span>
+                <span class="text-xs uppercase tracking-widest">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">group</span>
+                <span class="text-xs uppercase tracking-widest">Pengguna &amp; Mentor</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">corporate_fare</span>
+                <span class="text-xs uppercase tracking-widest">Mitra B2B</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">movie</span>
+                <span class="text-xs uppercase tracking-widest">Content Studio</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">map</span>
+                <span class="text-xs uppercase tracking-widest">Journey Builder</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">event_note</span>
+                <span class="text-xs uppercase tracking-widest">Master Schedule</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded bg-primary text-black font-semibold transition-all group"
+                href="#">
+                <span class="material-icons-round text-xl">account_balance_wallet</span>
+                <span class="text-xs uppercase tracking-widest">Royalty &amp; Payouts</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">description</span>
+                <span class="text-xs uppercase tracking-widest">Laporan Keuangan</span>
+            </a>
+        </nav>
+        <div class="p-6 border-t border-border-dark">
+            <div class="p-4 rounded border border-border-dark bg-surface-dark/50">
+                <p class="text-[10px] font-bold tracking-widest text-primary/60 mb-1 uppercase">Node_Access: Finance</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <p class="text-[10px] text-slate-500 font-medium">ENCRYPTED_SESSION</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <header
+            class="h-24 border-b border-border-dark flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md sticky top-0 z-10">
+            <div class="space-y-1">
+                <h2 class="text-3xl font-display font-bold tracking-tight text-white uppercase ">Royalty &amp;
+                    Payouts</h2>
+                <div class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-slate-500">
+                    <span class="uppercase">ADMIN FINANCE</span>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <span class="uppercase text-primary">BULAN BERJALAN: OKTOBER 2023</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="bg-primary hover:bg-white text-black font-bold px-6 py-3 rounded text-xs uppercase tracking-widest flex items-center gap-2 shadow-[0_0_20px_rgba(245,208,32,0.2)] transition-all">
+                    <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                    Proses Semua Pembayaran
+                </button>
+                <div class="w-10 h-10 rounded border border-border-dark overflow-hidden bg-surface-dark">
+                    <img alt="Finance Admin Profile"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-5BTNZZGHiVDLgCHYbN_p4holy6jv7i-RdcCbm0fs-v3U7T8GuyL6zRWrXRGgdpwgKtYm9ziAZ2-jlhIPRGEhM7C6e0M--JmGnTI9Mr3OxCW3jRoSon5wSZHM0MhFASTjybj9ogUgNkPHXdJOmanTmRov3UN3VbLQx0DtHhqs7vBnJxKnRWw30HQfvdDA14XWIL-WdNMcvfYeYdExEXaWvYixEWgpzq9Tgqa0Tpe4d9r9UrfJ9RMBGYxuxaal-kr2iQru2yAnQoo" />
+                </div>
+            </div>
+        </header>
+        <div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+            <div class="stat-card p-8 mb-10 rounded-lg relative overflow-hidden group">
+                <div class="absolute -right-16 -top-16 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <span class="material-symbols-outlined text-[240px]">account_balance</span>
+                </div>
+                <div class="relative z-10">
+                    <label class="text-[11px] font-bold tracking-[0.3em] text-primary uppercase mb-2 block">Total Dana
+                        Royalti Bulan Ini</label>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-6xl font-display font-bold text-white tracking-tighter">Rp
+                            1.842.550.000</span>
+                        <span class="text-green-500 font-bold text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">trending_up</span>
+                            +12.4%
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 pt-8 border-t border-white/5">
+                        <div class="space-y-1">
+                            <p class="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Pendapatan VOD</p>
+                            <p class="text-2xl font-display font-medium text-slate-200">Rp 1.250.000.000</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Sesi 1-on-1</p>
+                            <p class="text-2xl font-display font-medium text-slate-200">Rp 592.550.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-surface-dark/30 border border-border-dark rounded-lg overflow-hidden">
+                <div class="p-6 border-b border-border-dark flex items-center justify-between">
+                    <h3 class="text-xs font-bold tracking-[0.2em] text-white uppercase flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-neon-gold"></span>
+                        Antrean Pembayaran Mentor
+                    </h3>
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+                            <input
+                                class="bg-black/50 border-border-dark rounded py-1.5 pl-9 pr-4 text-[10px] w-48 focus:ring-primary/50 focus:border-primary text-slate-300"
+                                placeholder="Cari mentor..." type="text" />
+                        </div>
+                        <button class="p-2 border border-border-dark rounded hover:bg-surface-dark transition-colors">
+                            <span class="material-symbols-outlined text-sm">filter_list</span>
+                        </button>
+                    </div>
+                </div>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr
+                            class="text-[10px] font-bold tracking-widest text-slate-500 uppercase border-b border-border-dark">
+                            <th class="px-6 py-4 font-semibold">Nama Mentor</th>
+                            <th class="px-6 py-4 font-semibold">VOD Streamshare (%)</th>
+                            <th class="px-6 py-4 font-semibold">Sesi Live Selesai</th>
+                            <th class="px-6 py-4 font-semibold">Total Pembayaran (Rp)</th>
+                            <th class="px-6 py-4 font-semibold text-right">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border-dark">
+                        <tr class="data-table-row transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-800 border border-border-dark overflow-hidden">
+                                        <img alt="Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc25yh9AuKYuc28prnEwfspcl-ERbPzDygCnW4HJAGiUMBCiix72pEZ1W5sub45kZjOWpZg5Diifrwg6pc7zlWwkqSiDxwOeYxzVHCt0QpO8tHxG6bBXH9RkXuvu94_22_wTSRV-OHXF_2boIuQoQy7fjbMRcO6Q1r54LScKinEVpK_bo_1FhdRNxdM6Ba2kAYvGkNXH_QcVSgl8_5GFNbtC8hoGQ7k_vM_Z71R6is65ik3mtpgvIBjrM2uAaDpPkX4DW-Avnbpv0" />
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white leading-none">Arief Widjayanto</p>
+                                        <p class="text-[10px] text-slate-500 mt-1">Produser Musik</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm font-medium text-slate-300">65%</span>
+                                    <div class="w-16 h-1 bg-white/5 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[65%]"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm font-medium">24 Sesi</td>
+                            <td class="px-6 py-4 text-sm font-bold text-white tracking-tight">Rp 45.200.000</td>
+                            <td class="px-6 py-4 text-right">
+                                <span
+                                    class="px-2.5 py-1 rounded bg-primary/10 border border-primary/20 text-primary text-[9px] font-bold uppercase tracking-wider">Tertunda</span>
+                            </td>
+                        </tr>
+                        <tr class="data-table-row transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-800 border border-border-dark overflow-hidden">
+                                        <img alt="Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbhvTHD4cDCd3yTmetaj1-Tf3yyDaJ7b79MlFPvj-SP03_HJDaW6QRA27iszoRXRnYZdrm8v-nTFVAMc57kEqdZgoPKpDAZZDVXUU4gZ1YxnoFmPHSIkNlprtAgA1lzsKSx8pwaokNn6EQBSaMDqdQYzqvMDS_8Wjeqq42Rh3zB4qYlU5cpkZahapwJ03ZPSFbsFicAOQkX2CNgpcgyfhhC10xUxVNxZxCEx9eSViv0SvE-PFDOBjJaDGFV9-M7Z1opQkDwhAVfs4" />
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white leading-none">Sarah Amalia</p>
+                                        <p class="text-[10px] text-slate-500 mt-1">Voice Talent</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm font-medium text-slate-300">42%</span>
+                                    <div class="w-16 h-1 bg-white/5 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[42%]"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm font-medium">12 Sesi</td>
+                            <td class="px-6 py-4 text-sm font-bold text-white tracking-tight">Rp 28.150.000</td>
+                            <td class="px-6 py-4 text-right">
+                                <span
+                                    class="px-2.5 py-1 rounded bg-green-500/10 border border-green-500/20 text-green-500 text-[9px] font-bold uppercase tracking-wider">Terbayar</span>
+                            </td>
+                        </tr>
+                        <tr class="data-table-row transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-800 border border-border-dark overflow-hidden">
+                                        <img alt="Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxVoUEyyxH3Ss5AlWjYh8i2mkpoCujx8wF-rXGu2TYZfUv8pWekTP2akY98YawYHA9blGGMJUgYx9wmpbdiAUJLQV83-kfmtC8y9kWqkJssJd3-dGj_g9isThypXrdtcEpXu3V1deSg9dzaF-7vygrrpKdaZ0m0iUp0d5emqIwjovZpzLbCiB9XYs4TFvQF0x6TWkluhL-lZyOqF7GMvw8BsoaGjhpDZOdBO5oEv5OaoXiVZ12W9zE-A6ZDdxO5KJOUM06CU_FhY4" />
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white leading-none">Bambang Hartono</p>
+                                        <p class="text-[10px] text-slate-500 mt-1">Audio Engineer</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm font-medium text-slate-300">80%</span>
+                                    <div class="w-16 h-1 bg-white/5 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[80%]"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm font-medium">40 Sesi</td>
+                            <td class="px-6 py-4 text-sm font-bold text-white tracking-tight">Rp 82.400.000</td>
+                            <td class="px-6 py-4 text-right">
+                                <span
+                                    class="px-2.5 py-1 rounded bg-primary/10 border border-primary/20 text-primary text-[9px] font-bold uppercase tracking-wider">Tertunda</span>
+                            </td>
+                        </tr>
+                        <tr class="data-table-row transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-800 border border-border-dark overflow-hidden">
+                                        <img alt="Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd56tyrldqiuuCQhP6jgJuRD-zsc7gODixNx8_3UZHlO903WPJ3G8AmNtogFQOwuAxyxqspcbX1Sdx56qgrxHy-Lp1vLbQVyAdF3IaxJda-4KGH_HqtTi8DVo0QVAgZr_YAt0tpMSmr0j_3Wxfb8-IUkTjmOxsHEAnQY-Lg1nyhHgM3XgiHFKLz1pwP_qiypZXBTBHMduiOECYOra7DdTHqwkgmFrVA0KF-ozXCjxIgXXGmPT1AEA3JRrRJANyMBWN2oORtzI6Dg0" />
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white leading-none">Rina Kartika</p>
+                                        <p class="text-[10px] text-slate-500 mt-1">Content Strategist</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm font-medium text-slate-300">55%</span>
+                                    <div class="w-16 h-1 bg-white/5 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[55%]"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm font-medium">18 Sesi</td>
+                            <td class="px-6 py-4 text-sm font-bold text-white tracking-tight">Rp 34.000.000</td>
+                            <td class="px-6 py-4 text-right">
+                                <span
+                                    class="px-2.5 py-1 rounded bg-green-500/10 border border-green-500/20 text-green-500 text-[9px] font-bold uppercase tracking-wider">Terbayar</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="p-4 border-t border-border-dark flex justify-between items-center bg-black/20">
+                    <p class="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Menampilkan 4 dari 86
+                        Mentor Aktif</p>
+                    <div class="flex gap-2">
+                        <button
+                            class="px-3 py-1 border border-border-dark rounded text-[10px] font-bold text-slate-400 hover:text-white transition-colors">SEBELUMNYA</button>
+                        <button
+                            class="px-3 py-1 border border-border-dark rounded text-[10px] font-bold text-slate-400 hover:text-white transition-colors">BERIKUTNYA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer
+            class="h-10 border-t border-border-dark flex items-center justify-between px-8 bg-background-dark text-[9px] font-bold tracking-widest text-slate-600 shrink-0">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    <span>SECURE_FINANCE_NODE: SG_01</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <span>AUDIT_LOG: ACTIVE</span>
+                </div>
+                <span>UTC+7: <span id="clock">14:15:22</span></span>
+            </div>
+            <div class="uppercase tracking-[0.2em]">OZCADEMY_FINANCE_V4.2.0</div>
+        </footer>
+    </main>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' +
+                now.getMinutes().toString().padStart(2, '0') + ':' +
+                now.getSeconds().toString().padStart(2, '0');
+            const clockEl = document.getElementById('clock');
+            if (clockEl) clockEl.textContent = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+
+</html>

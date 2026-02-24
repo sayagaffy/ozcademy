@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.07);
+                border: 1px solid rgba(242, 208, 13, 0.15);
+            }
+            .glassmorphism {
+                background: rgba(12, 12, 12, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .dashed-border {
+                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23f2d00d80' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+                border-radius: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+    <div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+    <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+    <div class="flex h-screen overflow-hidden">
+        <aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50 shrink-0">
+            <div class="p-8">
+                <div class="flex items-center gap-3">
+                    <div class="p-1.5 bg-primary rounded text-background-dark">
+                        <span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold tracking-tighter leading-none text-white">OZCADEMY</span>
+                        <span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Mentor_CMS</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 px-4 space-y-2 mt-4">
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">grid_view</span>
+                    <span class="text-xs tracking-[0.2em] uppercase">Beranda</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.2)] transition-all"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">library_books</span>
+                    <span class="text-xs tracking-[0.2em] uppercase">Modul Saya</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">event_available</span>
+                    <span class="text-xs font-bold tracking-[0.2em] uppercase">Jadwal Sesi</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">group</span>
+                    <span class="text-xs font-bold tracking-[0.2em] uppercase">Portofolio Siswa</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">settings</span>
+                    <span class="text-xs font-bold tracking-[0.2em] uppercase">Pengaturan</span>
+                </a>
+            </nav>
+            <div class="p-6 mt-auto">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+                    <div class="text-[8px] font-mono text-primary uppercase tracking-widest">UPLOAD_SERVER: READY</div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                        <span class="text-[9px] font-mono text-slate-400">ENCRYPTION_ACTIVE</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 overflow-y-auto custom-scrollbar relative z-10">
+            <header
+                class="px-8 py-6 border-b border-white/5 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-md z-20">
+                <div>
+                    <h1 class="text-2xl font-black tracking-tighter uppercase text-white">MANAJEMEN KONTEN</h1>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Studio Produksi &amp; Distribusi
+                        Modul</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <button class="relative p-2 text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-2xl">notifications</span>
+                        <span
+                            class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-background-dark"></span>
+                    </button>
+                    <div class="flex items-center gap-4 pl-6 border-l border-white/10">
+                        <div class="text-right">
+                            <div class="text-xs font-bold uppercase tracking-widest text-white">Andhika Pratama</div>
+                            <div class="text-[9px] text-primary uppercase font-mono">Lead Mentor</div>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 p-0.5 overflow-hidden ring-2 ring-primary/10">
+                            <img alt="Mentor Profile" class="w-full h-full rounded-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bIykbemfUwIVaQUZUTm7yrSt8IbFIDKDbT0gsjak3eVUAW5uIp9E9liHE9gDPtuhfTL0NT3HeaoPhQG7c9yuMmWTRFQW6FxuYaeD_T-kXl3eFnfbPVN6DAmoIhK7DCRv23bfL4-KNdBXnSZ2HVoTg6AeNqR8qoXRpMVz-A8ft9wOnMtuCbgkpVk0-EqwA8PfOwl_G08-WdcCKAcz3SutH855ieuRbDfOkt0lOObRVgLn8knqYxibJaZAVpoJBHPGfiXIubwQrXo" />
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="p-8 max-w-5xl mx-auto space-y-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-xl font-black tracking-tight uppercase text-white">Unggah Modul Baru</h2>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Sistem Distribusi Konten
+                            V.2.4</p>
+                    </div>
+                    <button
+                        class="bg-primary hover:bg-yellow-400 text-background-dark font-black px-6 py-2.5 rounded-lg text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(242,208,13,0.3)]">
+                        Unggah Modul
+                    </button>
+                </div>
+                <div
+                    class="dashed-border glassmorphism p-12 flex flex-col items-center justify-center text-center group cursor-pointer hover:bg-white/5 transition-all border-none">
+                    <div
+                        class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl text-primary">cloud_upload</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Tarik &amp; Lepas berkas video MP4 di sini</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-widest">atau klik untuk memilih berkas dari
+                        sistem</p>
+                    <div class="mt-8 px-4 py-2 border border-white/10 rounded-full bg-white/5">
+                        <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Maksimal Ukuran
+                            Berkas: 2GB • Format: .mp4, .mkv</span>
+                    </div>
+                </div>
+                <div class="glow-card glassmorphism rounded-2xl p-8 space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="space-y-2">
+                                <label class="flex items-center justify-between">
+                                    <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Judul
+                                        Modul</span>
+                                    <span
+                                        class="text-[8px] font-mono text-slate-500 tracking-tighter">REQ_FIELD_01</span>
+                                </label>
+                                <input
+                                    class="w-full bg-white/5 border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary/50 focus:ring-0 transition-all text-white placeholder:text-slate-600"
+                                    placeholder="Masukkan judul modul yang menarik..." type="text" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="flex items-center justify-between">
+                                    <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Kategori
+                                        Skill</span>
+                                    <span
+                                        class="text-[8px] font-mono text-slate-500 tracking-tighter">DATA_CAT_SELECT</span>
+                                </label>
+                                <select
+                                    class="w-full bg-white/5 border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary/50 focus:ring-0 transition-all text-white">
+                                    <option class="bg-card-dark" value="musik">Produksi Musik</option>
+                                    <option class="bg-card-dark" value="speaking">Public Speaking</option>
+                                    <option class="bg-card-dark" value="podcast">Podcasting</option>
+                                    <option class="bg-card-dark" value="broadcasting">Broadcasting</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="flex items-center justify-between">
+                                    <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Tingkat
+                                        Kesulitan</span>
+                                    <span
+                                        class="text-[8px] font-mono text-slate-500 tracking-tighter">DIFFICULTY_LVL</span>
+                                </label>
+                                <select
+                                    class="w-full bg-white/5 border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary/50 focus:ring-0 transition-all text-white">
+                                    <option class="bg-card-dark" value="beginner">Beginner</option>
+                                    <option class="bg-card-dark" value="intermediate">Intermediate</option>
+                                    <option class="bg-card-dark" value="advanced">Advanced</option>
+                                </select>
+                            </div>
+                            <div class="space-y-4 pt-2">
+                                <label class="flex items-center justify-between">
+                                    <span
+                                        class="text-[10px] font-bold text-primary uppercase tracking-widest">Visibilitas
+                                        Publik</span>
+                                    <span
+                                        class="text-[8px] font-mono text-slate-500 tracking-tighter">ACCESS_CONTROL</span>
+                                </label>
+                                <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                    <div class="flex items-center gap-3 flex-1">
+                                        <span class="material-symbols-outlined text-slate-400">public</span>
+                                        <div>
+                                            <p class="text-xs font-bold text-white">Publik</p>
+                                            <p class="text-[10px] text-slate-500">Dapat diakses oleh semua siswa</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                        <div
+                                            class="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        </div>
+                                    </label>
+                                    <span
+                                        class="text-[10px] font-bold text-primary uppercase tracking-widest w-12 text-center">Publik</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 flex flex-col h-full">
+                            <label class="flex items-center justify-between">
+                                <span
+                                    class="text-[10px] font-bold text-primary uppercase tracking-widest">Deskripsi</span>
+                                <span
+                                    class="text-[8px] font-mono text-slate-500 tracking-tighter">META_DESCRIPTION</span>
+                            </label>
+                            <textarea
+                                class="w-full flex-1 bg-white/5 border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary/50 focus:ring-0 transition-all text-white placeholder:text-slate-600 resize-none"
+                                placeholder="Jelaskan detail apa yang akan dipelajari siswa dalam modul ini..."
+                                rows="12"></textarea>
+                        </div>
+                    </div>
+                    <div class="flex justify-end pt-6 border-t border-white/5">
+                        <div class="flex items-center gap-6">
+                            <button
+                                class="text-[10px] font-bold text-slate-500 uppercase tracking-widest hover:text-white transition-colors">Batalkan</button>
+                            <button
+                                class="bg-primary hover:bg-yellow-400 text-background-dark font-black px-8 py-3 rounded-lg text-xs uppercase tracking-widest transition-all shadow-[0_0_25px_rgba(242,208,13,0.4)] ring-2 ring-primary/20">
+                                Submit to Admin for Approval
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center justify-between text-[8px] font-mono text-slate-600 uppercase tracking-[0.2em] px-2 pb-8">
+                    <div class="flex gap-4">
+                        <span>SYS_ID: 882-OZ</span>
+                        <span>NODE_LOCATION: JKT_STATION_01</span>
+                    </div>
+                    <div>© 2024 OZCADEMY PLATFORM CORE</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

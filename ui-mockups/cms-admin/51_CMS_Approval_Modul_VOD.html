@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>OZCADEMY Content Moderation Queue</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F5D020",
+                        "background-dark": "#050505",
+                        "surface-dark": "#121212",
+                        "border-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            background-color: #050505;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-300 antialiased overflow-hidden h-screen flex">
+    <aside class="w-64 border-r border-border-dark flex flex-col bg-background-dark shrink-0">
+        <div class="p-8 pb-10">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-1.5 rounded text-black">
+                    <span class="material-symbols-outlined block">bolt</span>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-lg tracking-tighter text-white leading-none">OZCADEMY</h1>
+                    <p class="text-[10px] font-medium tracking-[0.2em] text-primary/70 mt-1 uppercase">Admin_Hub</p>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 px-4 space-y-1 overflow-y-auto custom-scrollbar">
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">grid_view</span>
+                <span class="text-xs uppercase tracking-widest">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">group</span>
+                <span class="text-xs uppercase tracking-widest">Pengguna &amp; Mentor</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">corporate_fare</span>
+                <span class="text-xs uppercase tracking-widest">Mitra B2B</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded bg-primary text-black font-semibold transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">movie</span>
+                <span class="text-xs uppercase tracking-widest">Content Studio</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">map</span>
+                <span class="text-xs uppercase tracking-widest">Journey Builder</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">event_note</span>
+                <span class="text-xs uppercase tracking-widest">Master Schedule</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+                <span class="text-xs uppercase tracking-widest">Royalty &amp; Payouts</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded hover:bg-white/5 text-slate-400 hover:text-white transition-all group"
+                href="#">
+                <span class="material-symbols-outlined text-xl">description</span>
+                <span class="text-xs uppercase tracking-widest">Laporan Keuangan</span>
+            </a>
+        </nav>
+        <div class="p-6 border-t border-border-dark">
+            <div class="p-4 rounded border border-border-dark bg-surface-dark/50">
+                <p class="text-[10px] font-bold tracking-widest text-primary/60 mb-1 uppercase">Node_Access: Authorized
+                </p>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                    <p class="text-[10px] text-slate-500 font-medium">SYSTEM_STABLE</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <header
+            class="h-24 border-b border-border-dark flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md sticky top-0 z-10">
+            <div class="space-y-1">
+                <h2 class="text-3xl font-display font-bold tracking-tight text-white uppercase ">Approval Moderasi
+                    Modul</h2>
+                <div class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-slate-500">
+                    <span class="uppercase">CONTENT STUDIO</span>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <span class="uppercase">MODERASI</span>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <span class="uppercase text-primary">APPROVAL QUEUE</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded border border-border-dark overflow-hidden bg-surface-dark">
+                    <img alt="Admin Profile"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-5BTNZZGHiVDLgCHYbN_p4holy6jv7i-RdcCbm0fs-v3U7T8GuyL6zRWrXRGgdpwgKtYm9ziAZ2-jlhIPRGEhM7C6e0M--JmGnTI9Mr3OxCW3jRoSon5wSZHM0MhFASTjybj9ogUgNkPHXdJOmanTmRov3UN3VbLQx0DtHhqs7vBnJxKnRWw30HQfvdDA14XWIL-WdNMcvfYeYdExEXaWvYixEWgpzq9Tgqa0Tpe4d9r9UrfJ9RMBGYxuxaal-kr2iQru2yAnQoo" />
+                </div>
+            </div>
+        </header>
+        <div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+            <div class="flex flex-col md:flex-row items-center gap-4 mb-8">
+                <div class="relative flex-1 w-full">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">search</span>
+                    <input
+                        class="w-full bg-surface-dark/50 border-border-dark rounded-md py-3 pl-12 pr-4 text-sm focus:border-primary focus:ring-0 text-slate-200"
+                        placeholder="Cari Judul Modul atau Mentor..." type="text" />
+                </div>
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <div class="relative w-full md:w-64">
+                        <select
+                            class="w-full bg-surface-dark/50 border-border-dark rounded-md py-3 px-4 text-xs font-bold tracking-widest uppercase text-primary appearance-none focus:border-primary focus:ring-0">
+                            <option>Status: Pending Review</option>
+                            <option>Status: Approved</option>
+                            <option>Status: Rejected</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div
+                    class="p-5 rounded border border-border-dark bg-surface-dark/40 hover:bg-surface-dark/60 transition-colors flex flex-col lg:flex-row items-center gap-8">
+                    <div
+                        class="relative w-full lg:w-48 h-28 bg-black rounded overflow-hidden group cursor-pointer shrink-0">
+                        <img alt="Thumbnail"
+                            class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwUpkWKBrNlsoyb_tO0Drc5zX2sCdsdOiDvfuuxg4ZQDzrWq1h6CZ4H7iDXcGgXtPePrnYdSp7jlDeWXqcTAHCwDboVKI21RaVdmJUE5jf5goUtNe2rhygWCWxd0vi7qnoqKgQINj4xYJxMwk4YClkAbwVH9Cpj5qC3TS2NMZ3Lu72LOjvOXOfkceFIa9LYDAoOlhJSkYCKCZX8wXQCwkRSoF0a3KXELbkIVMdnL8RaCDqGoeYvMFxIZJiOeNRam7Mu0p3n4joy1w" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined fill-1">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1 w-full">
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Nama Mentor
+                            </p>
+                            <p class="text-xs font-bold text-white uppercase">Andi Arifin</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Judul Modul
+                            </p>
+                            <p class="text-xs font-bold text-white leading-relaxed">Masterclass Mixing Vocal</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Kategori</p>
+                            <p class="text-xs font-medium text-primary">Audio Production</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Tanggal Submit
+                            </p>
+                            <p class="text-xs font-medium text-slate-400">24 Okt 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0 w-full lg:w-auto">
+                        <button
+                            class="flex-1 lg:flex-none px-6 py-2.5 rounded border border-green-500/50 text-green-500 text-[10px] font-bold uppercase tracking-widest hover:bg-green-500 hover:text-black transition-all">Tinjau
+                            &amp; Setujui</button>
+                        <button
+                            class="flex-1 lg:flex-none px-6 py-2.5 rounded border border-red-500/50 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all">Tolak</button>
+                    </div>
+                </div>
+                <div
+                    class="p-5 rounded border border-border-dark bg-surface-dark/40 hover:bg-surface-dark/60 transition-colors flex flex-col lg:flex-row items-center gap-8">
+                    <div
+                        class="relative w-full lg:w-48 h-28 bg-black rounded overflow-hidden group cursor-pointer shrink-0">
+                        <img alt="Thumbnail"
+                            class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC22Kg6-c589JlChUEUY5y-3NGuiZtY0bfJhAbPGnUhKHDgAMSxQvjcMbe8VdHp05uQTtUV0lt6aeV1dJ3_EmdiFKIZ9H-_VQiuPwEOIfwNWNw7t0ox5qBidF4ve3Uidbqdu9QAIIo_UbPlzIa549zwOjj-k1FaSIOUdmj_LH375ZMN2S_uvpP7CcsEx-BNw6pbXSQPqFgPKMHImDRC-MM1lalVP-IMn7Vj-E8v8Fg8CkNanF59TFin5ufRxuVEOpMxEpcD6b3DkOM" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined fill-1">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1 w-full">
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Nama Mentor
+                            </p>
+                            <p class="text-xs font-bold text-white uppercase">Siska Pratama</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Judul Modul
+                            </p>
+                            <p class="text-xs font-bold text-white leading-relaxed">Modern UI Design System</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Kategori</p>
+                            <p class="text-xs font-medium text-primary">Visual Design</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Tanggal Submit
+                            </p>
+                            <p class="text-xs font-medium text-slate-400">22 Okt 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0 w-full lg:w-auto">
+                        <button
+                            class="flex-1 lg:flex-none px-6 py-2.5 rounded border border-green-500/50 text-green-500 text-[10px] font-bold uppercase tracking-widest hover:bg-green-500 hover:text-black transition-all">Tinjau
+                            &amp; Setujui</button>
+                        <button
+                            class="flex-1 lg:flex-none px-6 py-2.5 rounded border border-red-500/50 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all">Tolak</button>
+                    </div>
+                </div>
+                <div
+                    class="p-5 rounded border border-border-dark bg-surface-dark/40 hover:bg-surface-dark/60 transition-colors flex flex-col lg:flex-row items-center gap-8">
+                    <div
+                        class="relative w-full lg:w-48 h-28 bg-black rounded overflow-hidden group cursor-pointer shrink-0">
+                        <img alt="Thumbnail"
+                            class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdTFKjWCkwgJ73WHpox3TDfP1N6SYkjdH6Eu5z5ZCP0E2nKUuQH7mM3MzQ97-payW0pgiLSDC3f_AzOdIFFp6DARj5XR7Jun0ZoTCDtWw6fcW2QM5ccWaqmPcDTedkJO0cOGz2dkMmzcQGwzKZvNslIN196epApUWy4FCqyUCsXOzHjajrrgNmw6VlHIgvM4nPLBjattokex2sipUbrqyMBRu6NW7UdNo8DB8HK5TMLf-9OMqD7nnIaKb8IkHNNVtd8vM-_JRoWMw" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined fill-1">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1 w-full">
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Nama Mentor
+                            </p>
+                            <p class="text-xs font-bold text-white uppercase">Budi Santoso</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Judul Modul
+                            </p>
+                            <p class="text-xs font-bold text-white leading-relaxed">React Framework Fundamentals</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Kategori</p>
+                            <p class="text-xs font-medium text-primary">Web Development</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Tanggal Submit
+                            </p>
+                            <p class="text-xs font-medium text-slate-400">21 Okt 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0 w-full lg:w-auto">
+                        <button
+                            class="flex-1 lg:flex-none px-6 py-2.5 rounded border border-green-500/50 text-green-500 text-[10px] font-bold uppercase tracking-widest hover:bg-green-500 hover:text-black transition-all">Tinjau
+                            &amp; Setujui</button>
+                        <button
+                            class="flex-1 lg:flex-none px-6 py-2.5 rounded border border-red-500/50 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all">Tolak</button>
+                    </div>
+                </div>
+                <div
+                    class="p-5 rounded border border-border-dark bg-surface-dark/40 hover:bg-surface-dark/60 transition-colors flex flex-col lg:flex-row items-center gap-8">
+                    <div
+                        class="relative w-full lg:w-48 h-28 bg-black rounded overflow-hidden group cursor-pointer shrink-0">
+                        <img alt="Thumbnail"
+                            class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMSmy-P1u4OFpwIJLp_R0lftqXBZJbHW47J-Yl98ikKoswxcjAuBCZrwt_-xDU9e8wUpbGBPxYP50jHwVsm5TxgaCObCeBdVjyzJ0FN0ZITmidCAuWbU_3Fl1lhNqxBwp-iP4hvs69J2H0RdGKseNqw_pkvPYzVWm8FSXNRMLysVFj7nhixJC6Ph59SYIZVlybW_mjIZJxF-EHh1GCge54Kn6q5efx-hKQ5xPOp2ARUTBSb1QUufLWiwp64bepKBPTEYn-BIekiKo" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined fill-1">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1 w-full">
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Nama Mentor
+                            </p>
+                            <p class="text-xs font-bold text-white uppercase">Lestari Wahyuni</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Judul Modul
+                            </p>
+                            <p class="text-xs font-bold text-white leading-relaxed">Business Strategy 101</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Kategori</p>
+                            <p class="text-xs font-medium text-primary">Entrepreneurship</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mb-1">Tanggal Submit
+                            </p>
+                            <p class="text-xs font-medium text-slate-400">20 Okt 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0 w-full lg:w-auto">
+                        <button
+                            class="flex-1 lg:flex-none px-6 py-2.5 rounded border border-green-500/50 text-green-500 text-[10px] font-bold uppercase tracking-widest hover:bg-green-500 hover:text-black transition-all">Tinjau
+                            &amp; Setujui</button>
+                        <button
+                            class="flex-1 lg:flex-none px-6 py-2.5 rounded border border-red-500/50 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all">Tolak</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer
+            class="h-10 border-t border-border-dark flex items-center justify-between px-8 bg-background-dark text-[9px] font-bold tracking-widest text-slate-600">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    <span>SERVER_NODE: SG_01</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <span>NETWORK: SECURE</span>
+                </div>
+                <span>UTC+7: <span id="clock">14:15:22</span></span>
+            </div>
+            <div class="uppercase">OZCADEMY_ADMIN_V3.0.1</div>
+        </footer>
+    </main>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' +
+                now.getMinutes().toString().padStart(2, '0') + ':' +
+                now.getSeconds().toString().padStart(2, '0');
+            const clockEl = document.getElementById('clock');
+            if (clockEl) clockEl.textContent = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { BookingForm } from "../../../../features/booking/ui/BookingForm";
 
 export const MentorDetailPage = () => {
   const { id } = useParams();
@@ -170,94 +171,7 @@ export const MentorDetailPage = () => {
           </div>
         </div>
         <div className="col-span-4">
-          <div className="sticky top-12 bg-card-dark border border-white/10 rounded-3xl p-8 glow-card">
-            <div className="mb-8">
-              <div className="text-[8px] font-mono text-primary uppercase tracking-[0.3em] mb-2">
-                SCHEDULING_SYSTEM
-              </div>
-              <h2 className="text-2xl font-black text-white uppercase tracking-tight">
-                Pesan Sesi Live
-              </h2>
-              <p className="text-xs text-slate-500 mt-2 uppercase tracking-widest font-bold">
-                Pilih Tipe Sesi Mentoring
-              </p>
-            </div>
-            <div className="space-y-4 mb-10">
-              <label className="block cursor-pointer group">
-                <input
-                  defaultChecked
-                  className="hidden peer"
-                  name="tier"
-                  type="radio"
-                />
-                <div className="p-5 rounded-2xl border border-white/10 peer-checked:border-primary peer-checked:bg-primary/5 group-hover:border-white/20 transition-all relative">
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-xs font-black text-white uppercase tracking-wider">
-                      Privat 1-on-1
-                    </span>
-                    <div className="w-4 h-4 rounded-full border-2 border-white/20 flex items-center justify-center peer-checked:border-primary">
-                      <div className="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
-                    </div>
-                  </div>
-                  <div className="text-lg font-black text-primary">
-                    Rp 500rb
-                  </div>
-                  <div className="text-[9px] font-mono text-slate-500 mt-2 uppercase">
-                    Durasi 60 Menit • Video Call
-                  </div>
-                </div>
-              </label>
-              <label className="block cursor-pointer group">
-                <input className="hidden peer" name="tier" type="radio" />
-                <div className="p-5 rounded-2xl border border-white/10 peer-checked:border-primary peer-checked:bg-primary/5 group-hover:border-white/20 transition-all relative">
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-xs font-black text-white uppercase tracking-wider">
-                      Grup Maks 5
-                    </span>
-                    <div className="w-4 h-4 rounded-full border-2 border-white/20 flex items-center justify-center peer-checked:border-primary">
-                      <div className="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
-                    </div>
-                  </div>
-                  <div className="text-lg font-black text-primary">
-                    Rp 250rb
-                  </div>
-                  <div className="text-[9px] font-mono text-slate-500 mt-2 uppercase">
-                    Durasi 90 Menit • Interaktif
-                  </div>
-                </div>
-              </label>
-              <label className="block cursor-pointer group">
-                <input className="hidden peer" name="tier" type="radio" />
-                <div className="p-5 rounded-2xl border border-white/10 peer-checked:border-primary peer-checked:bg-primary/5 group-hover:border-white/20 transition-all relative">
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-xs font-black text-white uppercase tracking-wider">
-                      Grup Maks 10
-                    </span>
-                    <div className="w-4 h-4 rounded-full border-2 border-white/20 flex items-center justify-center peer-checked:border-primary">
-                      <div className="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
-                    </div>
-                  </div>
-                  <div className="text-lg font-black text-primary">
-                    Rp 100rb
-                  </div>
-                  <div className="text-[9px] font-mono text-slate-500 mt-2 uppercase">
-                    Durasi 90 Menit • Webinar Mode
-                  </div>
-                </div>
-              </label>
-            </div>
-            <button className="w-full bg-primary text-background-dark py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(242,208,13,0.2)] hover:shadow-[0_15px_40px_rgba(242,208,13,0.3)] hover:-translate-y-1 transition-all active:translate-y-0">
-              Lihat Jadwal & Booking
-            </button>
-            <div className="mt-6 flex items-center justify-center gap-2">
-              <span className="material-symbols-outlined text-[14px] text-slate-600">
-                verified_user
-              </span>
-              <span className="text-[8px] font-mono text-slate-600 uppercase tracking-widest">
-                TRANSACTION_SECURED: END-TO-END
-              </span>
-            </div>
-          </div>
+          <BookingForm mentorId={id} />
         </div>
       </div>
     </>

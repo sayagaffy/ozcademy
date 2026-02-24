@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	"github.com/ozcademy-platform/backend/internal/auth"
 	"github.com/ozcademy-platform/backend/internal/booking"
@@ -15,6 +16,10 @@ import (
 )
 
 func main() {
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found, relying on system environment variables")
+	}
+
 	// 1. Database Connection
 	// Default to local PostgreSQL if ENV is not set.
 	dbUser := getEnv("DB_USER", "postgres")

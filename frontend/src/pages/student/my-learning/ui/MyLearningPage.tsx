@@ -39,7 +39,7 @@ export const MyLearningPage = () => {
                 </div>
 
                 <div className="bg-[#111] p-1 rounded-2xl border border-white/10">
-                    <LiveRoom bookingId={activeBookingId} />
+                    <LiveRoom bookingId={activeBookingId} onLeave={() => setSearchParams({})} />
                 </div>
             </div>
         );

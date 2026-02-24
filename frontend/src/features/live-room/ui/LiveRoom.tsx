@@ -4,9 +4,10 @@ import { useLiveToken } from '../api/useLiveToken';
 
 interface LiveRoomProps {
     bookingId: string;
+    onLeave?: () => void;
 }
 
-export const LiveRoom = ({ bookingId }: LiveRoomProps) => {
+export const LiveRoom = ({ bookingId, onLeave }: LiveRoomProps) => {
     const { token, serverUrl, isLoading, error } = useLiveToken(bookingId);
 
     if (isLoading) {
@@ -51,6 +52,7 @@ export const LiveRoom = ({ bookingId }: LiveRoomProps) => {
                 serverUrl={serverUrl}
                 data-lk-theme="default"
                 connect={true}
+                onDisconnected={onLeave}
             >
                 <VideoConference />
             </LiveKitRoom>

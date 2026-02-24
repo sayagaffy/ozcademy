@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .glassmorphism {
+                background: rgba(12, 12, 12, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .active-chat-glow {
+                box-shadow: inset 0 0 15px rgba(242, 208, 13, 0.1), 0 0 10px rgba(242, 208, 13, 0.05);
+                border-color: rgba(242, 208, 13, 0.5);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+    <div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+    <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+    <div class="flex h-screen overflow-hidden relative z-10">
+        <aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50 shrink-0">
+            <div class="p-8">
+                <div class="flex items-center gap-3">
+                    <div class="p-1.5 bg-primary rounded text-background-dark">
+                        <span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-xl font-bold tracking-tighter leading-none text-white uppercase">OZCADEMY</span>
+                        <span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Mentor_HUB</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 px-4 space-y-1.5 mt-4">
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">dashboard</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">Dashboard</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">movie_edit</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">Content Studio</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">calendar_month</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">Master Schedule</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">folder_shared</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">Review Portofolio</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.15)] transition-all"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">mail</span>
+                    <span class="text-[10px] tracking-[0.2em] uppercase">Inbox</span>
+                </a>
+            </nav>
+            <div class="p-6">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+                    <div class="text-[8px] font-mono text-primary uppercase tracking-widest">CHAT_SYSTEM: ACTIVE</div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                        <span class="text-[9px] font-mono text-slate-400">REALTIME_LINK_ESTABLISHED</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 flex flex-col min-w-0">
+            <header
+                class="px-8 py-6 border-b border-white/5 flex items-center justify-between bg-background-dark/80 backdrop-blur-md z-30 shrink-0">
+                <div>
+                    <h1 class="text-2xl font-black tracking-tighter uppercase">Inbox / Pesan</h1>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Komunikasi Langsung dengan
+                        Mahasiswa</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-4 pr-6 border-r border-white/10">
+                        <div class="text-right">
+                            <div class="text-xs font-bold uppercase tracking-widest text-white">Andhika Pratama</div>
+                            <div class="text-[9px] text-primary uppercase font-mono">Senior Producer &amp; Mentor</div>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 p-0.5 overflow-hidden ring-2 ring-primary/5">
+                            <img alt="Mentor Profile" class="w-full h-full rounded-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuARyy4QKcVmnxJZNKBqqk1_n2r0DnpWV4DvtGhgGma5oEsIuPnCCQovOVHCXdNsvk55BX7B_nrLsfYvynbfzXjArNZwM_Pa3dyUry-ZDOpDLg76bIctPORAlFg82EIPOi78EcnB8EGCWBCdGFuPYAqq7NdaHEMpFZtHE16h-M-IvgOdZPwOp4dznnvGzPkDwduiHq23aSoNBNse4WyxSegDPECE2EEi-Tnd1up5WF5rOJwIpvjxfHJln86o7h6GAXSCQgz-beIqv7M" />
+                        </div>
+                    </div>
+                    <button class="relative p-2 text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-2xl">settings</span>
+                    </button>
+                </div>
+            </header>
+            <div class="flex-1 flex overflow-hidden">
+                <div
+                    class="w-80 border-r border-white/5 flex flex-col bg-card-dark/30 custom-scrollbar overflow-y-auto">
+                    <div class="p-4 sticky top-0 bg-background-dark/40 backdrop-blur-sm z-10 border-b border-white/5">
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+                            <input
+                                class="w-full bg-white/[0.03] border-white/10 rounded-lg pl-9 pr-4 py-2 text-[10px] font-bold tracking-widest text-white focus:ring-primary focus:border-primary"
+                                placeholder="CARI PESAN..." type="text" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <div
+                            class="p-4 border-b border-white/5 bg-primary/[0.03] active-chat-glow cursor-pointer group transition-all">
+                            <div class="flex gap-4">
+                                <div class="relative shrink-0">
+                                    <img alt="Student"
+                                        class="w-12 h-12 rounded-lg object-cover grayscale group-hover:grayscale-0 transition-all border border-primary/50"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3EsYAk2icOKl7Ik5vPZZ-UiESQpK-HBPyYxz1Eq0BqBRtRzHh9t_NfpR-Tfgquc6aRewN1F0HJ3IZo_RJ3zZ3X_Galv3szYjAzTyAPe_0zRta_dsdjVjRBR_plED9XoDgjLTJCj-HC8fIWVRzlD156uJEG1hfVCJI6sQlfRk8H6xQ8eoc7hAF0r1xZQnJSHfPEXeF82m_-88aP0E3RfxoNl9SR1AM3XqEQTLSXA3dXV0P1E1y_Q4VIXwCSEFENM2lPZVDdY7D1ko" />
+                                    <div
+                                        class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 border-2 border-background-dark rounded-full">
+                                    </div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h4 class="text-xs font-bold text-white uppercase tracking-tight truncate">Rizky
+                                            Ramadhan</h4>
+                                        <span class="text-[8px] text-primary font-mono uppercase">2m ago</span>
+                                    </div>
+                                    <p class="text-[10px] text-slate-400 line-clamp-1 leading-relaxed">Halo Mentor, saya
+                                        ingin bertanya tentang tugas modul Audio Mixing minggu lalu...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="p-4 border-b border-white/5 hover:bg-white/[0.02] cursor-pointer group transition-all">
+                            <div class="flex gap-4">
+                                <div class="relative shrink-0">
+                                    <img alt="Student"
+                                        class="w-12 h-12 rounded-lg object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all border border-white/5"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBONiKbmWCwVNvytj24yhyuJdbWVcbJMR1LtRkzzpIxK9bi4OgEr6GIQfunRYi-uz64UiJlYZBK-ljF6W4usiH04rTIZyQf1FNvocAig1qZ4MEKNKr-DGflGNpq_vQAZ4kjiWWYFdStE8HDnQmr0P0QldbMxDO-N_3OzKHmJ5qLR1UQTttTJAyG7epr6Yz5tsdfw_SO4kJUFi5HnrlQmTuPD750hVtrW-oL63U32RIe82AiGhFhWERxDpxOqxkVhdioxRyzGJ3YtW4" />
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h4
+                                            class="text-xs font-bold text-slate-400 group-hover:text-white uppercase tracking-tight truncate">
+                                            Siti Aminah</h4>
+                                        <span class="text-[8px] text-slate-600 font-mono uppercase">1h ago</span>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 line-clamp-1 leading-relaxed">Terima kasih atas
+                                        masukannya, sudah saya perbaiki di portofolio.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="p-4 border-b border-white/5 hover:bg-white/[0.02] cursor-pointer group transition-all">
+                            <div class="flex gap-4">
+                                <div class="relative shrink-0">
+                                    <img alt="Student"
+                                        class="w-12 h-12 rounded-lg object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all border border-white/5"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_L3zrfD7PdFBJ-jaNW71hj3WsLvyuiKrgOJWMwGjEWh6O0ASz8agiw-orEbSQXzTe49vwBeGA75qworcBwgByh7UgjUOUPRSQHcTuHQChM-vGSt-fjT1EbFmJ-9WlAGoOIhS12S1fvpQmNdH4EeZHx8WC7gzCYoSIZfYqmf6rDAHE3_PDjdH62UK-ylw5VacXtN0s3pdlkFs7TAQB_p6BGaOZhUsBBQrOzR81y0QdYgQovwpMEgRzLnRBszVG3u78uiEz8eiEvsg" />
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h4
+                                            class="text-xs font-bold text-slate-400 group-hover:text-white uppercase tracking-tight truncate">
+                                            Kevin Sanjaya</h4>
+                                        <span class="text-[8px] text-slate-600 font-mono uppercase">3h ago</span>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 line-clamp-1 leading-relaxed">Kapan jadwal
+                                        review live untuk batch 12 ya?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="p-4 border-b border-white/5 hover:bg-white/[0.02] cursor-pointer group transition-all">
+                            <div class="flex gap-4">
+                                <div class="relative shrink-0">
+                                    <img alt="Student"
+                                        class="w-12 h-12 rounded-lg object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all border border-white/5"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBINLkhACONqRtYNVTi0d9b2KH0-ZcdIcoUHd2bPJMiMOhDeCdCDov5nLmUP7kIMij3G-FCFY-eBsrOxi4AehI7F-9MmJygcOIC2U5ijhF1js99TGPlFp3ImFhT6zNEJ9g1kQIw5QEj_dNiW7qJih9MxN7h-3-Ej0EBv2uaeAVhgmQD1nmTBKvcdt16SMNjuD4eTqGGbpm8HIgxnK9Are0fMsZvXJxY7pOBF0TFhCo3LGXXr__Bj5RaZgj1ZrcgFLymdw6JyKSw-DQ" />
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h4
+                                            class="text-xs font-bold text-slate-400 group-hover:text-white uppercase tracking-tight truncate">
+                                            Nadia Putri</h4>
+                                        <span class="text-[8px] text-slate-600 font-mono uppercase">Yesterday</span>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 line-clamp-1 leading-relaxed">File project
+                                        sudah saya kirim ke link google drive.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col relative bg-background-dark/20">
+                    <div
+                        class="px-6 py-4 border-b border-white/5 flex items-center justify-between bg-card-dark/40 backdrop-blur-sm">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <h3 class="text-xs font-black uppercase tracking-widest">Rizky Ramadhan — Batch 12 Music
+                                Production</h3>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button class="p-2 text-slate-500 hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-lg">videocam</span>
+                            </button>
+                            <button class="p-2 text-slate-500 hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-lg">more_vert</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 overflow-y-auto p-8 space-y-6 custom-scrollbar">
+                        <div class="flex items-start gap-4 max-w-[80%]">
+                            <img alt="Student" class="w-8 h-8 rounded-lg object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC47R_dhkYt1jjaZOi3bpIOylRGZc3wmsAuyBArcbafxDZ6us5fGeXWWpUvruJTaegdfk4nJU40UYWVqs2Y5D_l4k12j8DbY-OAiXyPLqzM9yuBCJxFsO2sTWbFEWTGXIm0eLn5uC40aAMEI-Ws5cwujvXczv1GErMSRtlIxYKxTrYxOWGq_RFktQdGrOx7nmya7qofj38V2eKVws6_nzbj6uR5x0pdz-DULdcpwZKm6k8BPEof4E2UDO2FkREZWqc3hLCT1IPbG78" />
+                            <div class="space-y-2">
+                                <div
+                                    class="bg-white/[0.05] border border-white/5 px-4 py-3 rounded-2xl rounded-tl-none text-xs text-white leading-relaxed">
+                                    Halo Mentor, saya ingin bertanya tentang tugas modul Audio Mixing minggu lalu. Di
+                                    bagian EQ, apakah sebaiknya saya cut frekuensi low-mid atau biarkan saja agar tetap
+                                    warm?
+                                </div>
+                                <span class="text-[8px] font-mono text-slate-600 uppercase">10:42 AM</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 flex-row-reverse max-w-[80%] ml-auto">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary/20 border border-primary/40 p-0.5 overflow-hidden">
+                                <img alt="Mentor" class="w-full h-full rounded-md object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIO1gAkFye4xay44c6Py_74SqyUWab8rl4DYrmb-tszIRxKapGJRa-KrJQ67GpCRVuI510KkjgUoa_8A44a3I70XzqbsgrXLu26Gmey4uxTRTgmxTyr4-UAqqbeeoGTn_NZbfE_OEfQ5J9MWyhePKkhbL-B3b-8a_JekkpkHGHk7cuRGsrDviBtR-oXVhlYDoqn0upCwDqGtlOjWJbjQ7FOwtBYvxhOvonzWtU8B_lCqeA7eVtJA_B5ANpbxmIXrlyj6zb0uSZoaQ" />
+                            </div>
+                            <div class="space-y-2 text-right">
+                                <div
+                                    class="bg-white/[0.03] border border-primary/20 px-4 py-3 rounded-2xl rounded-tr-none text-xs text-primary leading-relaxed shadow-[0_0_20px_rgba(242,208,13,0.05)]">
+                                    Halo Rizky! Pertanyaan bagus. Untuk mixing vokal, biasanya sedikit cut di area
+                                    200-400Hz bisa membantu clarity. Tapi kalau ingin mengejar 'warmth', coba gunakan
+                                    analog saturation saja dibanding EQ boost.
+                                </div>
+                                <span class="text-[8px] font-mono text-primary/60 uppercase">10:45 AM</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 max-w-[80%]">
+                            <img alt="Student" class="w-8 h-8 rounded-lg object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Ushpgo9isf0FEV1gNrNlhsUSFtnjc53652z9R8spGuLXpFBX55dpG_sw2WVffi7r0BFtvUcKZ1jLmRPNZXuMaNAoYaSyp0x_e0tZVkUUQTG9TN_hj7ZyWPBRw2fzgcu7TN4XklLd8vyLiESbFQA3hM7FXM7OC7EnD4SQUb5eu1KSCshemtsYMFnRAF2YRrO5Sme050tujo4HmmMAiaOHIsM8NmUletIHwzDpThkFvdlIWyfv6Z594UVrH1gS4CK8-rmioTm7gJs" />
+                            <div class="space-y-2">
+                                <div
+                                    class="bg-white/[0.05] border border-white/5 px-4 py-3 rounded-2xl rounded-tl-none text-xs text-white leading-relaxed">
+                                    Siap Mentor! Langsung saya praktekkan. Ini ada screenshot hasil EQ saya sekarang,
+                                    mohon feedbacknya.
+                                </div>
+                                <div class="rounded-xl overflow-hidden border border-white/10 mt-2 bg-white/5 p-2">
+                                    <div
+                                        class="w-full aspect-video bg-neutral-900 rounded-lg flex items-center justify-center border border-white/5">
+                                        <span class="material-symbols-outlined text-white/20 text-4xl">image</span>
+                                    </div>
+                                </div>
+                                <span class="text-[8px] font-mono text-slate-600 uppercase">10:48 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-card-dark/60 backdrop-blur-xl border-t border-white/5">
+                        <div
+                            class="max-w-4xl mx-auto flex items-center gap-4 bg-white/[0.03] border border-white/10 rounded-2xl p-2 pl-4">
+                            <button class="p-2 text-slate-400 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">add_circle</span>
+                            </button>
+                            <input
+                                class="flex-1 bg-transparent border-none focus:ring-0 text-xs font-medium text-white placeholder:text-slate-600 tracking-wider"
+                                placeholder="TULIS PESAN ANDA..." type="text" />
+                            <div class="flex items-center gap-2">
+                                <button class="p-2 text-slate-400 hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">mood</span>
+                                </button>
+                                <button
+                                    class="flex items-center gap-2 bg-primary text-background-dark px-6 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-[0_0_20px_rgba(242,208,13,0.2)] hover:scale-105 active:scale-95 transition-all">
+                                    Kirim
+                                    <span class="material-symbols-outlined text-sm">send</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p class="text-[8px] text-slate-600 uppercase tracking-[0.4em]">Enkripsi end-to-end aktif
+                                via OZCADEMY SECURE_LINK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                        "success-neon": "#39ff14",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.02) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            .glow-card {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .glassmorphism {
+                background: rgba(12, 12, 12, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 6px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .video-placeholder {
+                background: linear-gradient(45deg, #0c0c0c 25%, #141414 25%, #141414 50%, #0c0c0c 50%, #0c0c0c 75%, #141414 75%, #141414 100%);
+                background-size: 40px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+    <div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+    <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+    <div class="flex h-screen overflow-hidden">
+        <aside class="w-64 border-r border-white/5 bg-background-dark/80 backdrop-blur-xl flex flex-col z-50 shrink-0">
+            <div class="p-8">
+                <div class="flex items-center gap-3">
+                    <div class="p-1.5 bg-primary rounded text-background-dark">
+                        <span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-xl font-bold tracking-tighter leading-none text-white uppercase">OZCADEMY</span>
+                        <span class="text-[8px] tracking-[0.3em] text-primary font-medium uppercase">Mentor_HUB</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 px-4 space-y-1.5 mt-4">
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">dashboard</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">Dashboard</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">movie_edit</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">Content Studio</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">calendar_month</span>
+                    <span class="text-[10px] tracking-[0.2em] uppercase">Master Schedule</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary text-background-dark font-black shadow-[0_0_20px_rgba(242,208,13,0.15)] transition-all"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">folder_shared</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">Review Portofolio</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">mail</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">Inbox</span>
+                </a>
+            </nav>
+            <div class="p-6">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+                    <div class="text-[8px] font-mono text-primary uppercase tracking-widest text-center">QUEUE_LOAD: 74%
+                    </div>
+                    <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-primary w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 overflow-hidden relative z-10 flex flex-col">
+            <header
+                class="px-8 py-6 border-b border-white/5 flex items-center justify-between bg-background-dark/80 backdrop-blur-md z-20">
+                <div>
+                    <h1 class="text-2xl font-black tracking-tighter uppercase">Antrean Evaluasi Portofolio</h1>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Review tugas &amp; berikan feedback
+                        pada karya siswa</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="relative group">
+                        <select
+                            class="bg-card-dark border border-white/10 rounded-full pl-6 pr-10 py-2 text-[10px] font-bold uppercase tracking-widest text-primary focus:ring-1 focus:ring-primary appearance-none transition-all cursor-pointer">
+                            <option>Status: Menunggu Penilaian</option>
+                            <option>Status: Sedang Direview</option>
+                            <option>Status: Selesai</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary text-sm">filter_list</span>
+                    </div>
+                    <div class="flex items-center gap-4 pl-6 border-l border-white/10">
+                        <div class="text-right">
+                            <div class="text-xs font-bold uppercase tracking-widest text-white">Andhika Pratama</div>
+                            <div class="text-[9px] text-primary uppercase font-mono">Senior Producer</div>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 p-0.5 overflow-hidden ring-2 ring-primary/5">
+                            <img alt="Mentor Profile" class="w-full h-full rounded-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bIykbemfUwIVaQUZUTm7yrSt8IbFIDKDbT0gsjak3eVUAW5uIp9E9liHE9gDPtuhfTL0NT3HeaoPhQG7c9yuMmWTRFQW6FxuYaeD_T-kXl3eFnfbPVN6DAmoIhK7DCRv23bfL4-KNdBXnSZ2HVoTg6AeNqR8qoXRpMVz-A8ft9wOnMtuCbgkpVk0-EqwA8PfOwl_G08-WdcCKAcz3SutH855ieuRbDfOkt0lOObRVgLn8knqYxibJaZAVpoJBHPGfiXIubwQrXo" />
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="flex-1 overflow-y-auto custom-scrollbar p-8">
+                <div class="max-w-5xl mx-auto space-y-8">
+                    <article class="glassmorphism rounded-3xl overflow-hidden glow-card">
+                        <div class="p-6 border-b border-white/5 flex items-center justify-between bg-white/5">
+                            <div class="flex items-center gap-4">
+                                <img alt="Student" class="w-12 h-12 rounded-xl object-cover ring-2 ring-primary/20"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhHGP0hgldQReL3Tyz_5aKuSuVU0dY4N5hwTJ_PowQs6DFBrxzCU5SRFOlZ85LQBHvAP_VlGtcj6MhxFABpdvVaFoOcuKjf1wZBVqZnuDZ05oQA9pxNWsOq1jGzvNknvaP_QlJGmbrauoEgVe3PeHXCxgjGuYWsz7TfgZEh1DxgU9H7QT9eekDeYOFk63wtpc9bqEnAfa_kHLoTqrExgorANHLG3VpkAsSaW01-lP3ILEXE951EIak5QM-NoWX1o9wDiRELnS7jGM" />
+                                <div>
+                                    <h3 class="text-sm font-bold text-white uppercase tracking-widest">Budi Santoso</h3>
+                                    <div class="flex items-center gap-2 mt-0.5">
+                                        <span
+                                            class="px-2 py-0.5 rounded bg-white/5 text-[9px] font-mono text-slate-400 border border-white/10 uppercase">UID:
+                                            OZ-2024-081</span>
+                                        <span
+                                            class="text-[9px] text-primary font-medium uppercase tracking-tighter">Submit:
+                                            14 Okt 2023, 10:45</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="block text-[8px] text-slate-500 uppercase tracking-widest mb-1">Modul/Tugas</span>
+                                <span
+                                    class="text-xs font-black text-white uppercase tracking-tight bg-primary/10 px-3 py-1 rounded-full border border-primary/20">Advanced
+                                    Sound Design: Foley Art</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div
+                                class="aspect-video video-placeholder rounded-2xl border border-white/10 relative overflow-hidden group mb-8">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all cursor-pointer">
+                                    <div
+                                        class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-[0_0_30px_rgba(242,208,13,0.4)] group-hover:scale-110 transition-transform">
+                                        <span
+                                            class="material-symbols-outlined text-background-dark text-3xl font-black">play_arrow</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/80 to-transparent flex items-center gap-4">
+                                    <div class="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary w-1/3"></div>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-white">04:21 / 12:45</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div class="md:col-span-3 space-y-3">
+                                    <label
+                                        class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-xs">notes</span> Berikan Feedback
+                                        (Notes)
+                                    </label>
+                                    <textarea
+                                        class="w-full h-32 bg-background-dark/50 border border-white/10 rounded-2xl p-4 text-sm text-slate-200 focus:ring-1 focus:ring-primary focus:border-primary transition-all resize-none placeholder:text-slate-600"
+                                        placeholder="Tuliskan evaluasi mendalam mengenai teknik dan kreativitas siswa..."></textarea>
+                                </div>
+                                <div class="space-y-6">
+                                    <div class="space-y-3">
+                                        <label
+                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-xs">grade</span> Nilai (0-100)
+                                        </label>
+                                        <div class="relative">
+                                            <input
+                                                class="w-full bg-background-dark/50 border border-white/10 rounded-2xl px-6 py-4 text-2xl font-black text-primary focus:ring-1 focus:ring-primary focus:border-primary transition-all text-center"
+                                                max="100" min="0" type="number" value="0" />
+                                            <span
+                                                class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-600">PTS</span>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="w-full py-4 bg-success-neon/90 hover:bg-success-neon text-background-dark text-[11px] font-black uppercase tracking-[0.2em] rounded-2xl shadow-[0_10px_30px_rgba(57,255,20,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined text-lg">check_circle</span>
+                                        Submit Penilaian
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="glassmorphism rounded-3xl overflow-hidden border-white/5 opacity-80 hover:opacity-100 transition-opacity">
+                        <div class="p-6 border-b border-white/5 flex items-center justify-between bg-white/5">
+                            <div class="flex items-center gap-4">
+                                <img alt="Student" class="w-12 h-12 rounded-xl object-cover ring-2 ring-white/10"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQMDBn49G7-vav-ud9XMga_MQkzeAzaQebgoIg9kjUvDICno2WFumKyU3Fe7Az0tT_TMOgA-ZMoHkhtH4Fez8UkIotOImM_SDzRBVVJcOvvhJmf5HkK38SYsNbE3GoZXHk0qcF-OgpHHyglp-GPFgpkmQ0WDX8-dy3NnLd6eFAFM8Ja_stcMrJrU-XzDNe4k9nE6HhlzEF6fvbEhGIQqWfMRv0Ay6tp96G0wcwtWs6wBPGxcRPKSzr5ulzLHGinex6pXvy7QYaNVU" />
+                                <div>
+                                    <h3 class="text-sm font-bold text-white uppercase tracking-widest">Ani Wijaya</h3>
+                                    <div class="flex items-center gap-2 mt-0.5">
+                                        <span
+                                            class="px-2 py-0.5 rounded bg-white/5 text-[9px] font-mono text-slate-400 border border-white/10 uppercase">UID:
+                                            OZ-2024-042</span>
+                                        <span
+                                            class="text-[9px] text-primary font-medium uppercase tracking-tighter">Submit:
+                                            15 Okt 2023, 08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="block text-[8px] text-slate-500 uppercase tracking-widest mb-1">Modul/Tugas</span>
+                                <span
+                                    class="text-xs font-black text-white uppercase tracking-tight bg-white/5 px-3 py-1 rounded-full border border-white/10">Music
+                                    Theory: Harmonization</span>
+                            </div>
+                        </div>
+                        <div
+                            class="p-6 bg-white/2 flex items-center justify-center border-t border-white/5 italic text-slate-500 text-[10px] tracking-widest uppercase">
+                            Klik untuk memperluas dan mulai evaluasi
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <aside class="w-80 border-l border-white/5 bg-card-dark/40 backdrop-blur-xl p-8 flex flex-col gap-8 shrink-0">
+            <div>
+                <h2 class="text-sm font-black uppercase tracking-[0.2em] mb-4 text-white">Review Summary</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <div class="text-[24px] font-black text-primary">12</div>
+                        <div class="text-[8px] font-bold text-slate-500 uppercase tracking-widest mt-1">Pending</div>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <div class="text-[24px] font-black text-success-neon">48</div>
+                        <div class="text-[8px] font-bold text-slate-500 uppercase tracking-widest mt-1">Evaluated</div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Kriteria Penilaian</h2>
+                <div class="space-y-3">
+                    <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                        <div class="flex justify-between text-[10px] font-bold uppercase">
+                            <span class="text-slate-300">Teknik</span>
+                            <span class="text-primary">40%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-[40%]"></div>
+                        </div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                        <div class="flex justify-between text-[10px] font-bold uppercase">
+                            <span class="text-slate-300">Kreativitas</span>
+                            <span class="text-primary">30%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-[30%]"></div>
+                        </div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                        <div class="flex justify-between text-[10px] font-bold uppercase">
+                            <span class="text-slate-300">Penyajian</span>
+                            <span class="text-primary">30%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-[30%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-auto p-4 rounded-2xl bg-primary/5 border border-primary/10">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="material-symbols-outlined text-primary text-lg">info</span>
+                    <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Tips Mentor</span>
+                </div>
+                <p class="text-[10px] text-slate-400 leading-relaxed italic">
+                    Pastikan memberikan feedback yang konstruktif dan spesifik pada timestamp tertentu dalam audio/video
+                    siswa.
+                </p>
+            </div>
+        </aside>
+    </div>
+
+</body>
+
+</html>

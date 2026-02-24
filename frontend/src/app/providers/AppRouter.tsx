@@ -1,16 +1,18 @@
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
-import { HomePage } from "../../pages/home";
-import { PricingPage } from "../../pages/pricing";
-import { MentorDirectoryPage } from "../../pages/mentor-directory";
 import { LoginPage, RegisterPage } from "../../pages/auth";
+import { HomePage } from "../../pages/home";
+import { MentorDirectoryPage } from "../../pages/mentor-directory";
+import { PricingPage } from "../../pages/pricing";
 import { ProgramPage } from "../../pages/program";
 
 // Student Dashboard Imports
+import { BookingSuccessPage } from "../../pages/student/booking-success";
+import { ExplorePage, MentorsTab, ModulesTab } from "../../pages/student/explore";
+import { MentorDetailPage } from "../../pages/student/mentor-detail";
+import { ModuleDetailPage } from "../../pages/student/module-detail";
+import { MyLearningPage } from "../../pages/student/my-learning";
 import { StudentLayout } from "../../shared/ui/Layouts/StudentLayout";
 import { Sidebar } from "../../widgets/Sidebar/Sidebar";
-import { ExplorePage, MentorsTab, ModulesTab } from "../../pages/student/explore";
-import { ModuleDetailPage } from "../../pages/student/module-detail";
-import { MentorDetailPage } from "../../pages/student/mentor-detail";
 
 export const AppRouter = () => {
   return (
@@ -43,6 +45,8 @@ export const AppRouter = () => {
 
           <Route path="module/:id" element={<ModuleDetailPage />} />
           <Route path="mentor/:id" element={<MentorDetailPage />} />
+          <Route path="booking-success" element={<BookingSuccessPage />} />
+          <Route path="my-learning" element={<MyLearningPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

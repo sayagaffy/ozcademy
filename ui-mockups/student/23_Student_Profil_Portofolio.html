@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.03) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.03) 1px, transparent 1px);
+                background-size: 50px 50px;
+            }
+            .glow-yellow {
+                box-shadow: 0 0 25px rgba(242, 208, 13, 0.15);
+            }
+            .glow-text {
+                text-shadow: 0 0 10px rgba(242, 208, 13, 0.5);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen relative z-10">
+<aside class="w-72 border-r border-white/5 bg-background-dark/95 backdrop-blur-xl flex flex-col shrink-0">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black tracking-tighter leading-none">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-bold uppercase">Enterprise_EdTech</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg bg-primary text-background-dark transition-all group shadow-[0_0_20px_rgba(242,208,13,0.3)]" href="#">
+<span class="material-symbols-outlined text-xl font-bold">person_pin</span>
+<span class="text-[11px] font-black tracking-[0.15em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center justify-between px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Komunitas</span>
+</div>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Pengaturan</span>
+</a>
+</nav>
+<div class="p-6 border-t border-white/5">
+<div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-slate-400">shield</span>
+</div>
+<div class="text-[10px] font-bold text-slate-300">STUDENT_MODE</div>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-primary"></div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto custom-scrollbar flex flex-col">
+<header class="h-20 border-b border-white/5 flex items-center justify-between px-10 shrink-0 sticky top-0 bg-background-dark/80 backdrop-blur-md z-30">
+<div class="flex-1 max-w-2xl relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-white/5 border border-white/10 rounded-full py-2.5 pl-12 pr-6 text-xs tracking-widest uppercase font-medium focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 glow-yellow transition-all placeholder:text-slate-600" placeholder="CARI PORTOFOLIO ATAU SERTIFIKAT..." type="text"/>
+</div>
+<div class="flex items-center gap-6 ml-10">
+<button class="relative text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-background-dark"></span>
+</button>
+<button class="text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+<div class="h-8 w-px bg-white/10 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider">REZA ARDIAN</p>
+<p class="text-[8px] font-mono text-primary uppercase">Elite_Member</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-yellow-600 p-0.5">
+<div class="w-full h-full rounded-full bg-background-dark flex items-center justify-center overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3SWF9iELMD-wyK716vDeQP5r0BXgq-zPH513dmHQuM4MbZ3OFAIf_FxzpgKg0RDNVJ8-DDcEMZBE_b0Qf5M2Z0iIMEy676dbRMwQNJl-jXXSyWWFyJjD0qQ5XfzFHHjQGKzH99_jnS0REeHMlaOfgN6hkkgngDuFUiEz72yxkstoFUW1aCSdASh5tsF7Fg_DHk9CoDHbh3hY0H0ld-EpS4UppRHN4H6JdRNmBVkxvQbzVjJNqMgoAg1-MM_GLA2YQqPHXZ8OUH5Ly"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex-1 p-10 space-y-12">
+<section class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-transparent rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+<div class="relative bg-card-dark border border-white/5 rounded-[2rem] p-8 overflow-hidden">
+<div class="absolute top-0 right-0 p-8">
+<span class="text-[60px] font-black text-white/5 select-none">PROFILE_VERIFIED</span>
+</div>
+<div class="flex flex-col md:flex-row gap-10 items-center md:items-start relative z-10">
+<div class="relative">
+<div class="w-40 h-40 rounded-3xl bg-gradient-to-br from-primary to-yellow-600 p-1 shadow-2xl">
+<div class="w-full h-full rounded-[1.4rem] bg-background-dark flex items-center justify-center overflow-hidden">
+<img alt="Reza Ardian" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv0AfWwfm2hIu7pb6bxHPlDxGpEd4_Z11DI_SQB71M1i0zx6AeP5zOyjVOrtuXbN218H5N2qI1jg3Nmbe4NXHqUXtVRi092BWJIthIvZ8tWT-eA-231fSdqUowFfa0X9o62E12I6cpCmLX37dvtah-1jZkRjHiKyvHLJLm2bh1IaQ1IsfGLGV9NLUtvNbrC1bX7Q1McL6V_YrwNAw15KPjAdKxY5w3dFvuxbvgIuBih3wI1bLFuQg1mLVuHYw7palaxxKEIZ_Lwl1Q"/>
+</div>
+</div>
+<div class="absolute -bottom-3 -right-3 bg-primary text-background-dark p-2 rounded-xl shadow-xl">
+<span class="material-symbols-outlined text-lg font-bold">verified</span>
+</div>
+</div>
+<div class="flex-1 space-y-6 text-center md:text-left">
+<div>
+<div class="flex items-center justify-center md:justify-start gap-3 mb-2">
+<h2 class="text-4xl font-black tracking-tighter uppercase">REZA ARDIAN</h2>
+<span class="px-3 py-1 border border-primary/30 text-primary text-[10px] font-black uppercase tracking-widest rounded-full">ELITE MEMBER</span>
+</div>
+<p class="text-slate-400 text-sm font-medium flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span> JAKARTA, INDONESIA • DIGITAL CONTENT CREATOR
+                                </p>
+</div>
+<div class="max-w-md bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1">CERTIFICATION TRACK</p>
+<h4 class="text-sm font-black text-white uppercase">Professional Podcaster</h4>
+</div>
+<span class="text-primary text-xl font-black glow-text leading-none">60%</span>
+</div>
+<div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full w-[60%] bg-primary shadow-[0_0_15px_rgba(242,208,13,0.5)]"></div>
+</div>
+<p class="text-[9px] text-slate-500 uppercase tracking-tight">4 DARI 6 MODUL DISELESAIKAN • EST. SELESAI: DES 2023</p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition-all">EDIT PROFIL</button>
+<button class="px-6 py-3 bg-primary text-background-dark rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-all">BAGIKAN PORTFOLIO</button>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-8">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-2xl font-black tracking-tighter uppercase">KARYA PORTOFOLIO SAYA</h3>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.4em] font-bold mt-1">Showcase your best production work</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-white/10 rounded-lg text-slate-400 hover:text-white transition-all">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 border border-white/10 rounded-lg text-slate-400 hover:text-white transition-all">
+<span class="material-symbols-outlined">list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group relative flex flex-col items-center justify-center p-8 rounded-2xl border-2 border-dashed border-white/10 hover:border-primary/50 hover:bg-primary/5 transition-all cursor-pointer aspect-[4/5]">
+<div class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary group-hover:text-background-dark transition-all duration-300">
+<span class="material-symbols-outlined text-3xl font-black">add</span>
+</div>
+<p class="mt-6 text-[11px] font-black tracking-[0.2em] text-slate-500 group-hover:text-primary uppercase">UNGGAH KARYA BARU</p>
+<p class="mt-2 text-[9px] text-slate-600 font-medium uppercase tracking-widest text-center">MP3, WAV, OR VIDEO LINKS</p>
+</div>
+<div class="group bg-card-dark rounded-2xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden flex flex-col aspect-[4/5]">
+<div class="relative flex-1 bg-neutral-900 overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhTEIkNtVMG7khtXNEikOHxTzcflLs5h0wnxZ6Yk5UYtEYmW_EIq6wlsJGNIexaMpYDKf88m5hOdZLl9BkSWOGGQMUbDxslQiktVRSF2eYIbCoA2FOPA7bHMt0R8c3GqrRfJ0EM3b3Tek8ChiwjlotDkaSQwiM3bpDTrtRCRhdTJmiiRw3LM7vZNuSnoOTLvVlP3---o8HshYjjLjoT0F4bfzY7bEXPmKqaUNSPTDQ5KeD4Dpvc6KWIbH4VH-dsCvKUPnLtXa8ZxHX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-card-dark via-card-dark/20 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-14 h-14 rounded-full bg-primary/90 text-background-dark flex items-center justify-center scale-90 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-xl">
+<span class="material-symbols-outlined fill-1 text-3xl">play_arrow</span>
+</button>
+</div>
+<div class="absolute top-4 right-4">
+<span class="px-2 py-1 bg-green-500/10 border border-green-500/20 text-green-500 text-[8px] font-black uppercase tracking-tighter rounded-md backdrop-blur-md">Mentor Feedback: Approved</span>
+</div>
+</div>
+<div class="p-6 pt-4">
+<p class="text-[9px] font-mono text-primary uppercase tracking-widest mb-2">PODCAST_PRODUCTION</p>
+<h3 class="text-sm font-black tracking-tight uppercase group-hover:text-primary transition-colors leading-tight mb-4 line-clamp-2">Episode 01: The Future of Tech &amp; AI Ethics</h3>
+<div class="flex items-center justify-between border-t border-white/5 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-slate-500">calendar_month</span>
+<span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">12 OCT 2023</span>
+</div>
+<button class="text-slate-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-card-dark rounded-2xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden flex flex-col aspect-[4/5]">
+<div class="relative flex-1 bg-neutral-900 overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY2iqT0azmVXzh6Vs1K1DAUueU3IMazQgXZtqRS6qjFHqwPhrFWt08rKRtTtkuLFvJ5jCvaRVxjZbJTN94d6JA3hTo878SYkr-TUZxHUA2xg2EIBgkPTqmIkTXNJX8ICLgdRtEUR28Di7xymmocpSDNy41iZtCPNcV-1hp5JsYUoRti-NdjMETgMv1DCEvXQpkdPFD7CLQMF95nw_0hl5LV643Ci-bF1AusnJJGVA2NP5KTJ4hMzMl5B1AIkiK_PPxQZYDfYatBVFS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-card-dark via-card-dark/20 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-14 h-14 rounded-full bg-primary/90 text-background-dark flex items-center justify-center scale-90 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-xl">
+<span class="material-symbols-outlined fill-1 text-3xl">play_arrow</span>
+</button>
+</div>
+<div class="absolute top-4 right-4">
+<span class="px-2 py-1 bg-green-500/10 border border-green-500/20 text-green-500 text-[8px] font-black uppercase tracking-tighter rounded-md backdrop-blur-md">Mentor Feedback: Approved</span>
+</div>
+</div>
+<div class="p-6 pt-4">
+<p class="text-[9px] font-mono text-primary uppercase tracking-widest mb-2">SOUND_ENGINEERING</p>
+<h3 class="text-sm font-black tracking-tight uppercase group-hover:text-primary transition-colors leading-tight mb-4 line-clamp-2">Electronic Soundscape: Jakarta Midnight</h3>
+<div class="flex items-center justify-between border-t border-white/5 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-slate-500">calendar_month</span>
+<span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">28 SEP 2023</span>
+</div>
+<button class="text-slate-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-card-dark rounded-2xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden flex flex-col aspect-[4/5]">
+<div class="relative flex-1 bg-neutral-900 overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbPXZ2iFeHkuTKPc9jf_Hl9E0Af3d-8ywVx_Ajr7n3yDbaYvWdJcx4pNsUgPOa4vwm70mb3VlJdtOU-fWqxP0mk1_VLvRmOGhIMcQJZaiRk0O-AVhRQkriFo0n2JMyn_Tw0cznu6moiiVhXrrP2YMZMF3MGTlXKKrENjYij8yYmaDCfSWTEyRDYa6oBMfC6nm_31Ar6Dj7bRPhsrdfPOSa7EODirYTeFJTPvHN29bzdqQahp8XtNL2XKAg3-XK8AbTbdkJDmL1PyH0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-card-dark via-card-dark/20 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-14 h-14 rounded-full bg-primary/90 text-background-dark flex items-center justify-center scale-90 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-xl">
+<span class="material-symbols-outlined fill-1 text-3xl">play_arrow</span>
+</button>
+</div>
+<div class="absolute top-4 right-4">
+<span class="px-2 py-1 bg-primary/10 border border-primary/20 text-primary text-[8px] font-black uppercase tracking-tighter rounded-md backdrop-blur-md">Under Review</span>
+</div>
+</div>
+<div class="p-6 pt-4">
+<p class="text-[9px] font-mono text-primary uppercase tracking-widest mb-2">VOICE_OVER</p>
+<h3 class="text-sm font-black tracking-tight uppercase group-hover:text-primary transition-colors leading-tight mb-4 line-clamp-2">Commercial Demo: Premium Beverage Brand</h3>
+<div class="flex items-center justify-between border-t border-white/5 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-slate-500">calendar_month</span>
+<span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">15 NOV 2023</span>
+</div>
+<button class="text-slate-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+
+</body></html>

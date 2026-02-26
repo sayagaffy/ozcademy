@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-dark": "#0c0c0c",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.03) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.03) 1px, transparent 1px);
+                background-size: 50px 50px;
+            }
+            .glow-yellow {
+                box-shadow: 0 0 25px rgba(242, 208, 13, 0.15);
+            }
+            .glow-text {
+                text-shadow: 0 0 10px rgba(242, 208, 13, 0.5);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen relative z-10">
+<aside class="w-72 border-r border-white/5 bg-background-dark/95 backdrop-blur-xl flex flex-col shrink-0">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black tracking-tighter leading-none">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-bold uppercase">Enterprise_EdTech</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl font-bold">menu_book</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">person_pin</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center justify-between px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Komunitas</span>
+</div>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Pengaturan</span>
+</a>
+</nav>
+<div class="p-6 border-t border-white/5">
+<div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-slate-400">shield</span>
+</div>
+<div class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Student_Pro_Tier</div>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-primary"></div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden">
+<header class="h-20 border-b border-white/5 flex items-center justify-between px-10 shrink-0 bg-background-dark/80 backdrop-blur-md z-30">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary glow-text">mail</span>
+<h2 class="text-xs font-black uppercase tracking-widest text-white">PESAN_MASUK (3)</h2>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-background-dark"></span>
+</button>
+<button class="text-primary hover:text-primary transition-colors filter drop-shadow-[0_0_8px_rgba(242,208,13,0.6)]">
+<span class="material-symbols-outlined">mail</span>
+</button>
+<div class="h-8 w-px bg-white/10 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider">REZA ARDIAN</p>
+<p class="text-[8px] font-mono text-primary uppercase">Elite_Member</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-yellow-600 p-0.5">
+<div class="w-full h-full rounded-full bg-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="w-[350px] border-r border-white/5 bg-background-dark/50 flex flex-col shrink-0 overflow-y-auto custom-scrollbar">
+<div class="p-6 border-b border-white/5">
+<div class="relative">
+<input class="w-full bg-white/5 border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-[10px] font-bold uppercase tracking-widest focus:ring-primary focus:border-primary text-slate-300 placeholder:text-slate-600" placeholder="CARI PESAN..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg">search</span>
+</div>
+</div>
+<div class="group relative flex items-center gap-4 p-6 bg-primary/5 border-l-4 border-primary cursor-pointer">
+<div class="relative w-12 h-12 rounded-lg bg-neutral-800 shrink-0 overflow-hidden">
+<img alt="Coach Panji" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4f5UoFIZlHU36_DB24AkswYJXhFKqofAr_uFLFfLiJDzMuOlKM_7WBi6omfYtt_kgTp0_IKDIgk5lj6en8Uzos9zaUuM3-196qT1bKbqVb9Og5y_ucoGZhxNjFS0QDogb1wAVjCG0A2-nbwPYcBeY8q3e6drtF1mcfehUyTy_hWEeT-FWvQotKC-qZi1_LT7pexe4SgP2bN3zBCw6a9GBTpHo4w5OWwkTAy270zaUWVnXEXxzAaC3Q8UM_vLNPh6lMkBEzY8NVY"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-[11px] font-black text-white uppercase truncate">COACH PANJI</h4>
+<span class="text-[9px] font-mono text-primary">12:40</span>
+</div>
+<p class="text-[10px] text-slate-400 truncate">Terima kasih atas kiriman tugasnya, Reza. Mari kita bedah...</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-6 border-b border-white/5 hover:bg-white/5 cursor-pointer transition-colors">
+<div class="relative w-12 h-12 rounded-lg bg-neutral-800 shrink-0 overflow-hidden">
+<img alt="Mentor Maya" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA993xHXpwT0FEN3OYd5-VfPo5BczxHHdR3KVoElTXWaFwmUw2Y2oOswbcxjvNGQTxpIaIytAu89SlxMi9Ux2-_efZi3SQC6u74JcAJ3qCUfVBHJvMilDB_hPvepTSYBFpKzSl3vhgfAc3UdC-pgOiftzSSNopq4pYp2CdRVNDRxFY2pV4gUDKdrn44-TAXHyXmFuARjKBQiw7ZF3poCNTti6DfgUNhDO523oHEXs_RVu4pP4N7aV-u6QMv4e0PVkE9xXx44ha4s8yq"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-[11px] font-bold text-slate-300 uppercase truncate">MENTOR MAYA</h4>
+<span class="text-[9px] font-mono text-slate-600">SENIN</span>
+</div>
+<p class="text-[10px] text-slate-500 truncate">Jadwal mentoring kita diubah ke jam 14:00 ya.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-6 border-b border-white/5 hover:bg-white/5 cursor-pointer transition-colors">
+<div class="relative w-12 h-12 rounded-lg bg-neutral-800 shrink-0 overflow-hidden">
+<img alt="Admin Ozcademy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYnHgFZ3Iak_949FQ31FOq3189viBsWKHvpz4ubumQLikoR9aoHhg0qLGoMDvGN59XRWkO9yTmKaYms6Bt9hNgI6ExB0MmMQ9mLBUNVh5oREi0Ia7twGlJ_DAmPdvxeNhcvOWVXTvLM2BcvyzHgboPloRV16e3pgd3cuv7pwTffdugEkS2htOUde3peqe0gxZO5tT-ArrjVcpMPEmPwFqjCQtreJ1KrCL98mGLW8qLJsjdI6EK0J7WH0skOMEv7I4xogcs_4OBS0cH"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-[11px] font-bold text-slate-300 uppercase truncate">ADMIN OZCADEMY</h4>
+<span class="text-[9px] font-mono text-slate-600">01 DES</span>
+</div>
+<p class="text-[10px] text-slate-500 truncate">Selamat! Anda telah menyelesaikan sertifikasi Broadcasting.</p>
+</div>
+</div>
+</aside>
+<section class="flex-1 flex flex-col bg-background-dark relative overflow-hidden">
+<div class="h-20 px-8 flex items-center justify-between border-b border-white/5 bg-card-dark/40 shrink-0">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-neutral-800 overflow-hidden">
+<img alt="Coach Panji" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4f5UoFIZlHU36_DB24AkswYJXhFKqofAr_uFLFfLiJDzMuOlKM_7WBi6omfYtt_kgTp0_IKDIgk5lj6en8Uzos9zaUuM3-196qT1bKbqVb9Og5y_ucoGZhxNjFS0QDogb1wAVjCG0A2-nbwPYcBeY8q3e6drtF1mcfehUyTy_hWEeT-FWvQotKC-qZi1_LT7pexe4SgP2bN3zBCw6a9GBTpHo4w5OWwkTAy270zaUWVnXEXxzAaC3Q8UM_vLNPh6lMkBEzY8NVY"/>
+</div>
+<div>
+<h3 class="text-xs font-black text-white uppercase tracking-widest">COACH PANJI</h3>
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-[9px] font-bold text-green-500 uppercase tracking-tighter">ONLINE</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-8 space-y-8 custom-scrollbar">
+<div class="flex justify-center">
+<span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[8px] font-bold text-slate-500 uppercase tracking-widest">HARI INI</span>
+</div>
+<div class="flex items-start gap-4 max-w-[80%]">
+<div class="w-8 h-8 rounded bg-neutral-800 shrink-0 overflow-hidden mt-1">
+<img alt="Coach Panji" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4f5UoFIZlHU36_DB24AkswYJXhFKqofAr_uFLFfLiJDzMuOlKM_7WBi6omfYtt_kgTp0_IKDIgk5lj6en8Uzos9zaUuM3-196qT1bKbqVb9Og5y_ucoGZhxNjFS0QDogb1wAVjCG0A2-nbwPYcBeY8q3e6drtF1mcfehUyTy_hWEeT-FWvQotKC-qZi1_LT7pexe4SgP2bN3zBCw6a9GBTpHo4w5OWwkTAy270zaUWVnXEXxzAaC3Q8UM_vLNPh6lMkBEzY8NVY"/>
+</div>
+<div class="space-y-1">
+<div class="bg-neutral-900 border border-white/10 p-4 rounded-2xl rounded-tl-none text-sm text-slate-200 leading-relaxed shadow-lg">
+                                Halo Reza, saya sudah meninjau rekaman audio latihan modul "Voice Modulation" milikmu.
+                            </div>
+<span class="text-[9px] font-mono text-slate-600 block pl-1">12:30</span>
+</div>
+</div>
+<div class="flex flex-row-reverse items-start gap-4 max-w-[80%] ml-auto">
+<div class="w-8 h-8 rounded bg-primary shrink-0 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-background-dark text-lg font-black">person</span>
+</div>
+<div class="space-y-1 items-end flex flex-col">
+<div class="bg-neutral-900 border border-primary/20 p-4 rounded-2xl rounded-tr-none text-sm leading-relaxed shadow-[0_0_20px_rgba(242,208,13,0.05)]">
+                                Terima kasih Coach! Bagaimana menurut anda tentang <span class="text-primary font-bold">Resonansi Diafragma</span> yang saya gunakan?
+                            </div>
+<span class="text-[9px] font-mono text-slate-600 block pr-1">12:35</span>
+</div>
+</div>
+<div class="flex items-start gap-4 max-w-[80%]">
+<div class="w-8 h-8 rounded bg-neutral-800 shrink-0 overflow-hidden mt-1">
+<img alt="Coach Panji" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4f5UoFIZlHU36_DB24AkswYJXhFKqofAr_uFLFfLiJDzMuOlKM_7WBi6omfYtt_kgTp0_IKDIgk5lj6en8Uzos9zaUuM3-196qT1bKbqVb9Og5y_ucoGZhxNjFS0QDogb1wAVjCG0A2-nbwPYcBeY8q3e6drtF1mcfehUyTy_hWEeT-FWvQotKC-qZi1_LT7pexe4SgP2bN3zBCw6a9GBTpHo4w5OWwkTAy270zaUWVnXEXxzAaC3Q8UM_vLNPh6lMkBEzY8NVY"/>
+</div>
+<div class="space-y-1">
+<div class="bg-neutral-900 border border-white/10 p-4 rounded-2xl rounded-tl-none text-sm text-slate-200 leading-relaxed shadow-lg">
+                                Sudah jauh lebih stabil dibanding minggu lalu. Tapi pada detik ke-0:45, powernya sedikit drop. Cobalah untuk mempertahankan tekanan udara yang konsisten hingga akhir kalimat.
+                            </div>
+<div class="bg-white/5 border border-white/10 p-3 rounded-xl flex items-center gap-3 mt-2 cursor-pointer hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary">description</span>
+<div class="flex-1">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider">Voice_Feedback_Panji.pdf</p>
+<p class="text-[8px] text-slate-500 uppercase">2.4 MB • DOKUMEN</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">download</span>
+</div>
+<span class="text-[9px] font-mono text-slate-600 block pl-1">12:40</span>
+</div>
+</div>
+</div>
+<div class="p-8 bg-background-dark/80 backdrop-blur-md">
+<div class="bg-white/5 border border-white/10 rounded-2xl p-2 flex items-center gap-4 group focus-within:border-primary/30 transition-all">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm text-slate-200 placeholder:text-slate-600 font-medium py-3 px-2" placeholder="TULIS PESAN ANDA..." type="text"/>
+<button class="bg-primary text-background-dark px-8 py-3 rounded-xl font-black text-[11px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all glow-yellow">
+                            KIRIM
+                        </button>
+</div>
+<div class="mt-4 flex items-center gap-6 px-4">
+<button class="flex items-center gap-2 text-[9px] font-bold text-slate-500 hover:text-slate-300">
+<span class="material-symbols-outlined text-xs">mood</span>
+                            EMOJI
+                        </button>
+<button class="flex items-center gap-2 text-[9px] font-bold text-slate-500 hover:text-slate-300">
+<span class="material-symbols-outlined text-xs">mic</span>
+                            VOICE NOTE
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+
+</body></html>

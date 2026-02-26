@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2d00d",
+                        "background-dark": "#050505",
+                        "card-grey": "#121212",
+                        "border-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .star-field {
+                background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 30px 30px;
+            }
+            .grid-pattern {
+                background-image: linear-gradient(to right, rgba(242, 208, 13, 0.03) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(242, 208, 13, 0.03) 1px, transparent 1px);
+                background-size: 50px 50px;
+            }
+            .glow-yellow {
+                box-shadow: 0 0 30px rgba(242, 208, 13, 0.2);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #1a1a1a;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #f2d00d;
+            }
+            .toggle-checkbox:checked {
+                @apply right-0 border-primary bg-primary;
+            }
+            .toggle-checkbox:checked + .toggle-label {
+                @apply bg-primary/20;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark overflow-hidden">
+<div class="fixed inset-0 star-field pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<div class="flex h-screen relative z-10">
+<aside class="w-72 border-r border-white/5 bg-card-grey/95 backdrop-blur-xl flex flex-col shrink-0">
+<div class="p-8">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-black">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black tracking-tighter leading-none">OZCADEMY</span>
+<span class="text-[8px] tracking-[0.3em] text-primary font-bold uppercase">Enterprise_EdTech</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Katalog</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Pembelajaranku</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">person_pin</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Profil &amp; Portofolio</span>
+</a>
+<a class="flex items-center justify-between px-4 py-3.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="text-[11px] font-bold tracking-[0.15em] uppercase">Komunitas</span>
+</div>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg bg-primary text-background-dark transition-all shadow-[0_0_20px_rgba(242,208,13,0.3)]" href="#">
+<span class="material-symbols-outlined text-xl font-bold">payments</span>
+<span class="text-[11px] font-black tracking-[0.15em] uppercase">Pengaturan &amp; Langganan</span>
+</a>
+</nav>
+<div class="p-6 border-t border-white/5">
+<div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-slate-400">shield</span>
+</div>
+<div class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Student_Status</div>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-primary"></div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden">
+<header class="h-20 border-b border-white/5 flex items-center justify-between px-10 shrink-0 bg-background-dark/80 backdrop-blur-md z-30">
+<div class="flex items-center gap-8 flex-1 max-w-2xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">search</span>
+<input class="w-full bg-white/5 border border-white/10 rounded-full py-2.5 pl-12 pr-6 text-[10px] font-bold tracking-widest text-white focus:outline-none focus:border-primary/50 transition-all placeholder:text-slate-600 uppercase" placeholder="CARI PENGATURAN..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-background-dark"></span>
+</button>
+<button class="text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+<div class="h-8 w-px bg-white/10 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider">REZA ARDIAN</p>
+<p class="text-[8px] font-mono text-primary uppercase">Elite_Member</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-yellow-600 p-0.5">
+<div class="w-full h-full rounded-full bg-background-dark flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<div class="max-w-4xl mx-auto px-10 py-12">
+<div class="mb-10">
+<h1 class="text-3xl font-black tracking-tighter text-white uppercase">PENGATURAN &amp; LANGGANAN</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.3em] mt-2">Kelola Akun, Penagihan, dan Keamanan Anda</p>
+</div>
+<div class="flex items-center gap-10 border-b border-white/5 mb-10">
+<button class="relative py-4 text-xs font-black uppercase tracking-[0.2em] text-primary">
+                        Profil &amp; Keamanan
+                        <div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary shadow-[0_0_8px_#f2d00d]"></div>
+</button>
+<button class="py-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-white transition-colors">
+                        Langganan &amp; Tagihan
+                    </button>
+</div>
+<div class="space-y-12 pb-20">
+<section class="space-y-8">
+<div class="flex items-center gap-8">
+<div class="relative group">
+<div class="w-32 h-32 rounded-full border-2 border-primary/30 p-1 group-hover:border-primary transition-all duration-500">
+<div class="w-full h-full rounded-full bg-card-grey flex items-center justify-center overflow-hidden border border-white/10">
+<span class="material-symbols-outlined text-5xl text-slate-700">person</span>
+</div>
+</div>
+<button class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-background-dark px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-xl hover:scale-105 transition-all whitespace-nowrap">
+                                    Ubah Foto
+                                </button>
+</div>
+<div>
+<h2 class="text-xl font-black text-white uppercase tracking-tight">INFORMASI PROFIL</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Data ini akan muncul di portofolio dan sertifikat</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Nama Lengkap</label>
+<input class="w-full bg-card-grey border border-white/10 rounded-xl px-5 py-4 text-xs font-bold text-white focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none" type="text" value="REZA ARDIAN"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Email</label>
+<input class="w-full bg-card-grey border border-white/10 rounded-xl px-5 py-4 text-xs font-bold text-white focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none" type="email" value="reza.ardian@enterprise.com"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Nomor Telepon</label>
+<input class="w-full bg-card-grey border border-white/10 rounded-xl px-5 py-4 text-xs font-bold text-white focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none" type="text" value="+62 812 3456 7890"/>
+</div>
+</div>
+</section>
+<section class="space-y-8 pt-8 border-t border-white/5">
+<h2 class="text-xl font-black text-white uppercase tracking-tight flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">security</span>
+                            KEAMANAN AKUN
+                        </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Kata Sandi Saat Ini</label>
+<input class="w-full bg-card-grey border border-white/10 rounded-xl px-5 py-4 text-xs font-bold text-white focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none placeholder:text-slate-700" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Kata Sandi Baru</label>
+<input class="w-full bg-card-grey border border-white/10 rounded-xl px-5 py-4 text-xs font-bold text-white focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none placeholder:text-slate-700" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Konfirmasi Kata Sandi</label>
+<input class="w-full bg-card-grey border border-white/10 rounded-xl px-5 py-4 text-xs font-bold text-white focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none placeholder:text-slate-700" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</section>
+<section class="space-y-8 pt-8 border-t border-white/5">
+<h2 class="text-xl font-black text-white uppercase tracking-tight">PENGATURAN NOTIFIKASI</h2>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-6 bg-card-grey/50 border border-white/5 rounded-2xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">alternate_email</span>
+</div>
+<div>
+<p class="text-xs font-black text-white uppercase tracking-widest">Email Notifications</p>
+<p class="text-[10px] text-slate-500 mt-1">Terima info update, promo, dan invoice via email</p>
+</div>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-slate-600 border-4 border-card-grey appearance-none cursor-pointer outline-none transition-all duration-300 right-6 checked:right-0" id="email-notif" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-white/5 cursor-pointer transition-colors duration-300" for="email-notif"></label>
+</div>
+</div>
+<div class="flex items-center justify-between p-6 bg-card-grey/50 border border-white/5 rounded-2xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">notifications_active</span>
+</div>
+<div>
+<p class="text-xs font-black text-white uppercase tracking-widest">Push Notifications</p>
+<p class="text-[10px] text-slate-500 mt-1">Aktifkan notifikasi langsung di browser atau mobile</p>
+</div>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-slate-600 border-4 border-card-grey appearance-none cursor-pointer outline-none transition-all duration-300 right-6 checked:right-0" id="push-notif" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-white/5 cursor-pointer transition-colors duration-300" for="push-notif"></label>
+</div>
+</div>
+</div>
+</section>
+<div class="pt-10 flex justify-end">
+<button class="px-12 py-5 bg-primary text-background-dark font-black text-[13px] tracking-[0.2em] uppercase rounded-xl hover:bg-white transition-all shadow-[0_10px_30px_rgba(242,208,13,0.3)] hover:scale-[1.02] active:scale-95 glow-yellow">
+                            SIMPAN PERUBAHAN
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<button class="fixed bottom-8 right-8 bg-primary text-background-dark px-7 py-5 rounded-full shadow-[0_15px_40px_rgba(242,208,13,0.5)] flex items-center gap-4 hover:scale-110 transition-all z-50 group border-4 border-background-dark glow-yellow">
+<div class="relative">
+<span class="material-symbols-outlined font-black text-2xl">support_agent</span>
+</div>
+<span class="text-[12px] font-black tracking-[0.2em] uppercase">BANTUAN TEKNIS</span>
+</button>
+
+</body></html>
